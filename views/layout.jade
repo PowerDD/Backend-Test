@@ -11,7 +11,8 @@ html
 		link(rel='stylesheet', href='/stylesheets/jquery.jsonview.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 
-	body.skin-blue.sidebar-mini
+	if data.screen != 'login'
+		body.skin-blue.sidebar-mini
 
 		input#apiKey(type="hidden", value= data.apiKey)
 
@@ -199,3 +200,7 @@ html
 		script(src='/javascripts/jquery.jsonview.js')
 		script(src='/javascripts/app.min.js')
 		script(src='/javascripts/common.js')
+
+	else
+		|  Login
+	
