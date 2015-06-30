@@ -10,7 +10,8 @@ $(function() {
 			}
 			else {
 				$('#message').html( '<i class="fa fa-spinner fa-pulse"></i> กำลังตรวจสอบข้อมูล กรุณารอสักครู่ค่ะ' ).addClass('text-light-blue').removeClass('text-red');
-				$('#btn-login, #btn-login_facebook, #txt-username, #txt-password').addClass('disabled');
+				$('#btn-login, #btn-login_facebook').addClass('disabled');
+				$('#txt-username, #txt-password, #cbx-remember').attr('disabled', 'disabled');
 			}
 		}
 	});
