@@ -58,7 +58,8 @@ exports.getMemberInfo = function(req, res, data) {
 
 			data.memberInfo.RegisterDate = moment(data.memberInfo.RegisterDate)
 				.zone((data.memberInfo.Timezone > 0 ? '+' : '-')+'0'+data.memberInfo.Timezone+':00')
-				.fromNow();
+				.fromNow()
+				.lang('th');
 		}
 
 		if (data.screen == 'index') {
