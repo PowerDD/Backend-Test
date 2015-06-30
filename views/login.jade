@@ -2,14 +2,15 @@ extends layout
 
 block content
 	body.login-page
-		input#apiKey (type="hidden", value= data.apiKey)
+		input#apiKey (type="hidden", value="#{data.apiKey}")
 
 		.login-box.margin-top-0.margin-bottom-0
 			.login-logo.margin-bottom-5
 				b PowerDD
 				|  Backend
 			.login-box-body
-				p.login-box-msg เข้าสู่ระบบ
+				p.login-box-msg 
+					h3 เข้าสู่ระบบ
 				form
 					.form-group.has-feedback
 						input#txt-username.form-control(type='email', placeholder='ชื่อผู้ใช้ / เบอร์โทรศัพท์ / อีเมล')
