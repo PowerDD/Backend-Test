@@ -8,7 +8,8 @@ $(function() {
 			$('#message').html( '<i class="fa fa-warning"></i> กรุณากรอกรหัสผ่านด้วยค่ะ' ).addClass('text-red').removeClass('text-light-blue');
 		}
 		else {
-			$('#message').html( '<i class="fa fa-circle-o-notch fa-spin"></i> กำลังตรวจสอบข้อมูล กรุณารอสักครู่ค่ะ' ).addClass('text-light-blue').removeClass('text-red');
+			$('#message').html( '<i class="fa fa-spinner fa-pulse"></i> กำลังตรวจสอบข้อมูล กรุณารอสักครู่ค่ะ' ).addClass('text-light-blue').removeClass('text-red');
+			$('#btn-login, #btn-login_facebook').addCalss('disabled').attr('disabled', 'disabled');
 		}
 	});
 
