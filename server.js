@@ -31,7 +31,9 @@ app.configure('development', function(){
 	});
 });
 
-
+app.all('*', function(req, res, next) {
+	res.json(req.headers);
+});
 
 app.get('*', function(req, res) {
 
