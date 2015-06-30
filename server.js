@@ -37,7 +37,7 @@ app.get('*', function(req, res) {
 
 	data = {};
 	data.screen = (typeof req.cookies.memberKey == 'undefined' || req.cookies.memberKey =='') ? 'login' : 'index';
-	data.systemName = process.env.systemName;
+	data.systemName = process.env.systemName+req.headers['x-forwarded-proto'];
 	data.title = process.env.systemName;
 	data.titleDescription = '';
 	data.apiKey = process.env.apiKey;
