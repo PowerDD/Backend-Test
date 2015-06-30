@@ -1,4 +1,26 @@
 extends layout
 
 block content
-	|  Login Hello
+	body.login-page
+		.login-box
+			.login-logo
+				a(href='../../index2.html')
+					b Admin
+					| LTE
+			.login-box-body
+				p.login-box-msg Sign in to start your session
+				form(action='../../index2.html', method='post')
+					.form-group.has-feedback
+						  input.form-control(type='email', placeholder='Email')
+						  span.glyphicon.glyphicon-envelope.form-control-feedback     
+					.form-group.has-feedback
+						input.form-control(type='password', placeholder='Password')
+						span.glyphicon.glyphicon-lock.form-control-feedback
+					.row
+						.col-xs-8
+							.checkbox.icheck
+								label
+									input(type='checkbox')
+									|  Remember Me
+						.col-xs-4
+							button.btn.btn-primary.btn-block.btn-flat(type='submit') Sign In
