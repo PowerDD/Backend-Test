@@ -57,20 +57,12 @@ app.get('*', function(req, res) {
 			fs.exists('./views/'+data.screen+'.jade', function (exists) {
 				if (exists) {
 					data.subUrl = (url.length == 1 ) ? '' : url[1];
-					routes.index(req, res, data);
-				}
-				else {
-					routes.index(req, res, data);
 				}
 			});
 		}
-		else {
-			routes.index(req, res, data);
-		}
 	}
-	else {
-		routes.index(req, res, data);
-	}
+
+	routes.index(req, res, data);
 
 });
 
