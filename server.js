@@ -15,6 +15,7 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.cookieParser());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
@@ -26,29 +27,35 @@ app.configure('development', function(){
 app.get('*', function(req, res) {
 
 	data = {};
-	data.screen = 'index';
+	data.screen = (typeof req.cookies.memberKey == 'undefined' || req.cookies.memberKey =='') ? 'login' : 'index';
 	data.systemName = process.env.systemName;
 	data.title = process.env.systemName;
 	data.titleDescription = '';
 	data.apiKey = process.env.apiKey;
 
-	var url = req.headers['x-original-url'].split('/');
-	url = url.filter(function(n){ return n !== ''; });
-	if ( url.length >= 1 ) {
-		data.screen = url[0];
-		fs.exists('./views/'+data.screen+'.jade', function (exists) {
-			if (exists) {
-				data.subUrl = (url.length == 1 ) ? '' : url[1];
-				routes.index(req, res, data);
-			}
-			else {
-				routes.index(req, res, data);
-			}
-		});
+	if ( data.screen != 'login' ) {		
+		var url = req.headers['x-original-url'].split('/');
+		url = url.filter(function(n){ return n !== ''; });
+		if ( url.length >= 1 ) {
+			data.screen = url[0];
+			fs.exists('./views/'+data.screen+'.jade', function (exists) {
+				if (exists) {
+					data.subUrl = (url.length == 1 ) ? '' : url[1];
+					routes.index(req, res, data);
+				}
+				else {
+					routes.index(req, res, data);
+				}
+			});
+		}
+		else {
+			routes.index(req, res, data);
+		}
 	}
 	else {
 		routes.index(req, res, data);
 	}
+
 });
 
 
