@@ -56,7 +56,7 @@ exports.getMemberInfo = function(req, res, data) {
 				data.memberInfo.DisplayName = 'Guest';
 			}
 
-			data.memberInfo.RegisterDate = moment(data.memberInfo.RegisterDate , 'MMM YYYY');
+			data.memberInfo.RegisterDate = moment(data.memberInfo.RegisterDate);
 		}
 
 		if (data.screen == 'index') {
