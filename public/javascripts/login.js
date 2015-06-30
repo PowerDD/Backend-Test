@@ -37,6 +37,7 @@ function login() {
 	}, function(data) {
 		if (data.success) {
 			$('#message').html( '<i class="fa fa-spinner fa-pulse"></i> กำลังเข้าสู่ระบบ กรุณารอสักครู่ค่ะ' ).addClass('text-light-blue').removeClass('text-red');
+			$.cookie('memberKey', data.memberKey, { expires: 365, secure: true });
 		}
 		else {
 			$('#btn-login, #btn-login_facebook').removeClass('disabled');
