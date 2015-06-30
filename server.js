@@ -32,7 +32,10 @@ app.configure('development', function(){
 });
 
 app.all('*', function(req, res, next) {
-	res.json(req.headers);
+	if (!req.get('x-arr-ssl'))
+		res.redirect('https://' + req.get('host') + req.url);
+	else
+		next();
 });
 
 app.get('*', function(req, res) {
