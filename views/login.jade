@@ -10,10 +10,10 @@ block content
 				p.login-box-msg เข้าสู่ระบบ
 				form
 					.form-group.has-feedback
-						input.form-control(type='email', placeholder='ชื่อผู้ใช้ / เบอร์โทรศัพท์ / อีเมล')
+						input#txt-username.form-control(type='email', placeholder='ชื่อผู้ใช้ / เบอร์โทรศัพท์ / อีเมล')
 						span.glyphicon.glyphicon-user.form-control-feedback     
 					.form-group.has-feedback
-						input.form-control(type='password', placeholder='รหัสผ่าน')
+						input#txt-password.form-control(type='password', placeholder='รหัสผ่าน')
 						span.glyphicon.glyphicon-lock.form-control-feedback
 					.row
 						.col-xs-7
@@ -22,7 +22,7 @@ block content
 									input(type='checkbox')
 									|  คงอยู่ในระบบ
 						.col-xs-5
-							span.btn.btn-primary.btn-block.btn-flat ลงชื่อเข้าใช้
+							span#btn-login.btn.btn-primary.btn-block.btn-flat ลงชื่อเข้าใช้
 
 				.social-auth-links.text-center
 					p - หรือ -
