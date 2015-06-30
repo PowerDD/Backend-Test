@@ -12,13 +12,17 @@ exports.index = function(req, res, data){
 	function (error, response, body) {
 		if (!error) {				
 			var json = JSON.parse(body);
-			res.json(json);
-		} else{
-			data.error = error.message;
-			data.stack = error.stack;
-			res.send('Login Failed');
-			//res.render('error', { data: data });
+			data.screen = ( json.success && json.exist ) ? data.screen : 'login';
 		}
+		else {
+			data.screen = 'login';
+		}
+
+		if (data.screen == 'login') {
+			data.title = 'เข้าสู่ระบบ - ' + data.title;
+		}
+		res.render(data.screen, { data: data });
+
 	});
 
 	/*if (data.screen == 'member') {
