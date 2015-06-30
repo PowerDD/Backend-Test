@@ -1,6 +1,6 @@
 var request = require('request');
 
-exports.index = function(req, res, data){
+exports.index = function(req, res, data) {
 	
 	request.post({headers: { 'referer': 'https://' + req.get('host') }, url: data.apiUrl + '/member/exist/memberKey',
 		form: {
@@ -20,24 +20,43 @@ exports.index = function(req, res, data){
 
 		if (data.screen == 'login') {
 			data.title = 'เข้าสู่ระบบ - ' + data.title;
+			res.render(data.screen, { data: data });
 		}
+		else {
+			exports.getMemberInfo(req, res, data)
+		}
+
+	});
+
+};
+
+exports.getMemberInfo = function(req, res, data) {
+	request.post({headers: { 'referer': 'https://' + req.get('host') }, url: data.apiUrl + '/member/info',
+		form: {
+			apiKey: data.apiKey,
+			shop: data.shop,
+			memberKey: req.cookies.memberKey,
+		}
+	},
+	function (error, response, body) {
+		if (!error) {
+			data.memberInfo = JSON.parse(body);
+			if ( typeof data.memberInfo.Firstname != 'undefined' && data.memberInfo.Firstname != null && data.memberInfo.Firstname != '' ) {
+				data.memberInfo.DisplayName = data.memberInfo.Firstname;
+			}
+			else if ( typeof data.memberInfo.Nickname != 'undefined' && data.memberInfo.Nickname != null && data.memberInfo.Nickname != '' ) {
+				data.memberInfo.DisplayName = data.memberInfo.Nickname;
+			}
+			else if ( typeof data.memberInfo.Username != 'undefined' && data.memberInfo.Username != null && data.memberInfo.Username != '' ) {
+				data.memberInfo.DisplayName = data.memberInfo.Username;
+			}
+			else {
+				data.memberInfo.DisplayName = 'Guest';
+			}
+		}
+
 		res.render(data.screen, { data: data });
 
 	});
 
-	/*if (data.screen == 'member') {
-		data.title = 'Member - ' + data.title;
-		data.titleDescription += 'ข้อมูลสมาชิกทั่วไป';
-	}
-	else if (data.screen == 'order') {
-		data.title = 'Order - ' + data.title;
-		data.titleDescription += 'คำสั่งซื้อ';
-	}
-	else if (data.screen == 'console') {
-		data.title = 'Developer Console - ' + data.title;
-		data.titleDescription += ' ';
-	}
-
-	res.render(data.screen, { data: data });*/
-
-};
+}
