@@ -28,7 +28,7 @@ $(function() {
 
 
 function login() {
-	$.post($('#apiUrl').val()+'/member/login', { shop: $('#shop').val(), authKey: $('#authKey').val(),
+	$.post($('#apiUrl').val()+'/member/login', { shop: $('#shop').val(), apiKey: $('#authKey').val(),
 		username: $.trim($('#username').val()),
 		password: $('#password').val(),
 	}, function(data) {
