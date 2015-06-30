@@ -16,18 +16,19 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
-  app.configure('production', function () {
-    app.use (function (req, res, next) {
-      var schema = (req.headers['x-forwarded-proto'] || '').toLowerCase();
-      if (schema === 'https') {
-        next();
-      } else {
-        res.redirect('https://' + req.headers.host + req.url);
-      }
-    });
-  });
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
+});
+
+app.configure('development', function(){
+	app.use (function (req, res, next) {
+		var schema = (req.headers['x-forwarded-proto'] || '').toLowerCase();
+		if (schema === 'https') {
+			next();
+		} else {
+			res.redirect('https://' + req.headers.host + req.url);
+		}
+	});
 });
 
 
