@@ -45,7 +45,9 @@ app.get('*', function(req, res) {
 	data.systemName = process.env.systemName;
 	data.title = process.env.systemName;
 	data.titleDescription = '';
+	data.shop = process.env.shop;
 	data.apiKey = process.env.apiKey;
+	data.apiUrl = process.env.apiUrl;
 
 	if ( data.screen != 'login' ) {		
 		var url = req.headers['x-original-url'].split('/');

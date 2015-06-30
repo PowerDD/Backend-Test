@@ -2,7 +2,9 @@ extends layout
 
 block content
 	body.login-page
+		input#shop(type="hidden", value="#{data.shop}")
 		input#apiKey(type="hidden", value="#{data.apiKey}")
+		input#apiUrl(type="hidden", value="#{data.apiUrl}")
 
 		.login-box.margin-top-0.margin-bottom-0
 			.login-logo.margin-bottom-5

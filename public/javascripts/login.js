@@ -17,3 +17,12 @@ $(function() {
 	});
 
 });
+
+
+function loadData() {
+	$.post($('#apiUrl').val()+'/member/login', { shop: $('#shop').val(), authKey: $('#authKey').val(),
+		username: $.trim($('#username').val()),
+		password: $('#password').val(),
+	}, function(data){
+	}
+}
