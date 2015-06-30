@@ -40,7 +40,8 @@ exports.getMemberInfo = function(req, res, data) {
 	},
 	function (error, response, body) {
 		if (!error) {
-			data.memberInfo = JSON.parse(body);
+			var json = JSON.parse(body);
+			data.memberInfo = json.memberInfo
 			if ( typeof data.memberInfo.Firstname != 'undefined' && data.memberInfo.Firstname != null && data.memberInfo.Firstname != '' ) {
 				data.memberInfo.DisplayName = data.memberInfo.Firstname;
 			}
