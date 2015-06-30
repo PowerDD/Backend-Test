@@ -1,4 +1,7 @@
 $(function() {
+	
+	$('#btn-login, #btn-login_facebook').removeClass('disabled');
+	$('#username, #password, #cbx-remember').removeAttr('disabled');
 
 	$(document).on('click', '#btn-login', function(){
 		if ( !$(this).hasClass('disabled') ) {
@@ -28,9 +31,17 @@ $(function() {
 
 
 function login() {
-	$.post($('#apiUrl').val()+'/member/login', { shop: $('#shop').val(), apiKey: $('#authKey').val(),
+	$.post($('#apiUrl').val()+'/member/login', { shop: $('#shop').val(), apiKey: $('#apiKey').val(),
 		username: $.trim($('#username').val()),
 		password: $('#password').val(),
 	}, function(data) {
+		if (data.success) {
+			$('#message').html( '<i class="fa fa-spinner fa-pulse"></i> กำลังเข้าสู่ระบบ กรุณารอสักครู่ค่ะ' ).addClass('text-light-blue').removeClass('text-red');
+		}
+		else {
+			$('#btn-login, #btn-login_facebook').removeClass('disabled');
+			$('#username, #password, #cbx-remember').removeAttr('disabled');
+			$('#message').html( '<i class="fa fa-warning"></i> ชื่อผู้ใช้ หรือ รหัสผ่านไม่ถูกต้องค่ะ' ).addClass('text-red').removeClass('text-light-blue');
+		}
 	});
 }
