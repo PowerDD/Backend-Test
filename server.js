@@ -2,10 +2,17 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , fs = require('fs')
-  , path = require('path');
+  , path = require('path')
+  , i18n = require('i18n');
+
+i18n.configure({
+	locales: ['th', 'en'],
+	defaultLocale: 'th',
+	directory: __dirname + '/locales'
+});
 
 var app = express();
-global.config = require('./config.js');
+
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -15,6 +22,7 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(i18n.init);
   app.use(express.cookieParser());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));

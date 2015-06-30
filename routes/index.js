@@ -56,6 +56,9 @@ exports.getMemberInfo = function(req, res, data) {
 				data.memberInfo.DisplayName = 'Guest';
 			}
 
+			var local = data.memberInfo.Locale.substr(0,2);
+			if (local != 'th' || local != 'en') local != 'th';
+			req.setLocale(data.memberInfo.Locale.substr(0,2));
 			moment.locale(data.memberInfo.Locale.replace('_', '-'));
 			data.memberInfo.RegisterDate = moment(data.memberInfo.RegisterDate)
 				.zone((data.memberInfo.Timezone > 0 ? '+' : '-')+'0'+data.memberInfo.Timezone+':00')
