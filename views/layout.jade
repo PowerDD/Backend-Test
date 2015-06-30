@@ -32,12 +32,12 @@ html
 							li.dropdown.user.user-menu
 								a.dropdown-toggle(href="#", data-toggle="dropdown")
 									img.user-image(src="/images/avatar5.png", alt="User Image")
-									span.hidden-xs  Developer Name
+									span.hidden-xs  #{data.memberInfo.DisplayName}
 								ul.dropdown-menu
 									li.user-header
 										img.img-circle(src="/images/avatar5.png", alt="User Image")
 										p
-											| Developer Name - Web Developer
+											| #{data.memberInfo.DisplayName} - Web Developer
 											small Member since Nov. 2012
 									li.user-body
 										div.col-xs-4.text-center
@@ -59,7 +59,7 @@ html
 							img.img-circle(src="/images/avatar5.png", alt="User Image")
 						div.pull-left.info
 							p
-								| Developer Name
+								| #{data.memberInfo.DisplayName}
 							a(href="#")
 								i.fa.fa-circle.text-success
 								| Online
