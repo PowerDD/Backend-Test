@@ -18,9 +18,10 @@ html
 			header.main-header
 				a.logo(href="index2.html")
 					span.logo-mini
-						b  API
+						b  PDD
 					span.logo-lg
-						| #{data.systemName}
+						b PowerDD  
+						| Backend
 				
 				nav.navbar.navbar-static-top(role="navigation")
 					a.sidebar-toggle(href="#", data-toggle="offcanvas", role="button")
@@ -37,7 +38,7 @@ html
 									li.user-header
 										img.img-circle(src="/images/avatar5.png", alt="User Image")
 										p
-											| #{data.memberInfo.DisplayName} - Web Developer
+											| #{data.memberInfo.DisplayName} - #{data.memberInfo.SelectedMemberType}
 											small Member since Nov. 2012
 									li.user-body
 										div.col-xs-4.text-center

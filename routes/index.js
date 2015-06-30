@@ -56,6 +56,10 @@ exports.getMemberInfo = function(req, res, data) {
 			}
 		}
 
+		if (data.screen == 'index') {
+			data.title = 'ภาพรวมระบบ - ' + data.title;
+		}
+
 		res.render(data.screen, { data: data });
 
 	});
