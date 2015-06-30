@@ -1,4 +1,5 @@
 var request = require('request');
+var moment = require('moment');
 
 exports.index = function(req, res, data) {
 	
@@ -54,6 +55,8 @@ exports.getMemberInfo = function(req, res, data) {
 			else {
 				data.memberInfo.DisplayName = 'Guest';
 			}
+
+			data.memberInfo.RegisterDate = moment(data.memberInfo.RegisterDate , 'MMM YYYY');
 		}
 
 		if (data.screen == 'index') {
