@@ -3,12 +3,10 @@ html
 	head
 		title= data.title
 		meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
-		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+		link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', )
 		link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
-		link(rel='stylesheet', href='//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
 		link(rel='stylesheet', href='/stylesheets/AdminLTE.min.css')
 		link(rel='stylesheet', href='/stylesheets/skins/skin-blue.min.css')
-		link(rel='stylesheet', href='/stylesheets/jquery.jsonview.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 
 	if data.screen != 'login'
@@ -195,9 +193,8 @@ html
 					a(href="http://www.PowerDD.com") PowerDD
 				|  All rights reserved.
 
-		script(src='/plugins/jQuery/jQuery-2.1.4.min.js')
-		script(src='/javascripts/bootstrap.min.js')
-		script(src='/javascripts/jquery.jsonview.js')
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+		script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
 		script(src='/javascripts/app.min.js')
 		script(src='/javascripts/common.js')
 
