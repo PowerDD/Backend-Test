@@ -13,7 +13,8 @@ exports.index = function(req, res, data) {
 			}
 		},
 		function (error, response, body) {
-			if (!error) {
+			res.send(body);
+			/*if (!error) {
 				var json = JSON.parse(body);
 				data.screen = ( json.success && json.exist ) ? data.screen : 'login';
 				if (!json.exist) res.clearCookie(req.cookies.memberKey);
@@ -28,7 +29,7 @@ exports.index = function(req, res, data) {
 			}
 			else {
 				exports.getMemberInfo(req, res, data)
-			}
+			}*/
 
 		});
 	}
