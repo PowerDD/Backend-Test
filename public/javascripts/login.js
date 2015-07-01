@@ -45,7 +45,7 @@ $(function() {
 						if (data.success) {
 							$.cookie.json = true;
 							$.cookie('memberKey', data.memberKey);
-							window.location.reload();
+							//window.location.reload();
 						}
 						else{
 							console.log(data.error);
