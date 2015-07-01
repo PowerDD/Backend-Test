@@ -18,5 +18,13 @@
 	"Screen Title - shop": "ข้อมูลเกี่ยวกับร้านค้า",
 	"Screen Title - product": "ข้อมูลสินค้า",
 	"Screen Title - category": "ข้อมูลหมวดหมู่สินค้า",
-	"Screen Title - brand": "ข้อมูลยี่ห้อสินค้า"
+	"Screen Title - brand": "ข้อมูลยี่ห้อสินค้า",
+	"Expiration Time": "เวลาหมดอายุ",
+	"Cart Expired": "รถเข็น",
+	"Order Expired": "ใบสั่งจอง",
+	"Login Expired (Normal)": "การเข้าระบบ (ปกติ)",
+	"Login Expired (Remember)": "การเข้าระบบ (จดจำการเข้าระบบ)",
+	"Hours": "ชั่วโมง",
+	"Days": "วัน",
+	"Save Data": "บันทึกข้อมูล"
 }

@@ -18,5 +18,13 @@
 	"Screen Title - shop": "Shop Information Data",
 	"Screen Title - product": "Product Data",
 	"Screen Title - category": "Category Data",
-	"Screen Title - brand": "Brand Data"
+	"Screen Title - brand": "Brand Data",
+	"Expiration Time": "Expiration Time",
+	"Cart Expired": "Cart Expired",
+	"Order Expired": "Order Expired",
+	"Login Expired (Normal)": "Login Expired (Normal)",
+	"Login Expired (Remember)": "Login Expired (Remember)",
+	"Hours": "Hours",
+	"Days": "Days",
+	"Save Data": "Save Data"
 }
