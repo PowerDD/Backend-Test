@@ -28,3 +28,6 @@
 .jsonview a { color: blue !important }
 
 .font-pre { font-family: Menlo,Monaco,Consolas,"Courier New",monospace !important; font-size: 0.85em; }
+
+
+.dotted-line { background: rgba(0, 0, 0, 0) url("../images/dottedBorder.png") repeat-x scroll 0 0; display: block; height:1px; margin-top:5px; margin-bottom:5px }

@@ -78,7 +78,7 @@ block content
 			.box.box-primary
 				.box-header.with-border
 					h3.box-title 
-						i.fa.fa-clock-o
+						i.fa.fa-truck
 						|  #{__('Shipping Cost')}
 				.box-body
 					form(role="form")
@@ -92,3 +92,16 @@ block content
 								label
 									input(type='radio', name='hasFees', value='has', checked='')
 									|  #{__('Has Shipping Cost')}
+
+						.dotted-line
+
+							.radio
+								label
+									input(type='radio', name='feesType', value='free', checked='')
+									|  #{__('Fixed Cost')}
+
+							.radio
+								label
+									input(type='radio', name='feesType', value='free', checked='')
+									|  #{__('Weight Calculation')}
+							
