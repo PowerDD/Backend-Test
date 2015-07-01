@@ -12,7 +12,7 @@ block content
 					form(role="form")
 
 						.form-group
-							label เวลาหมดอายุของรถเข็น
+							label #{__('Cart Expired')}เวลาหมดอายุของรถเข็น
 							.input-group
 								input.form-control(type='text')
 								.input-group-btn
@@ -26,7 +26,7 @@ block content
 											a(href='#') วัน
 
 						.form-group
-							label เวลาหมดอายุของใบสั่งจอง
+							label #{__('Order Expired')} เวลาหมดอายุของใบสั่งจอง
 							.input-group
 								input.form-control(type='text')
 								.input-group-btn
@@ -40,7 +40,7 @@ block content
 											a(href='#') วัน
 
 						.form-group
-							label เวลาหมดอายุของการเข้าระบบ (ปกติ)
+							label #{__('Login Expired (Normal)')}เวลาหมดอายุของการเข้าระบบ (ปกติ)
 							.input-group
 								input.form-control(type='text')
 								.input-group-btn
@@ -54,20 +54,20 @@ block content
 											a(href='#') วัน
 
 						.form-group
-							label เวลาหมดอายุของการเข้าระบบ (จดจำการเข้าระบบ)
+							label #{__('Login Expired (Remember)')}เวลาหมดอายุของการเข้าระบบ (จดจำการเข้าระบบ)
 							.input-group
 								input.form-control(type='text')
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
-										| ชั่วโมง 
+										| #{__('Hours')}ชั่วโมง 
 										span.fa.fa-caret-down
 									ul.dropdown-menu
 										li.active
-											a(href='#') ชั่วโมง
+											a(href='#') #{__('Hours')}ชั่วโมง
 										li
-											a(href='#') วัน
+											a(href='#') #{__('Days')}วัน
 
 				.box-footer
 					span.btn.btn-primary.pull-right
 						i.fa.fa-save
-						|  บันทึกข้อมูล
+						|  #{__('Save Data')}บันทึกข้อมูล
