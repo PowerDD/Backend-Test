@@ -41,7 +41,7 @@ $(function() {
 					}, function(data, response){
 						if (data.success) {
 							$.cookie('memberKey', data.memberKey);
-							//window.location.reload();
+							location.reload(true);
 						}
 						else{
 							console.log(data.error);

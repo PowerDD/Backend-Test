@@ -9,7 +9,7 @@ exports.index = function(req, res, data) {
 			form: {
 				apiKey: data.apiKey,
 				shop: data.shop,
-				memberKey: req.cookies.memberKey.replace(/"/g, ''),
+				memberKey: req.cookies.memberKey,
 			}
 		},
 		function (error, response, body) {
@@ -42,7 +42,7 @@ exports.getMemberInfo = function(req, res, data) {
 		form: {
 			apiKey: data.apiKey,
 			shop: data.shop,
-			memberKey: req.cookies.memberKey.replace(/"/g, ''),
+			memberKey: req.cookies.memberKey,
 		}
 	},
 	function (error, response, body) {
