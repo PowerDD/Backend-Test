@@ -2,24 +2,26 @@ extends layout
 
 block content
 	.row
-		.col-md-3
+		.col-md-4
 			.box.box-primary.direct-chat.direct-chat-primary
 				.box-header.with-border
 					h3.box-title #{__('Expiration Time')}
 				.box-body
-					table
-						tr
-							td  ระยะเวลาการจองสินค้าในรถเข็น
-						tr
-							td  ระยะเวลาการจองสินค้าที่สั่งซื้อแล้ว แต่ยังไม่ชำระเงิน
+					.col-sm-12
+						table
+							tr
+								td  ระยะเวลาการจองสินค้าในรถเข็น
+							tr
+								td  ระยะเวลาการรอชำระเงิน หลังจากสั่งซื้อแล้ว
 
-					.input-group
-						.input-group-btn
-							button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-								| Action 
-								span.caret
-							ul.dropdown-menu
-								li
-									a(href='#') Action
-								li
-									a(href='#') Another action
+						.input-group
+							.input-group-btn
+								button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									| Action 
+									span.caret
+								ul.dropdown-menu
+									li
+										a(href='#') Action
+									li
+										a(href='#') Another action
+								input.form-control(type='text')
