@@ -30,6 +30,14 @@ html
 					div.navbar-custom-menu
 						ul.nav.navbar-nav
 
+							li.dropdown
+								a.dropdown-toggle(href="#", data-toggle="dropdown")
+									span
+										img(src="/images/flag/th.png", alt="xxx")
+								ul.dropdown-menu
+									li #{__('Language')}
+									li #{__('Language')}
+
 							li.dropdown.user.user-menu
 								a.dropdown-toggle(href="#", data-toggle="dropdown")
 									img.user-image(src="/images/avatar5.png", alt="User Image")
@@ -52,14 +60,6 @@ html
 											a.btn.btn-default.btn-flat(href="#") Profile
 										div.pull-right
 											a.btn.btn-default.btn-flat(href="#") Sign out
-
-							li.dropdown.user.user-menu
-								a.dropdown-toggle(href="#", data-toggle="dropdown")
-									span
-										i.fa.fa-language
-								ul.dropdown-menu
-									li #{__('Language')}
-									li #{__('Language')}
 
 			aside.main-sidebar
 				section.sidebar
