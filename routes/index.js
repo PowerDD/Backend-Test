@@ -49,14 +49,17 @@ exports.getMemberInfo = function(req, res, data) {
 		if (!error) {
 			var json = JSON.parse(body);
 			data.memberInfo = json.memberInfo
-			if ( typeof data.memberInfo.Firstname != 'undefined' && data.memberInfo.Firstname != null ) {
-				data.memberInfo.DisplayName = data.memberInfo.Firstname;
+			if ( typeof data.memberInfo.Firstname != 'undefined' ) {
+				if (data.memberInfo.Firstname != null && data.memberInfo.Firstname != '')
+					data.memberInfo.DisplayName = data.memberInfo.Firstname;
 			}
-			else if ( typeof data.memberInfo.Nickname != 'undefined' && data.memberInfo.Nickname != null ) {
-				data.memberInfo.DisplayName = data.memberInfo.Nickname;
+			else if ( typeof data.memberInfo.Nickname != 'undefined' ) {
+				if (data.memberInfo.Nickname != null && data.memberInfo.Nickname != '')
+					data.memberInfo.DisplayName = data.memberInfo.Nickname;
 			}
-			else if ( typeof data.memberInfo.Username != 'undefined' && data.memberInfo.Username != null ) {
-				data.memberInfo.DisplayName = data.memberInfo.Username;
+			else if ( typeof data.memberInfo.Username != 'undefined' ) {
+				if (data.memberInfo.Username != null && data.memberInfo.Username != '')
+					data.memberInfo.DisplayName = data.memberInfo.Username;
 			}
 			else {
 				data.memberInfo.DisplayName = 'Guest';
