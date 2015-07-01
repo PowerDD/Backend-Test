@@ -71,3 +71,24 @@ block content
 					span.btn.btn-primary.pull-right
 						i.fa.fa-save
 						|  #{__('Save Data')}
+
+
+
+		.col-md-4
+			.box.box-primary
+				.box-header.with-border
+					h3.box-title 
+						i.fa.fa-clock-o
+						|  #{__('Shipping Cost')}
+				.box-body
+					form(role="form")
+
+						.form-group
+							.radio
+								label
+									input(type='radio', name='hasFees', value='free', checked='')
+									|  #{__('Free Shipping')}
+							.radio
+								label
+									input(type='radio', name='hasFees', value='has', checked='')
+									|  #{__('Has Shipping Cost')}
