@@ -27,7 +27,7 @@ $(function() {
 		}
 	});
 
-	$(document).on('click', '.btn-login_facebook', function(){
+	$(document).on('click', '#btn-login_facebook', function(){
 
 		FB.login(function(response) {
 			if (response.status === 'connected') {
