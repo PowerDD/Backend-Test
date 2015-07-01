@@ -68,8 +68,8 @@ html
 							p
 								| #{data.memberInfo.DisplayName}
 							a(href="#")
-								i.fa.fa-circle.text-success
-								| Online
+								i.fa.fa-user.text-success
+								| #{__('Member Type - '+data.memberInfo.SelectedMemberType)}
 
 					form.sidebar-form(action="#", method="get")
 						div.input-group
@@ -79,112 +79,75 @@ html
 									i.fa.fa-search
 
 					ul.sidebar-menu
-						li.header  API
+						li.header  #{__('Shop')}
 						li(class=(data.screen === 'member' || data.screen === 'dealer' || data.screen === 'teamwork' ? 'treeview active' : 'treeview'))
 							a(href="#")
 								i(class=(data.screen === 'member' || data.screen === 'dealer' || data.screen === 'teamwork' ? 'fa fa-user text-aqua' : 'fa fa-user'))
-								span  Member
+								span  #{__('Member')}
 								i.fa.fa-angle-left.pull-right
 							ul.treeview-menu
 								li(class=(data.screen === 'member' ? 'active' : ''))
 									a(href="./member")
 										i(class=(data.screen === 'member' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Member
+										|  #{__('Member')}
 								li(class=(data.screen === 'dealer' ? 'active' : ''))
 									a(href="./dealer")
 										i(class=(data.screen === 'dealer' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Dealer
+										|  #{__('Dealer')}
 								li(class=(data.screen === 'teamwork' ? 'active' : ''))
 									a(href="./teamwork")
 										i(class=(data.screen === 'teamwork' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Teamwork
+										|  #{__('Teamwork')}
 
 						li(class=(data.screen === 'product' || data.screen === 'category' || data.screen === 'brand' ? 'treeview active' : 'treeview'))
 							a(href="#")
 								i(class=(data.screen === 'product' || data.screen === 'category' || data.screen === 'brand' ? 'fa fa-cubes text-aqua' : 'fa fa-cubes'))
-								span  Product
+								span  #{__('Product')}
 								i.fa.fa-angle-left.pull-right
 							ul.treeview-menu
 								li(class=(data.screen === 'product' ? 'active' : ''))
 									a(href="./product")
 										i(class=(data.screen === 'product' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Product
+										|  #{__('Product')}
 								li(class=(data.screen === 'category' ? 'active' : ''))
 									a(href="./category")
 										i(class=(data.screen === 'category' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Category
+										|  #{__('Category')}
 								li(class=(data.screen === 'brand' ? 'active' : ''))
 									a(href="./brand")
 										i(class=(data.screen === 'brand' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Brand
+										|  #{__('Brand')}
 
 						li(class=(data.screen === 'cart' ? 'treeview active' : 'treeview'))
 							a(href="#")
 								i(class=(data.screen === 'cart' || data.screen === 'order' ? 'fa fa-shopping-cart text-aqua' : 'fa fa-shopping-cart'))
-								span  Order
+								span  #{__('Order')}
 								i.fa.fa-angle-left.pull-right
 							ul.treeview-menu
 								li(class=(data.screen === 'cart' ? 'active' : ''))
 									a(href="./cart")
 										i(class=(data.screen === 'cart' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Cart
+										|  #{__('Cart')}
 								li(class=(data.screen === 'order' ? 'active' : ''))
 									a(href="./order")
 										i(class=(data.screen === 'order' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Order
+										|  #{__('Order')}
 
 						li(class=(data.screen === 'shop' || data.screen === 'shop-config' ? 'treeview active' : 'treeview'))
 							a(href="#")
 								i(class=(data.screen === 'shop' || data.screen === 'shop-config' ? 'fa fa-home text-aqua' : 'fa fa-home'))
-								span  Shop
+								span  #{__('Shop')}
 								i.fa.fa-angle-left.pull-right
 							ul.treeview-menu
 								li(class=(data.screen === 'shop' ? 'active' : ''))
 									a(href="./shop")
 										i(class=(data.screen === 'shop' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Shop
+										|  #{__('Shop')}
 
 								li(class=(data.screen === 'shop-config' ? 'active' : ''))
 									a(href="./shop-config")
 										i(class=(data.screen === 'shop-config' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Configuration
-
-						li(class=(data.screen === 'province' ? 'treeview active' : 'treeview'))
-							a(href="#")
-								i(class=(data.screen === 'province' ? 'fa fa-database text-aqua' : 'fa fa-database'))
-								span  Master Data
-								i.fa.fa-angle-left.pull-right
-							ul.treeview-menu
-								li(class=(data.screen === 'province' ? 'active' : ''))
-									a(href="./province")
-										i(class=(data.screen === 'province' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Province
-
-						li(class=(data.screen === 'security' || data.screen === 'webclient' || data.screen === 'api' ? 'treeview active' : 'treeview'))
-							a(href="#")
-								i(class=(data.screen === 'security' || data.screen === 'webclient' || data.screen === 'api' ? 'fa fa-slack text-aqua' : 'fa fa-slack'))
-								span  Utilities
-								i.fa.fa-angle-left.pull-right
-							ul.treeview-menu
-								li(class=(data.screen === 'security' ? 'active' : ''))
-									a(href="./security")
-										i(class=(data.screen === 'security' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Security
-								li(class=(data.screen === 'webclient' ? 'active' : ''))
-									a(href="./webclient")
-										i(class=(data.screen === 'webclient' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  Web Client
-								li(class=(data.screen === 'api' ? 'active' : ''))
-									a(href="./api")
-										i(class=(data.screen === 'api' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  API
-
-					ul.sidebar-menu
-						li.header  
-						li
-							a(href="./console")
-								i.fa.fa-heart
-								span  API Console
+										|  #{__('Configuration')}
 
 			div.content-wrapper
 				section.content-header
