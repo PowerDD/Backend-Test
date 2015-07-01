@@ -31,10 +31,7 @@ $(function() {
 
 		FB.login(function(response) {
 			if (response.status === 'connected') {
-				console.log("ID = " + response.authResponse.userID);
 				FB.api('/me', function(response) {
-					//console.log(response);
-					//console.log(JSON.stringify(response));
 					var facebookLogin = JSON.stringify(response);
 					$.post($('#apiUrl').val()+'/member/register', {
 						apiKey: $('#apiKey').val(),
@@ -49,14 +46,9 @@ $(function() {
 						}
 						else{
 							console.log(data.error);
-							console.log(data.errorMessage);				
 						}
 					}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 				});
-				//var json = JSON.stringify(response);
-			}
-			else {
-				console.log("No no nO");
 			}
 		}, {scope: 'public_profile, email'});
 
