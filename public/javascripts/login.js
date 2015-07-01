@@ -40,7 +40,6 @@ $(function() {
 						value: facebookLogin
 					}, function(data, response){
 						if (data.success) {
-							$.cookie.json = true;
 							$.cookie('memberKey', data.memberKey);
 							//window.location.reload();
 						}
