@@ -10,6 +10,7 @@ block content
 						|  #{__('Expiration Time')}
 				.box-body
 					form(role="form")
+
 						.form-group
 							label เวลาหมดอายุของรถเข็น
 							.input-group
@@ -23,8 +24,37 @@ block content
 											a(href='#') ชั่วโมง
 										li
 											a(href='#') วัน
+
 						.form-group
 							label เวลาหมดอายุของใบสั่งจอง
+							.input-group
+								input.form-control(type='text')
+								.input-group-btn
+									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+										| ชั่วโมง 
+										span.fa.fa-caret-down
+									ul.dropdown-menu
+										li.active
+											a(href='#') ชั่วโมง
+										li
+											a(href='#') วัน
+
+						.form-group
+							label เวลาหมดอายุของการเข้าระบบ (ปกติ)
+							.input-group
+								input.form-control(type='text')
+								.input-group-btn
+									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+										| ชั่วโมง 
+										span.fa.fa-caret-down
+									ul.dropdown-menu
+										li.active
+											a(href='#') ชั่วโมง
+										li
+											a(href='#') วัน
+
+						.form-group
+							label เวลาหมดอายุของการเข้าระบบ (คงอยู่ใระบบ)
 							.input-group
 								input.form-control(type='text')
 								.input-group-btn
