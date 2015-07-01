@@ -10,7 +10,7 @@ block content
 					form(role="form")
 						.form-group
 							label เวลาหมดอายุของรถเข็น
-							.input-group.form-control
+							.input-group
 								input.form-control(type='text')
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
@@ -21,19 +21,19 @@ block content
 											a(href='#') ชั่วโมง
 										li
 											a(href='#') วัน
-
-						b เวลาหมดอายุของใบสั่งจอง
-						.input-group
-							input.form-control(type='text')
-							.input-group-btn
-								button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
-									| ชั่วโมง 
-									span.fa.fa-caret-down
-								ul.dropdown-menu
-									li.active
-										a(href='#') ชั่วโมง
-									li
-										a(href='#') วัน
+						.form-group
+							label เวลาหมดอายุของใบสั่งจอง
+							.input-group
+								input.form-control(type='text')
+								.input-group-btn
+									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+										| ชั่วโมง 
+										span.fa.fa-caret-down
+									ul.dropdown-menu
+										li.active
+											a(href='#') ชั่วโมง
+										li
+											a(href='#') วัน
 
 				.box-footer
 					span.btn.btn-info.pull-right
