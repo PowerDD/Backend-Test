@@ -28,17 +28,6 @@ app.configure(function(){
   app.use(express.static(path.join(__dirname, 'public')));
 });
 
-app.configure('development', function(){
-	app.use (function (req, res, next) {
-		var schema = (req.headers['x-forwarded-proto'] || '').toLowerCase();
-		if (schema === 'https') {
-			next();
-		} else {
-			res.redirect('https://' + req.headers.host + req.url);
-		}
-	});
-});
-
 app.all('*', function(req, res, next) {
 	if (!req.get('x-arr-ssl'))
 		res.redirect('https://' + req.get('host') + req.url);
