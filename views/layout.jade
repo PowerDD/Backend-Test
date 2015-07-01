@@ -51,18 +51,11 @@ html
 										p
 											| #{data.memberInfo.DisplayName} - #{__('Member Type - '+data.memberInfo.SelectedMemberType)}
 											small #{__('Member since')} #{data.memberInfo.RegisterDate}
-									li.user-body
-										div.col-xs-4.text-center
-											a(href="#") Followers
-										div.col-xs-4.text-center
-											a(href="#") Sales
-										div.col-xs-4.text-center
-											a(href="#") Friends
 									li.user-footer
 										div.pull-left
-											a.btn.btn-default.btn-flat(href="#") Profile
+											a.btn.btn-default.btn-flat(href="#") #{__('Profile')}
 										div.pull-right
-											a.btn.btn-default.btn-flat(href="#") Sign out
+											a.btn-logout.btn.btn-default.btn-flat(href="javascript:void(0)") #{__('Sign out')}
 
 			aside.main-sidebar
 				section.sidebar
