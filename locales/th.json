@@ -3,5 +3,15 @@
 	"Member since": "เป็นสมาชิกตั้งแต่",
 	"Language": "ภาษา",
 	"Profile": "ข้อมูลส่วนตัว",
-	"Sign out": "ออกจากระบบ"
+	"Sign out": "ออกจากระบบ",
+	"Shop": "Shop",
+	"Member": "สมาชิก",
+	"Dealer": "ดีลเลอร์",
+	"Teamwork": "ทีมงาน",
+	"Product": "สินค้า",
+	"Category": "หมวดหมู่",
+	"Brand": "ยี่ห้อ",
+	"Order": "รายการสั่งซื้อ",
+	"Cart": "รถเข็นสินค้า",
+	"Configuration": "การตั้งค่า"
 }
