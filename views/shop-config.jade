@@ -3,23 +3,24 @@ extends layout
 block content
 	.row
 		.col-md-4
-			.box.box-primary.direct-chat.direct-chat-primary
+			.box.box-primary
 				.box-header.with-border
 					h3.box-title #{__('Expiration Time')}
 				.box-body
 					form(role="form")
-						b เวลาหมดอายุของรถเข็น
-						.input-group
-							input.form-control(type='text')
-							.input-group-btn
-								button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
-									| ชั่วโมง 
-									span.fa.fa-caret-down
-								ul.dropdown-menu
-									li.active
-										a(href='#') ชั่วโมง
-									li
-										a(href='#') วัน
+						.form-group
+							label เวลาหมดอายุของรถเข็น
+							.input-group.form-control
+								input.form-control(type='text')
+								.input-group-btn
+									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+										| ชั่วโมง 
+										span.fa.fa-caret-down
+									ul.dropdown-menu
+										li.active
+											a(href='#') ชั่วโมง
+										li
+											a(href='#') วัน
 
 						b เวลาหมดอายุของใบสั่งจอง
 						.input-group
