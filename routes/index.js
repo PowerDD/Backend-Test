@@ -3,6 +3,41 @@ var moment = require('moment');
 
 exports.index = function(req, res, data) {
 	
+	if ( typeof req.cookies.memberKey != 'undefined') {
+		
+		request.post({headers: { 'referer': 'https://' + req.get('host') }, url: data.apiUrl + '/member/exist/memberKey',
+			form: {
+				apiKey: data.apiKey,
+				shop: data.shop,
+				memberKey: req.cookies.memberKey,
+			}
+		},
+		function (error, response, body) {
+			if (!error) {
+				res.send(body);
+				var json = JSON.parse(body);
+				data.screen = ( json.success && json.exist ) ? data.screen : 'login';
+				if (!json.exist) res.clearCookie(req.cookies.memberKey);
+			}
+			else {
+				data.screen = 'login';
+			}
+
+			if (data.screen == 'login') {
+				//data.title = 'เข้าสู่ระบบ - ' + data.title;
+				res.render(data.screen, { data: data });
+			}
+			else {
+				exports.getMemberInfo(req, res, data)
+			}
+
+		});
+	}
+	else {
+		data.screen = 'login';
+		res.render(data.screen, { data: data });
+	}
+
 	request.post({headers: { 'referer': 'https://' + req.get('host') }, url: data.apiUrl + '/member/exist/memberKey',
 		form: {
 			apiKey: data.apiKey,
