@@ -12,7 +12,9 @@ html
 	if data.screen != 'login'
 		body.skin-blue.sidebar-mini
 
-		input#apiKey(type="hidden", value= data.apiKey)
+		input#shop(type="hidden", value="#{data.shop}")
+		input#apiKey(type="hidden", value="#{data.apiKey}")
+		input#apiUrl(type="hidden", value="#{data.apiUrl}")
 
 		.wrapper
 			header.main-header
