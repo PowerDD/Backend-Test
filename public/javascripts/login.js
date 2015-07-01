@@ -27,6 +27,59 @@ $(function() {
 		}
 	});
 
+
+	$('.btn-login_facebook').click(function(){
+
+		FB.login(function(response) {
+			if (response.status === 'connected') {
+				console.log("ID = " + response.authResponse.userID);
+				FB.api('/me', function(response) {
+					//console.log(response);
+					//console.log(JSON.stringify(response));
+					var facebookLogin = JSON.stringify(response);
+					$.post($('#apiUrl').val()+'/member/register', {
+						apiKey: $('#apiKey').val(),
+						shop: $('#shop').val(),
+						type: 'Facebook',
+						value: facebookLogin
+					}, function(data, response){
+						if (data.success) {
+							$.cookie.json = true;
+							$.cookie('memberKey', data.memberKey);
+							window.location.reload();
+						}
+						else{
+							console.log(data.error);
+							console.log(data.errorMessage);				
+						}
+					}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
+				});
+				//var json = JSON.stringify(response);
+			}
+			else {
+				console.log("No no nO");
+			}
+		}, {scope: 'public_profile, email'});
+
+	});
+
+	window.fbAsyncInit = function() {
+	FB.init({
+	  appId      : '337592559713793',
+	  xfbml      : true,
+	  version    : 'v2.0'
+	});
+	};
+
+	(function(d, s, id){
+	 var js, fjs = d.getElementsByTagName(s)[0];
+	 if (d.getElementById(id)) {return;}
+	 js = d.createElement(s); js.id = id;
+	 js.src = "//connect.facebook.net/en_US/sdk.js";
+	 fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	
+
 });
 
 
