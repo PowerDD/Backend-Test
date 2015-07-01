@@ -14,7 +14,6 @@ exports.index = function(req, res, data) {
 		},
 		function (error, response, body) {
 			if (!error) {
-				res.send(body);
 				var json = JSON.parse(body);
 				data.screen = ( json.success && json.exist ) ? data.screen : 'login';
 				if (!json.exist) res.clearCookie(req.cookies.memberKey);
