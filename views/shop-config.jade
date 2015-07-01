@@ -101,6 +101,19 @@ block content
 								label
 									input(type='radio', name='feesType', value='free', checked='')
 									|  #{__('Fixed Cost')}
+
+						.form-group
+							.input-group
+								input.form-control(type='text')
+								.input-group-btn
+									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+										| #{__('Per Order')} 
+										span.fa.fa-caret-down
+									ul.dropdown-menu
+										li.active
+											a(href='#') #{__('Per Piece')}
+										li
+											a(href='#') #{__('Per Order')}
 						.form-group
 							.radio
 								label
