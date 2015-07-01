@@ -151,8 +151,8 @@ html
 
 			div.content-wrapper
 				section.content-header
-					h1= data.title
-						small= data.titleDescription
+					h1= #{__('Screen Title - '+data.screen)}
+						small= #{__('Screen Description - '+data.screen)}
 				section.content
 					block content
 
