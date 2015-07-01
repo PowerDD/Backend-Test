@@ -33,13 +33,13 @@ html
 							li.dropdown
 								a.dropdown-toggle(href="#", data-toggle="dropdown")
 									span
-										#{__('Language')}
+										|  #{__('Language')}
 									span.caret
 								ul.dropdown-menu(role="menu")
-									li
-										a(href="") ภาษาไทย
-									li
-										a(href="") English
+									li(class=(data.memberInfo.Locale.substr(0,2) == 'th' ? 'active' : ''))
+										a(href="javascript:void(0)") ภาษาไทย
+									li(class=(data.memberInfo.Locale.substr(0,2) == 'en' ? 'active' : ''))
+										a(href="javascript:void(0)") English
 
 							li.dropdown.user.user-menu
 								a.dropdown-toggle(href="#", data-toggle="dropdown")
