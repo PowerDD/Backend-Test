@@ -46,7 +46,8 @@ exports.getMemberInfo = function(req, res, data) {
 		}
 	},
 	function (error, response, body) {
-		if (!error) {
+		res.send(body);
+		/*if (!error) {
 			var json = JSON.parse(body);
 			data.memberInfo = json.memberInfo
 			if ( typeof data.memberInfo.Firstname != 'undefined' ) {
@@ -78,7 +79,7 @@ exports.getMemberInfo = function(req, res, data) {
 			data.title = 'ภาพรวมระบบ - ' + data.title;
 		}
 
-		res.render(data.screen, { data: data });
+		res.render(data.screen, { data: data });*/
 
 	});
 
