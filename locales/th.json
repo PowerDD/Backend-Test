@@ -13,5 +13,10 @@
 	"Brand": "ยี่ห้อ",
 	"Order": "รายการสั่งซื้อ",
 	"Cart": "รถเข็นสินค้า",
-	"Configuration": "การตั้งค่า"
+	"Configuration": "การตั้งค่า",
+	"Screen Title - shop-config": "การตั้งค่าต่างๆ ของร้านค้า",
+	"Screen Title - shop": "ข้อมูลเกี่ยวกับร้านค้า",
+	"Screen Title - product": "ข้อมูลสินค้า",
+	"Screen Title - category": "ข้อมูลหมวดหมู่สินค้า",
+	"Screen Title - brand": "ข้อมูลยี่ห้อสินค้า"
 }

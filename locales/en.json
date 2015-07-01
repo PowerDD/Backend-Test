@@ -13,5 +13,10 @@
 	"Brand": "Brand",
 	"Order": "Order",
 	"Cart": "Cart",
-	"Configuration": "Configuration"
+	"Configuration": "Configuration",
+	"Screen Title - shop-config": "Shop Configuration Data",
+	"Screen Title - shop": "Shop Information Data",
+	"Screen Title - product": "Product Data",
+	"Screen Title - category": "Category Data",
+	"Screen Title - brand": "Brand Data"
 }
