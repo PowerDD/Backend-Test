@@ -45,11 +45,11 @@ html
 
 							li.dropdown.user.user-menu
 								a.dropdown-toggle(href="#", data-toggle="dropdown")
-									img.user-image(src="/images/avatar5.png", alt="User Image")
+									img.user-image(src=(typeof data.memberInfo.Image != 'undefined' ? data.memberInfo.Image : "/images/avatar5.png", alt="User Image")
 									span.hidden-xs  #{data.memberInfo.DisplayName}
 								ul.dropdown-menu
 									li.user-header
-										img.img-circle(src="/images/avatar5.png", alt="User Image")
+										img.img-circle(src=(typeof data.memberInfo.Image != 'undefined' ? data.memberInfo.Image : "/images/avatar5.png"), alt="User Image")
 										p
 											| #{data.memberInfo.DisplayName} - #{__('Member Type - '+data.memberInfo.SelectedMemberType)}
 											small #{__('Member since')} #{data.memberInfo.RegisterDate}
@@ -63,7 +63,7 @@ html
 				section.sidebar
 					div.user-panel
 						div.pull-left.image
-							img.img-circle(src="/images/avatar5.png", alt="User Image")
+							img.img-circle(src=(typeof data.memberInfo.Image != 'undefined' ? data.memberInfo.Image : "/images/avatar5.png", alt="User Image")
 						div.pull-left.info
 							p
 								| #{data.memberInfo.DisplayName}
