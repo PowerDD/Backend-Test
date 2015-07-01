@@ -13,7 +13,7 @@ exports.index = function(req, res, data) {
 			}
 		},
 		function (error, response, body) {
-			res.send(body);
+			res.send(req.cookies.memberKey+' '+body);
 			/*if (!error) {
 				var json = JSON.parse(body);
 				data.screen = ( json.success && json.exist ) ? data.screen : 'login';
