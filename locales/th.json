@@ -26,5 +26,12 @@
 	"Login Expired (Remember)": "การเข้าระบบ (จดจำการเข้าระบบ)",
 	"Hours": "ชั่วโมง",
 	"Days": "วัน",
-	"Save Data": "บันทึกข้อมูล"
+	"Save Data": "บันทึกข้อมูล",
+	"Shipping Cost": "ค่าขนส่ง",
+	"Free Shipping": "ฟรี",
+	"Has Shipping Cost": "มีค่าขนส่ง",
+	"Fixed Cost": "ราคาคงที่",
+	"Per Order": "ต่อคำสั่งซื้อ",
+	"Per Piece": "ต่อชิ้น",
+	"Weight Calculation": "คำนวณตามน้ำหนัก"
 }

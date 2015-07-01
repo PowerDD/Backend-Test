@@ -26,5 +26,12 @@
 	"Login Expired (Remember)": "Login Expired (Remember)",
 	"Hours": "Hours",
 	"Days": "Days",
-	"Save Data": "Save Data"
+	"Save Data": "Save Data",
+	"Shipping Cost": "Shipping Cost",
+	"Free Shipping": "Free Shipping",
+	"Has Shipping Cost": "Has Shipping Cost",
+	"Fixed Cost": "Fixed Cost",
+	"Per Order": "Per Order",
+	"Per Piece": "Per Piece",
+	"Weight Calculation": "Weight Calculation"
 }
