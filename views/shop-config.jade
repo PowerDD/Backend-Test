@@ -5,7 +5,9 @@ block content
 		.col-md-4
 			.box.box-primary
 				.box-header.with-border
-					h3.box-title #{__('Expiration Time')}
+					h3.box-title 
+						i.fa.fa-clock-o
+						|  #{__('Expiration Time')}
 				.box-body
 					form(role="form")
 						.form-group
@@ -36,5 +38,6 @@ block content
 											a(href='#') วัน
 
 				.box-footer
-					span.btn.btn-info.pull-right
+					span.btn.btn-primary.pull-right
 						i.fa.fa-save
+						|  บันทึกข้อมูล
