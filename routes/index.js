@@ -42,7 +42,7 @@ exports.getMemberInfo = function(req, res, data) {
 		form: {
 			apiKey: data.apiKey,
 			shop: data.shop,
-			memberKey: req.cookies.memberKey,
+			memberKey: req.cookies.memberKey.replace(/"/g, ''),
 		}
 	},
 	function (error, response, body) {
