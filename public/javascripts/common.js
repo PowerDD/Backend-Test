@@ -8,4 +8,8 @@ $(function() {
 		});
 	});
 
+	$(document).on('click', 'a.option', function(){
+		console.log( $(this).data('value') );
+	});
+
 });

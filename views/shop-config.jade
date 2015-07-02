@@ -17,13 +17,13 @@ block content
 								input.form-control(type='text')
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
-										| #{__('Hours')} 
+										span.message #{__('Hours')} 
 										span.fa.fa-caret-down
 									ul.dropdown-menu
 										li.active
-											a(href='#') #{__('Hours')}
+											a.option(href='javascript:void(0)', data-value='H') #{__('Hours')}
 										li
-											a(href='#') #{__('Days')}
+											a.option(href='javascript:void(0)', data-value='D') #{__('Days')}
 
 						.form-group
 							label #{__('Order Expired')}
@@ -31,13 +31,13 @@ block content
 								input.form-control(type='text')
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
-										| #{__('Hours')} 
+										span.message #{__('Hours')} 
 										span.fa.fa-caret-down
 									ul.dropdown-menu
 										li.active
-											a(href='#') #{__('Hours')}
+											a.option(href='javascript:void(0)', data-value='H') #{__('Hours')}
 										li
-											a(href='#') #{__('Days')}
+											a.option(href='javascript:void(0)', data-value='D') #{__('Days')}
 
 						.form-group
 							label #{__('Login Expired (Normal)')}
@@ -45,13 +45,13 @@ block content
 								input.form-control(type='text')
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
-										| #{__('Hours')} 
+										span.message #{__('Hours')} 
 										span.fa.fa-caret-down
 									ul.dropdown-menu
 										li.active
-											a(href='#') #{__('Hours')}
+											a.option(href='javascript:void(0)', data-value='H') #{__('Hours')}
 										li
-											a(href='#') #{__('Days')}
+											a.option(href='javascript:void(0)', data-value='D') #{__('Days')}
 
 						.form-group
 							label #{__('Login Expired (Remember)')}
@@ -59,13 +59,13 @@ block content
 								input.form-control(type='text')
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
-										| #{__('Hours')} 
+										span.message #{__('Hours')} 
 										span.fa.fa-caret-down
 									ul.dropdown-menu
 										li.active
-											a(href='#') #{__('Hours')}
+											a.option(href='javascript:void(0)', data-value='H') #{__('Hours')}
 										li
-											a(href='#') #{__('Days')}
+											a.option(href='javascript:void(0)', data-value='D') #{__('Days')}
 
 				.box-footer
 					span.btn.btn-primary.pull-right
@@ -86,12 +86,12 @@ block content
 						.form-group
 							.radio
 								label
-									input(type='radio', name='hasFees', value='free', checked='')
+									input(type='radio', name='hasFees', value='0')
 									|  #{__('Free Shipping')}
 						.form-group
 							.radio
 								label
-									input(type='radio', name='hasFees', value='has', checked='')
+									input(type='radio', name='hasFees', value='1')
 									|  #{__('Has Shipping Cost')}
 
 						.dotted-line
@@ -99,7 +99,7 @@ block content
 						.form-group.padding-left-15
 							.radio
 								label
-									input(type='radio', name='feesType', value='free', checked='')
+									input(type='radio', name='feesType', value='F', checked)
 									|  #{__('Fixed Cost')}
 
 						.form-group.padding-left-15
@@ -107,16 +107,16 @@ block content
 								input.form-control(type='text')
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
-										| #{__('Per Order')} 
+										span.message #{__('Per Order')} 
 										span.fa.fa-caret-down
 									ul.dropdown-menu
 										li.active
-											a(href='#') #{__('Per Piece')}
+											a.option(href='javascript:void(0)', data-value='P') #{__('Per Piece')}
 										li
-											a(href='#') #{__('Per Order')}
+											a.option(href='javascript:void(0)', data-value='O') #{__('Per Order')}
 						.form-group.padding-left-15
 							.radio
 								label
-									input(type='radio', name='feesType', value='free', checked='')
+									input(type='radio', name='feesType', value='W', disabled)
 									|  #{__('Weight Calculation')}
 							
