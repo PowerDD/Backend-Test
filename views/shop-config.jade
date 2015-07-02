@@ -48,9 +48,9 @@ block content
 										span.message #{__('Hours')} 
 										span.fa.fa-caret-down
 									ul.dropdown-menu
-										li.active
+										li(class=data.config.LoginExpire.Type == 'H' ? 'active' : '')
 											a.option(href='javascript:void(0)', data-value='H') #{__('Hours')}
-										li
+										li(class=data.config.LoginExpire.Type == 'H' ? 'active' : '')
 											a.option(href='javascript:void(0)', data-value='D') #{__('Days')}
 
 						.form-group
@@ -62,9 +62,9 @@ block content
 										span.message #{__('Hours')} 
 										span.fa.fa-caret-down
 									ul.dropdown-menu
-										li.active
+										li(class=data.config.LoginRememberExpire.Type == 'H' ? 'active' : '')
 											a.option(href='javascript:void(0)', data-value='H') #{__('Hours')}
-										li
+										li(class=data.config.LoginRememberExpire.Type == 'H' ? 'active' : '')
 											a.option(href='javascript:void(0)', data-value='D') #{__('Days')}
 
 				.box-footer
