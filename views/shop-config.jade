@@ -14,7 +14,7 @@ block content
 						.form-group
 							label #{__('Cart Expired')}
 							.input-group
-								input.form-control.txt-input.numeric-only(type='text', data-value=data.config.CartExpire.Value)
+								input.form-control.txt-input.numeric-only(type='text', data-name="CartExpire", data-value=data.config.CartExpire.Value, data-option-old=data.config.CartExpire.Type, data-option=data.config.CartExpire.Type)
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
 										span.message #{__('Hours')} 
@@ -28,7 +28,7 @@ block content
 						.form-group
 							label #{__('Order Expired')}
 							.input-group
-								input.form-control.txt-input.numeric-only(type='text', data-value=data.config.OrderExpire.Value)
+								input.form-control.txt-input.numeric-only(type='text', data-name="OrderExpire", data-value=data.config.OrderExpire.Value, data-option-old=data.config.OrderExpire.Type, data-option=data.config.OrderExpire.Type)
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
 										span.message #{__('Hours')} 
@@ -42,7 +42,7 @@ block content
 						.form-group
 							label #{__('Login Expired (Normal)')}
 							.input-group
-								input.form-control.txt-input.numeric-only(type='text')
+								input.form-control.txt-input.numeric-only(type='text', data-value="")
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
 										span.message #{__('Hours')} 
@@ -56,7 +56,7 @@ block content
 						.form-group
 							label #{__('Login Expired (Remember)')}
 							.input-group
-								input.form-control.txt-input.numeric-only(type='text')
+								input.form-control.txt-input.numeric-only(type='text', data-value="")
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
 										span.message #{__('Hours')} 
@@ -68,7 +68,7 @@ block content
 											a.option(href='javascript:void(0)', data-value='D') #{__('Days')}
 
 				.box-footer
-					span.btn.btn-primary.pull-right
+					span.btn.btn-primary.pull-right.btn-save
 						i.fa.fa-save
 						|  #{__('Save Data')}
 
