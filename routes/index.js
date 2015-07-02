@@ -80,7 +80,7 @@ exports.getMemberInfo = function(req, res, data) {
 		}
 		else if (data.screen == 'shop-config') {
 			render = false;
-			var object = require('./objects/barcode');
+			var object = require('./../objects/barcode');
 			object.action( req, res, data );
 		}
 
