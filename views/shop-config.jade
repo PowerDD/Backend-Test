@@ -42,7 +42,7 @@ block content
 						.form-group
 							label #{__('Login Expired (Normal)')}
 							.input-group
-								input.form-control.txt-input.numeric-only(type='text', data-value="")
+								input.form-control.txt-input.numeric-only(type='text', data-name="LoginExpire", data-value=data.config.LoginExpire.Value, data-option-old=data.config.LoginExpire.Type, data-option=data.config.LoginExpire.Type)
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
 										span.message #{__('Hours')} 
@@ -56,7 +56,7 @@ block content
 						.form-group
 							label #{__('Login Expired (Remember)')}
 							.input-group
-								input.form-control.txt-input.numeric-only(type='text', data-value="")
+								input.form-control.txt-input.numeric-only(type='text', data-name="LoginRememberExpire", data-value=data.config.LoginRememberExpire.Value, data-option-old=data.config.LoginRememberExpire.Type, data-option=data.config.LoginRememberExpire.Type)
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
 										span.message #{__('Hours')} 
