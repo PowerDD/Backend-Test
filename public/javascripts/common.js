@@ -1,8 +1,6 @@
 $(function() {
 
-	$('.numeric-only').ForceNumericOnly();
-
-	
+	//$('.numeric-only').ForceNumericOnly();
 
 	$(document).on('click', '.btn-logout', function(){
 		$.post($('#apiUrl').val()+'/member/logout', { shop: $('#shop').val(), apiKey: $('#apiKey').val(), memberKey: $.cookie('memberKey'),
