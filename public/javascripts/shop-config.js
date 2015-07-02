@@ -13,8 +13,11 @@ $(function() {
 				json[$(this).data('name')] = {};
 				if ( $(this).attr('data-value') != $(this).val() && $(this).val() != '' ) {
 					json[$(this).data('name')].Value = $(this).val();
+					if ( $(this).attr('data-option') != undefined )
+						json[$(this).data('name')].Type = $(this).attr('data-option');
 				}
-				if ( $(this).data('data-option') != undefined && $(this).attr('data-option-old') != $(this).attr('data-option') ) {
+				if ( $(this).attr('data-option') != undefined && $(this).attr('data-option-old') != $(this).attr('data-option') ) {
+					json[$(this).data('name')].Value = $(this).val();
 					json[$(this).data('name')].Type = $(this).attr('data-option');
 				}
 				if ( json[$(this).data('name')].Value == undefined && json[$(this).data('name')].Type == undefined )
