@@ -14,7 +14,7 @@ block content
 						.form-group
 							label #{__('Cart Expired')}
 							.input-group
-								input.form-control.txt-input.numeric-only(type='text')
+								input.form-control.txt-input.numeric-only(type='text', value=data.config.CartExpire.value)
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
 										span.message #{__('Hours')} 
