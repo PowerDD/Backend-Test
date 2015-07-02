@@ -24,7 +24,7 @@ $(function() {
 					delete json[$(this).data('name')];
 			}
 		});
-		console.log( json+(json == {}) );
+		console.log( JSON.stringify(json) );
 	});
 
 });
