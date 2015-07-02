@@ -74,11 +74,18 @@ exports.getMemberInfo = function(req, res, data) {
 				.fromNow();
 		}
 
+		var render = true;
 		if (data.screen == 'index') {
 			data.title = 'ภาพรวมระบบ - ' + data.title;
 		}
+		else if (data.screen == 'shop-config') {
+			render = false;
+			var object = require('./objects/barcode');
+			object.action( req, res, data );
+		}
 
-		res.render(data.screen, { data: data });
+		if (render)
+			res.render(data.screen, { data: data });
 
 	});
 
