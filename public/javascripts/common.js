@@ -12,7 +12,7 @@ $(function() {
 
 	$(document).on('click', 'a.option', function(){
 		$(this).parents('.input-group').find('span.message').html( $(this).html()+'  ' );
-		$(this).parents('.input-group').find('input.txt-input').attr('data-value', $(this).data('value') );
+		$(this).parents('.input-group').find('input.txt-input').attr('data-option', $(this).data('value') );
 		$(this).parents('.input-group').find('ul.dropdown-menu li').removeClass('active');
 		$(this).parents('li').addClass('active');
 	});
