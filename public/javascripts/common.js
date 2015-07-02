@@ -9,7 +9,7 @@ $(function() {
 	});
 
 	$(document).on('click', 'a.option', function(){
-		console.log( $(this).data('value') );
+		$(this).parents('.input-group').find('span.message').html( $(this).html() ).attr('data-value', $(this).data('value') );
 	});
 
 });
