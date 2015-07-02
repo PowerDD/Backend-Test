@@ -24,7 +24,21 @@ $(function() {
 					delete json[$(this).data('name')];
 			}
 		});
-		console.log( JSON.stringify(json) );
+		var data =JSON.stringify(json);
+		if ( data != '{}' ) {
+			updateConfig(data);
+		}
 	});
 
 });
+
+function updateConfig( json ) {
+	$.post($('#apiUrl').val()+'/shop-config/update', { shop: $('#shop').val(), apiKey: $('#apiKey').val(),
+		value: json,
+	}, function(data) {
+		if (data.success) {
+		}
+		else {
+		}
+	});
+}
