@@ -53,7 +53,10 @@ app.get('*', function(req, res) {
 			data.screen = url[0];
 			fs.exists('./views/'+data.screen+'.jade', function (exists) {
 				if (exists) {
-					data.subUrl = (url.length == 1 ) ? '' : url[1];
+					fs.exists('./public/javascripts/'+data.screen+'.js', function (exists) {
+						data.script = (exists) ? '/javascripts/'+data.screen+'.js' : '';	
+						data.subUrl = (url.length == 1 ) ? '' : url[1];
+					});
 				}
 			});
 		}

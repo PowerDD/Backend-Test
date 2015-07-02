@@ -14,7 +14,7 @@ block content
 						.form-group
 							label #{__('Cart Expired')}
 							.input-group
-								input.form-control.txt-input.numeric-only(type='text', value=data.config.CartExpire.Value)
+								input.form-control.txt-input.numeric-only(type='text', data-value=data.config.CartExpire.Value)
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
 										span.message #{__('Hours')} 
@@ -28,7 +28,7 @@ block content
 						.form-group
 							label #{__('Order Expired')}
 							.input-group
-								input.form-control.txt-input.numeric-only(type='text', value=data.config.OrderExpire.Value)
+								input.form-control.txt-input.numeric-only(type='text', data-value=data.config.OrderExpire.Value)
 								.input-group-btn
 									button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
 										span.message #{__('Hours')} 

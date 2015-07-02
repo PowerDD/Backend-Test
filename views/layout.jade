@@ -168,6 +168,8 @@ html
 		script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js')
 		script(src='/javascripts/app.min.js')
 		script(src='/javascripts/common.js')
+		if (data.script != '')
+			script(src='/javascripts/#{data.script}')
 
 	else
 		block content
