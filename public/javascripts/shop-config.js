@@ -1,5 +1,8 @@
 $(function() {
 
-	alert('Hello World');
+	$('.txt-input').each(function(){
+		if ( $(this).attr('data-value') != undefined )
+			$(this).val( $(this).attr('data-value') );
+	});
 
 });
