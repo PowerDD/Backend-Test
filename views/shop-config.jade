@@ -50,7 +50,7 @@ block content
 									ul.dropdown-menu
 										li(class=data.config.LoginExpire.Type == 'H' ? 'active' : '')
 											a.option(href='javascript:void(0)', data-value='H') #{__('Hours')}
-										li(class=data.config.LoginExpire.Type == 'H' ? 'active' : '')
+										li(class=data.config.LoginExpire.Type == 'D' ? 'active' : '')
 											a.option(href='javascript:void(0)', data-value='D') #{__('Days')}
 
 						.form-group
@@ -64,7 +64,7 @@ block content
 									ul.dropdown-menu
 										li(class=data.config.LoginRememberExpire.Type == 'H' ? 'active' : '')
 											a.option(href='javascript:void(0)', data-value='H') #{__('Hours')}
-										li(class=data.config.LoginRememberExpire.Type == 'H' ? 'active' : '')
+										li(class=data.config.LoginRememberExpire.Type == 'D' ? 'active' : '')
 											a.option(href='javascript:void(0)', data-value='D') #{__('Days')}
 
 				.box-footer
