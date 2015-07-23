@@ -33,5 +33,6 @@
 	"Fixed Cost": "ราคาคงที่",
 	"Per Order": "ต่อคำสั่งซื้อ",
 	"Per Piece": "ต่อชิ้น",
-	"Weight Calculation": "คำนวณตามน้ำหนัก"
+	"Weight Calculation": "คำนวณตามน้ำหนัก",
+	"loadingData": "กำลังโหลดข้อมูล กรุณารอสักครู่ค่ะ"
 }

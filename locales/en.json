@@ -33,5 +33,6 @@
 	"Fixed Cost": "Fixed Cost",
 	"Per Order": "Per Order",
 	"Per Piece": "Per Piece",
-	"Weight Calculation": "Weight Calculation"
+	"Weight Calculation": "Weight Calculation",
+	"loadingData": "Loading data, please wait"
 }
