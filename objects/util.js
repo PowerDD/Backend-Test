@@ -1,7 +1,7 @@
 exports.getCategoryMenu = function(req, res, data) {
 //## Get Category Menu ##//	
 	try{
-		request.post({headers: { 'referer': data.websiteUrl }, url: data.apiUrl + '/category/info',
+		request.post({headers: { 'referer': 'https://' + req.get('host') }, url: data.apiUrl + '/category/info',
 			form: {
 				apiKey: data.apiKey,
 				shop: data.shop
