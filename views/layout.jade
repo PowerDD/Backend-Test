@@ -87,10 +87,18 @@ html
 								i.fa.fa-angle-left.pull-right
 							ul.treeview-menu
 								each values in data.category
-									li(class=(data.screen === values.Url ? 'active' : ''))
-										a(href="./category/"+values.Url)
-											i(class=(data.screen === 'values.Url' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-											|  #{__('values.Name')}	
+								li(class=(data.screen === 'member' ? 'active' : ''))
+									a(href="./member")
+										i(class=(data.screen === 'member' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
+										|  #{__('Member')}
+								li(class=(data.screen === 'dealer' ? 'active' : ''))
+									a(href="./dealer")
+										i(class=(data.screen === 'dealer' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
+										|  #{__('Dealer')}
+								li(class=(data.screen === 'teamwork' ? 'active' : ''))
+									a(href="./teamwork")
+										i(class=(data.screen === 'teamwork' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
+										|  #{__('Teamwork')}
 
 						li(class=(data.screen === 'product' || data.screen === 'category' || data.screen === 'brand' ? 'treeview active' : 'treeview'))
 							a(href="#")
@@ -98,18 +106,11 @@ html
 								span  #{__('Product')}
 								i.fa.fa-angle-left.pull-right
 							ul.treeview-menu
-								li(class=(data.screen === 'product' ? 'active' : ''))
-									a(href="./product")
-										i(class=(data.screen === 'product' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('Product')}
-								li(class=(data.screen === 'category' ? 'active' : ''))
-									a(href="./category")
-										i(class=(data.screen === 'category' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('Category')}
-								li(class=(data.screen === 'brand' ? 'active' : ''))
-									a(href="./brand")
-										i(class=(data.screen === 'brand' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('Brand')}
+								each values in data.category
+									li(class=(data.screen === values.Url ? 'active' : ''))
+										a(href="./category/"+values.Url)
+											i(class=(data.screen === 'values.Url' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
+											|  #{values.Name}	
 
 						li(class=(data.screen === 'cart' ? 'treeview active' : 'treeview'))
 							a(href="#")
