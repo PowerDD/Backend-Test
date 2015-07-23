@@ -86,18 +86,11 @@ html
 								span  #{__('Member')}
 								i.fa.fa-angle-left.pull-right
 							ul.treeview-menu
-								li(class=(data.screen === 'member' ? 'active' : ''))
-									a(href="./member")
-										i(class=(data.screen === 'member' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('Member')}
-								li(class=(data.screen === 'dealer' ? 'active' : ''))
-									a(href="./dealer")
-										i(class=(data.screen === 'dealer' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('Dealer')}
-								li(class=(data.screen === 'teamwork' ? 'active' : ''))
-									a(href="./teamwork")
-										i(class=(data.screen === 'teamwork' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('Teamwork')}
+								each values in data.category
+								li(class=(data.screen === values.Url ? 'active' : ''))
+									a(href="./category/"+values.Url)
+										i(class=(data.screen === 'values.Url' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
+										|  #{__('values.Name')}	
 
 						li(class=(data.screen === 'product' || data.screen === 'category' || data.screen === 'brand' ? 'treeview active' : 'treeview'))
 							a(href="#")
