@@ -28,6 +28,7 @@ exports.getCategoryMenu = function(req, res, data) {
 		res.render('error', { data: data });
 	}
 };
+
 //--------// Render Screen //--------//
 exports.renderProductCategory = function(req, res, data){
 	//## Render Product in Category ##//
