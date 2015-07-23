@@ -104,6 +104,9 @@ exports.getMemberInfo = function(req, res, data) {
 				var object = require('./../objects/shop-config');
 				object.action( req, res, data );
 			}
+			else if (data.screen == 'category') {
+				data.renderPage.renderProductCategory( req, res, data );				
+			}
 
 			if (render)
 				res.render(data.screen, { data: data });

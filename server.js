@@ -4,7 +4,8 @@ var express = require('express')
   , fs = require('fs')
   , path = require('path')
   , i18n = require('i18n')
-  , util = require('./objects/util');
+  , util = require('./objects/util')
+  , renderPage = require('./objects/render');
 
 i18n.configure({
 	locales: ['th', 'en'],
@@ -48,6 +49,7 @@ app.get('*', function(req, res) {
 	data.apiUrl = process.env.apiUrl;
 	data.websiteUrl = process.env.Website_URL;
 	data.util = util;
+	data.renderPage = renderPage
 
 	if ( data.screen != 'login' ) {		
 		var url = req.headers['x-original-url'].split('/');
