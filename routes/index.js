@@ -1,6 +1,10 @@
 var request = require('request');
 var moment = require('moment');
 
+exports.afterGetCategoryMenu = function(req, res, data){
+	exports.index(req, res, data);
+};
+
 exports.index = function(req, res, data) {
 	
 	if ( typeof req.cookies.memberKey != 'undefined') {
@@ -47,7 +51,6 @@ exports.getMemberInfo = function(req, res, data) {
 	},
 	function (error, response, body) {
 		if (!error) {
-			data.util.getCategoryMenu(req, res, data);
 			var json = JSON.parse(body);
 			data.memberInfo = json.memberInfo
 			if ( typeof data.memberInfo.Firstname != 'undefined' ) {
