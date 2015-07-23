@@ -25,7 +25,7 @@ function loadBrand(){
 						}
 							unique[brandArrey[i].BrandName] = 0;
 					}
-					distinct.sort();
+					//distinct.sort();
 					distinct.reverse();
 					console.log(distinct);
 				}
