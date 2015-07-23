@@ -107,7 +107,7 @@ html
 							ul.treeview-menu
 								each values in data.category
 									li(class=(data.subUrl === values.Url ? 'active' : ''))
-										a(href="./category/"+values.Url)
+										a(href='#{data.websiteUrl}/category/'+values.Url)
 											i(class=(data.subUrl === 'values.Url' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
 											|  #{values.Name}	
 
@@ -161,6 +161,7 @@ html
 		script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js')
 		script(src='/javascripts/app.min.js')
 		script(src='/javascripts/common.js')
+		script(src='/javascripts/plugins/scrollToFixed/jquery-scrolltofixed-min.js')
 		if (data.script != '')
 			script(src='#{data.script}')
 

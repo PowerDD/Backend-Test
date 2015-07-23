@@ -46,6 +46,7 @@ app.get('*', function(req, res) {
 	data.shop = process.env.shop;
 	data.apiKey = process.env.apiKey;
 	data.apiUrl = process.env.apiUrl;
+	data.websiteUrl = process.env.Website_URL;
 	data.util = util;
 
 	if ( data.screen != 'login' ) {		
