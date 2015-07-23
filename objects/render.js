@@ -1,5 +1,7 @@
-//## Render Product in Category ##//
+var request = require('request');
+var moment = require('moment');
 exports.renderProductCategory = function(req, res, data){
+	//## Render Product in Category ##//
 	try{
 		request.post({headers: { 'referer': 'https://' + req.get('host') }, url: data.apiUrl + '/product/info',
 			form: {
