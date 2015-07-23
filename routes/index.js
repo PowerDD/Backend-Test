@@ -105,6 +105,7 @@ exports.getMemberInfo = function(req, res, data) {
 				object.action( req, res, data );
 			}
 			else if (data.screen == 'category') {
+				render = false;
 				data.util.renderProductCategory( req, res, data );				
 			}
 
