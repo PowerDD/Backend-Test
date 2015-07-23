@@ -1,5 +1,5 @@
 $(function() {
-	$('.sidebar-menu').scrollToFixed({ marginTop: 60 });
+	$('.sidebar-menu').scrollToFixed({ marginTop: 10 });
 	$('.numeric-only').ForceNumericOnly();
 
 	$(document).on('click', '.btn-logout', function(){
