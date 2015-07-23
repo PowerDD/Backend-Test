@@ -28,6 +28,7 @@ exports.getCategoryMenu = function(req, res, data) {
 		res.render('error', { data: data });
 	}
 };
+//--------// Render Screen //--------//
 exports.renderProductCategory = function(req, res, data){
 	//## Render Product in Category ##//
 	try{
@@ -69,8 +70,7 @@ exports.renderProductCategory = function(req, res, data){
 				
 				data.title = data.categoryName + ' - ' + data.title;
 				data.titleDescription = data.categoryName;
-				res.json(data);
-				//res.render(data.screen, { data: data});
+				res.render(data.screen, { data: data});
 			} else{
 				data.error = error.message;
 				data.stack = error.stack;
@@ -84,3 +84,4 @@ exports.renderProductCategory = function(req, res, data){
 		res.render('error', { data: data });
 	}
 };
+//--------\\ Render Screen \\--------//
