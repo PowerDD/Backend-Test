@@ -87,10 +87,10 @@ html
 								i.fa.fa-angle-left.pull-right
 							ul.treeview-menu
 								each values in data.category
-								li(class=(data.screen === values.Url ? 'active' : ''))
-									a(href="./category/"+values.Url)
-										i(class=(data.screen === 'values.Url' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('values.Name')}	
+									li(class=(data.screen === values.Url ? 'active' : ''))
+										a(href="./category/"+values.Url)
+											i(class=(data.screen === 'values.Url' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
+											|  #{__('values.Name')}	
 
 						li(class=(data.screen === 'product' || data.screen === 'category' || data.screen === 'brand' ? 'treeview active' : 'treeview'))
 							a(href="#")
