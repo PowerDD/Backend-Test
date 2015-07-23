@@ -41,7 +41,8 @@ exports.renderProductCategory = function(req, res, data){
 				
 				data.title = data.categoryName + ' - ' + data.title;
 				data.titleDescription = data.categoryName;
-				res.render(data.screen, { data: data});
+				res.json(data);
+				//res.render(data.screen, { data: data});
 			} else{
 				data.error = error.message;
 				data.stack = error.stack;
