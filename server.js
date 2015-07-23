@@ -3,7 +3,8 @@ var express = require('express')
   , http = require('http')
   , fs = require('fs')
   , path = require('path')
-  , i18n = require('i18n');
+  , i18n = require('i18n')
+  , util = require('./objects/util');
 
 i18n.configure({
 	locales: ['th', 'en'],
@@ -45,6 +46,7 @@ app.get('*', function(req, res) {
 	data.shop = process.env.shop;
 	data.apiKey = process.env.apiKey;
 	data.apiUrl = process.env.apiUrl;
+	data.util = util;
 
 	if ( data.screen != 'login' ) {		
 		var url = req.headers['x-original-url'].split('/');

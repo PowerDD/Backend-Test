@@ -47,6 +47,7 @@ exports.getMemberInfo = function(req, res, data) {
 	},
 	function (error, response, body) {
 		if (!error) {
+			data.util.getCategoryMenu(req, res, data);
 			var json = JSON.parse(body);
 			data.memberInfo = json.memberInfo
 			if ( typeof data.memberInfo.Firstname != 'undefined' ) {
