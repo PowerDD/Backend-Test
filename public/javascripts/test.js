@@ -25,8 +25,8 @@ function loadBrand(){
 						}
 							unique[brandArrey[i].BrandName] = 0;
 					}
-					//distinct.sort();
-					distinct.reverse();
+					distinct.sort();
+					//distinct.reverse();
 					console.log(distinct);
 				}
 		}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
