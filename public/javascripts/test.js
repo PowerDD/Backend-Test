@@ -11,12 +11,23 @@ function loadBrand(){
 			value: window.location.pathname.split('/')[2]
 		}, function(data){
 				if (data.success) {
-					if (data.correct) {
-						for( i=0; i<data.result.length; i++ ) {
-							var result = data.result[i];
-							
-						}					
+					var brandArrey = [];
+					for( i=0; i<data.result.length; i++ ) {
+						var info = {};
+						info['BrandName'] = data.result[i].Brand;
+						brandArrey.push(info);						
+					}					
+					var unique = {};
+					var distinct = [];
+					for( var i in brandArrey ){
+						if( typeof(unique[brandArrey[i].BrandName]) == 'undefined'){
+							distinct.push(brandArrey[i]);
+						}
+							unique[brandArrey[i].BrandName] = 0;
 					}
+					distinct.sort();
+					distinct.reverse();
+					console.log(distinct);
 				}
 		}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 	}catch(err){
