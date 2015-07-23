@@ -2,4 +2,5 @@ extends layout
 
 block content
 	H1 Main
-	p= data.category
+	each values in data.category
+		p= values.Name
