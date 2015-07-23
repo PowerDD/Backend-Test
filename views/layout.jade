@@ -108,7 +108,7 @@ html
 								each values in data.category
 									li(class=(data.subUrl === values.Url ? 'active' : ''))
 										a(href='/category/'+values.Url)
-											i(class=(data.subUrl === 'values.Url' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
+											i(class=(data.subUrl === values.Url ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
 											|  #{values.Name}	
 
 						li(class=(data.screen === 'cart' ? 'treeview active' : 'treeview'))
