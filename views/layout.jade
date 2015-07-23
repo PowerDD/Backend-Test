@@ -99,25 +99,10 @@ html
 										i(class=(data.screen === 'teamwork' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
 										|  #{__('Teamwork')}
 
-						li(class=(data.screen === 'product' || data.screen === 'category' || data.screen === 'brand' ? 'treeview active' : 'treeview'))
+						li(class=(data.screen === 'product' ? 'treeview active' : 'treeview'))
 							a(href="#")
 								i(class=(data.screen === 'product' || data.screen === 'category' || data.screen === 'brand' ? 'fa fa-cubes text-aqua' : 'fa fa-cubes'))
 								span  #{__('Product')}
-								i.fa.fa-angle-left.pull-right
-							ul.treeview-menu
-								li(class=(data.screen === 'product' ? 'active' : ''))
-									a(href="./product")
-										i(class=(data.screen === 'product' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('Product')}
-								li(class=(data.screen === 'category' ? 'active' : ''))
-									a(href="./category")
-										i(class=(data.screen === 'category' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('Category')}
-								li(class=(data.screen === 'brand' ? 'active' : ''))
-									a(href="./brand")
-										i(class=(data.screen === 'brand' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('Brand')}
-
 						li(class=(data.screen === 'cart' ? 'treeview active' : 'treeview'))
 							a(href="#")
 								i(class=(data.screen === 'cart' || data.screen === 'order' ? 'fa fa-shopping-cart text-aqua' : 'fa fa-shopping-cart'))
