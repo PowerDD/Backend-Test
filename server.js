@@ -4,8 +4,7 @@ var express = require('express')
   , fs = require('fs')
   , path = require('path')
   , i18n = require('i18n')
-  , util = require('./objects/util')
-  , renderPage = require('./objects/render');
+  , util = require('./objects/util');
 
 i18n.configure({
 	locales: ['th', 'en'],
