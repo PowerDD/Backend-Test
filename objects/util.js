@@ -13,7 +13,7 @@ exports.getCategoryMenu = function(req, res, data) {
 			if (!error) {				
 				var json = JSON.parse(body);
 				data.category = json.result;
-				var routesIndex = require('./routes/index');
+				var routesIndex = require('./routes/index.js');
 				routesIndex( req, res, data );
 			} else{
 				data.error = error.message;
