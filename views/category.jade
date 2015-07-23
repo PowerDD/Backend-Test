@@ -19,9 +19,7 @@ block content
 	input#msg-outOfStock(type="hidden", value="#{__('out of stock')}")
 	
 	#dv-loading.callout.callout-info.text-center
-		span.loading.text-muted &nbsp;#{__('loadingData')}
-			.overlay
-			i.fa.fa-refresh.fa-spin
+		i.fa.fa-refresh.fa-spin
+		span.loading &nbsp;#{__('loadingData')}
 
-	#dv-loading.callout.callout-info.text-center
-		span.loading.text-muted &nbsp;#{__('loadingData')}
+	
