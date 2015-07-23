@@ -1,3 +1,5 @@
+var request = require('request');
+var moment = require('moment');
 exports.getCategoryMenu = function(req, res, data) {
 //## Get Category Menu ##//	
 	try{
