@@ -106,7 +106,7 @@ html
 								i.fa.fa-angle-left.pull-right
 							ul#ul-category.treeview-menu
 								each values in data.category
-									li(class=(data.subUrl === values.Url ? 'active' : ''))
+									li.category(data-id= values.ID (class=(data.subUrl === values.Url ? 'active' : '')))
 										a(href='/category/'+values.Url)
 											i(class=(data.subUrl === values.Url ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
 											|  #{values.Name}	
