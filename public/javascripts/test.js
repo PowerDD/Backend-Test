@@ -13,7 +13,7 @@ function loadProduct(){
 				var category = data.categoryId;
 				var addDate = moment('16/07/2015 18:57:39');
 				var dateDiff = moment() - addDate;
-				console.log(dateDiff.day())				
+				console.log(moment(dateDiff).days())				
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
