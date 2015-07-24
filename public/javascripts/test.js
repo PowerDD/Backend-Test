@@ -21,13 +21,12 @@ function loadBrand(){
 					var unique = {};
 					var distinct = [];
 					for( var i in brandArrey ){
-						if( typeof(unique[brandArrey[i].BrandName]) == 'undefined'){
+						if( typeof(unique[brandArrey[i].Id]) == 'undefined'){
 							distinct.push(brandArrey[i]);
 						}
+							unique[brandArrey[i].Id] = 0;
 							unique[brandArrey[i].BrandName] = 0;
 					}
-					distinct.sort();
-					distinct.reverse();
 					console.log(distinct);
 				}
 		}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
