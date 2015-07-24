@@ -12,9 +12,9 @@ function loadProduct(){
 				var product = data.result;
 				var category = data.categoryId;
 				var now = moment();				
-				var addDate = moment("14/07/2015").format('DD/MM/YYYY');
+				var addDate = moment("14/07/2015");
 				console.log('diff:' + now.diff(addDate, 'days', true));	
-				console.log(now);
+				console.log('addDate' + addDate);
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
