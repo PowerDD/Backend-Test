@@ -13,8 +13,7 @@ exports.getCategoryMenu = function(req, res, data) {
 			if (!error) {				
 				var json = JSON.parse(body);
 				//data.category = json.result;
-				json.result.orderJsonInt('ID');
-				data.category = json.result;
+				data.category = exports.sortResults(json.result, 'ID', 'asc', 'int');
 				var routesIndex = require('../routes/index');
 				routesIndex.afterGetCategoryMenu( req, res, data );
 			} else{
@@ -40,35 +39,12 @@ exports.sortResults = function(arr, prop, asc, type) {
 	}
 	else{
 		return arr = arr.sort(function(a, b) {
-			if (asc == 'asc') return 1;
-			else if (asc == 'asc') return -1;
-			else return 0;
+			if( parseInt(a[prop]) > parseInt(b[prop])) return 1;
+			else if( parseInt(a[prop]) < parseInt(b[prop]) ) return -1;
+			return 0;
 		});
 	}
-	//return arr = arr.sort();
 }
-
-exports.orderJsonString = function(prop) {
-   return function(a,b){
-	  if( a[prop] > b[prop]){
-		  return 1;
-	  }else if( a[prop] < b[prop] ){
-		  return -1;
-	  }
-	  return 0;
-   }
-};
-
-exports.orderJsonInt = function(prop) {
-   return function(a,b){
-	  if( parseInt(a[prop]) > parseInt(b[prop])){
-		  return 1;
-	  }else if( parseInt(a[prop]) < parseInt(b[prop]) ){
-		  return -1;
-	  }
-	  return 0;
-   }
-};
 
 //--------// Render Screen //--------//
 exports.renderProductCategory = function(req, res, data){
