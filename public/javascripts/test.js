@@ -11,11 +11,10 @@ function loadProduct(){
 			if (data.success) {
 				var product = data.result;
 				var category = data.categoryId;
-				var now = moment();
-				var addDate = moment("14/07/2015");
-				var diff = now - addDate;
-				var datediff = diff/(1000 * 60 * 60 * 24);
-				console.log('js diff:' + datediff);
+				var now = moment();				
+				var addDate = moment("14/07/2015").format('DD/MM/YYYY');
+				console.log('diff:' + now.diff(addDate, 'days', true));	
+				console.log(now);
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
