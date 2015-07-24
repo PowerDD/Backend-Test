@@ -1,6 +1,20 @@
 $(function() {
-	loadBrand();
+	loadProduct();
 });
+function loadProduct(){
+	$.post($('#apiUrl').val()+'/product/info', {
+		apiKey: $('#apiKey').val(),
+		shop: $('#shop').val(),
+		type: 'categoryUrl',
+		value: window.location.pathname.split('/')[2]
+	}, function(data){
+			if (data.success) {
+				var product = data.result;
+				var category = data.categoryId;
+				console.log(product)				
+			}
+	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
+}
 
 function loadBrand(){
 	try{
