@@ -12,7 +12,8 @@ exports.getCategoryMenu = function(req, res, data) {
 		function (error, response, body) {
 			if (!error) {				
 				var json = JSON.parse(body);
-				data.category = json.result.exports.sortResults('Name',asc);
+				data.category = json.result;
+				data.category.exports.sortResults('Name',asc);
 				var routesIndex = require('../routes/index');
 				routesIndex.afterGetCategoryMenu( req, res, data );
 			} else{
