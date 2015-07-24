@@ -14,7 +14,8 @@ function loadProduct(){
 				var now = moment();				
 				var addDate = moment("14/07/2015");
 				console.log('diff:' + now.diff(addDate, 'days', true));	
-				console.log('addDate' + addDate);
+				console.log('addDate: ' + addDate);
+				console.log('now: ' + now);
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
