@@ -31,7 +31,7 @@ exports.getCategoryMenu = function(req, res, data) {
 };
 
 exports.sortResults = function(arr, prop, asc) {
-     arr = arr.sort(function(a, b) {
+     return arr = arr.sort(function(a, b) {
         if (asc == 'asc') return (a[prop] > b[prop]);
         else return (b[prop] > a[prop]);
 	});
