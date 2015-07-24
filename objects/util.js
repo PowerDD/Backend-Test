@@ -13,7 +13,7 @@ exports.getCategoryMenu = function(req, res, data) {
 			if (!error) {				
 				var json = JSON.parse(body);
 				//data.category = json.result;
-				data.category = exports.sortResults(json.result, 'Name', true);
+				data.category = exports.sortResults(json.result, 'Name', 'asc');
 				var routesIndex = require('../routes/index');
 				routesIndex.afterGetCategoryMenu( req, res, data );
 			} else{
@@ -32,7 +32,7 @@ exports.getCategoryMenu = function(req, res, data) {
 
 exports.sortResults = function(arr, prop, asc) {
      arr = arr.sort(function(a, b) {
-        if (asc) return (a[prop] > b[prop]);
+        if (asc == 'asc') return (a[prop] > b[prop]);
         else return (b[prop] > a[prop]);
 	});
 }
