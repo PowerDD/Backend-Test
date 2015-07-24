@@ -13,7 +13,7 @@ exports.getCategoryMenu = function(req, res, data) {
 			if (!error) {				
 				var json = JSON.parse(body);
 				//data.category = json.result;
-				data.category = exports.sortResults(json.result, 'ID', 'asc', 'int');
+				data.category = exports.sortResults(json.result, 'Name', 'asc', 'string');
 				var routesIndex = require('../routes/index');
 				routesIndex.afterGetCategoryMenu( req, res, data );
 			} else{
@@ -31,7 +31,7 @@ exports.getCategoryMenu = function(req, res, data) {
 };
 
 exports.sortResults = function(arr, prop, asc, type) {
-	/*if(type == 'string'){
+	if(type == 'string'){
 		 return arr = arr.sort(function(a, b) {
 			if (asc == 'asc') return (a[prop] > b[prop]);
 			else return (b[prop] > a[prop]);
@@ -42,8 +42,8 @@ exports.sortResults = function(arr, prop, asc, type) {
 			if (asc == 'asc') return (parseInt(a[prop]) > parseInt(b[prop]));
 			else return (parseInt(b[prop]) > parseInt(a[prop]));
 		});
-	}*/
-	return arr = arr.sort();
+	}
+	//return arr = arr.sort();
 }
 
 //--------// Render Screen //--------//
