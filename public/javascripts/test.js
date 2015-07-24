@@ -21,7 +21,7 @@ function loadBrand(){
 					var unique = {};
 					var distinct = [];
 					for( var i in brandArrey ){
-						if( typeof(unique[brandArrey[i].Id]) == 'undefined'){
+						if( typeof(unique[brandArrey[i].BrandId]) == 'undefined'){
 							distinct.push(brandArrey[i]);
 						}
 							unique[brandArrey[i].Id] = 0;
