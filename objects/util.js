@@ -39,13 +39,9 @@ exports.sortResults = function(arr, prop, asc, type) {
 	}
 	else{
 		return arr = arr.sort(function(a, b) {
-		if( parseInt(a[prop]) > parseInt(b[prop])){
-		  return 1;
-		  }else if( parseInt(a[prop]) < parseInt(b[prop]) ){
-			  return -1;
-		  }
-		  return 0
-		  });
+			if (asc == 'asc') return ( parseInt(a[prop]) > parseInt(b[prop]));
+			else return (parseInt(b[prop]) > parseInt(a[prop]));
+		});
 	}
 	//return arr = arr.sort();
 }
