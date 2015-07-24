@@ -40,7 +40,8 @@ exports.sortResults = function(arr, prop, asc, type) {
 	else{
 		return arr = arr.sort(function(a, b) {
 			if (asc == 'asc') return 1;
-			else return -1;
+			else if (asc == 'asc') return -1;
+			else return 0;
 		});
 	}
 	//return arr = arr.sort();
