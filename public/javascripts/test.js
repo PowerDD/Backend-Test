@@ -11,9 +11,8 @@ function loadProduct(){
 			if (data.success) {
 				var product = data.result;
 				var category = data.categoryId;
-				var dateDiff = moment().date() - moment('14/07/2015');
-				console.log('date:'+moment().date() );
-				console.log('getdate:'+moment().get('date') );
+				var dateDiff = moment().diff(moment('14/07/2015'));
+				console.log('dateDiff:'+dateDiff );
 				console.log('daysdate:'+moment(dateDiff).days());				
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
