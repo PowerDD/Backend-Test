@@ -8,6 +8,7 @@ function getShopConfig(){
 	}, function(data){
 			if (data.success) {
 				console.log(data);
+				console.log(data.NewProductExpire);
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
