@@ -7,7 +7,7 @@ function getShopConfig(){
 		shop: $('#shop').val()
 	}, function(data){
 			if (data.success) {
-				console.log(data.config);
+				console.log(data.config.NewProductExpire);
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
