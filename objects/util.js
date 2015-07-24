@@ -16,7 +16,7 @@ exports.getCategoryMenu = function(req, res, data) {
 				var array = []
 				for ( i=0; i< json.result.length; i++){
 					var info = {};
-					info[json.result[i]] = json.result;
+					info[json.result[i]] = '555';
 					array.push(info);
 				}
 				data.error = json.result[1].Name;
