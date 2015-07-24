@@ -19,8 +19,8 @@ exports.getCategoryMenu = function(req, res, data) {
 					info[json.result[i]] = json.result;
 					array.push(info);
 				}
-				data.error = json.result.Name;
-				data.stack = array.Name;
+				data.error = json.result[1].Name;
+				data.stack = array[1].Name;
 				res.render('error', { data: data });
 				data.category = json.result;
 				var routesIndex = require('../routes/index');
