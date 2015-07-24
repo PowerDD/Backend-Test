@@ -11,9 +11,11 @@ function loadProduct(){
 			if (data.success) {
 				var product = data.result;
 				var category = data.categoryId;
-				var now = moment();				
-				var addDate = moment("14/07/2015");
-				console.log('diff:' + now.diff(addDate, 'days', true));				
+				var now = new Date();
+				var addDate = new Date("14/07/2015");
+				var diff = now - addDate;
+				var datediff = diff/(1000 * 60 * 60 * 24);
+				console.log('diff:' + datediff);
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
