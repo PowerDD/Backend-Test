@@ -14,6 +14,7 @@ function loadBrand(){
 					var brandArrey = [];
 					for( i=0; i<data.result.length; i++ ) {
 						var info = {};
+						info['BrandId'] = data.result[i].BrandId;
 						info['BrandName'] = data.result[i].Brand;
 						brandArrey.push(info);						
 					}					
@@ -21,7 +22,7 @@ function loadBrand(){
 					var distinct = [];
 					for( var i in brandArrey ){
 						if( typeof(unique[brandArrey[i].BrandName]) == 'undefined'){
-							distinct.push(brandArrey[i].BrandName);
+							distinct.push(brandArrey[i]);
 						}
 							unique[brandArrey[i].BrandName] = 0;
 					}
