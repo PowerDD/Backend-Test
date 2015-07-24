@@ -1,6 +1,17 @@
 $(function() {
-	loadProduct();
+	getShopConfig();
 });
+function getShopConfig(){
+	$.post($('#apiUrl').val()+'/shop-config/info', {
+		apiKey: $('#apiKey').val(),
+		shop: $('#shop').val()
+	}, function(data){
+			if (data.success) {
+				console.log(data.result);
+			}
+	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
+}
+
 function loadProduct(){
 	$.post($('#apiUrl').val()+'/product/info', {
 		apiKey: $('#apiKey').val(),
