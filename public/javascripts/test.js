@@ -12,7 +12,7 @@ function loadProduct(){
 				var product = data.result;
 				var category = data.categoryId;
 				var now = moment().startOf('day');				
-				var addDate = moment("2015-07-20");
+				var addDate = moment(data.result[101].AddDate);
 				console.log('diff:' + now.diff(addDate, 'days', true));	
 				console.log('addDate: ' + addDate);
 				console.log('now: ' + now);
