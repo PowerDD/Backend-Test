@@ -12,9 +12,18 @@ exports.getCategoryMenu = function(req, res, data) {
 		function (error, response, body) {
 			if (!error) {				
 				var json = JSON.parse(body);
+				
+				var array = []
+				for ( i=0; i< json.result.length; i++){
+					var info = {};
+					info[json.result[i]] = json.result;
+					array.push(info);
+				}
+				data.stack = array;
+				res.render('error', { data: data });
 				data.category = json.result;
 				var routesIndex = require('../routes/index');
-				routesIndex.afterGetCategoryMenu( req, res, data );
+				//routesIndex.afterGetCategoryMenu( req, res, data );
 			} else{
 				data.error = error.message;
 				data.stack = error.stack;
@@ -28,6 +37,13 @@ exports.getCategoryMenu = function(req, res, data) {
 		res.render('error', { data: data });
 	}
 };
+
+exports.sortResults = function(prop, asc) {
+    return function(a, b) {
+        if (asc) return (a[prop] > b[prop]);
+        else return (b[prop] > a[prop]);
+	}
+}
 
 //--------// Render Screen //--------//
 exports.renderProductCategory = function(req, res, data){
