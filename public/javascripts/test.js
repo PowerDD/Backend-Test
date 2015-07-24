@@ -11,7 +11,7 @@ function loadProduct(){
 			if (data.success) {
 				var product = data.result;
 				var category = data.categoryId;
-				var now = moment();				
+				var now = moment().startOf('day');				
 				var addDate = moment("14/07/2015");
 				console.log('diff:' + now.diff(addDate, 'days', true));	
 				console.log('addDate: ' + addDate);
