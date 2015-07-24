@@ -12,19 +12,10 @@ exports.getCategoryMenu = function(req, res, data) {
 		function (error, response, body) {
 			if (!error) {				
 				var json = JSON.parse(body);
-				
-				var array = []
-				for ( i=0; i< json.result.length; i++){
-					var info = {};
-					info[json.result[i]] = '555';
-					array.push(info);
-				}
-				data.error = json.result[1].Name;
-				data.stack = array[1].Name;
-				res.render('error', { data: data });
 				data.category = json.result;
+				data.category.exports.sortResults('Name',asc)
 				var routesIndex = require('../routes/index');
-				//routesIndex.afterGetCategoryMenu( req, res, data );
+				routesIndex.afterGetCategoryMenu( req, res, data );
 			} else{
 				data.error = error.message;
 				data.stack = error.stack;
