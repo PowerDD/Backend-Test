@@ -104,13 +104,13 @@ html
 								i(class=(data.screen === 'product' || data.screen === 'category' ? 'fa fa-cubes text-aqua' : 'fa fa-cubes'))
 								span  #{__('Product')}
 								i.fa.fa-angle-left.pull-right
-							ul#ul-category.treeview-menu
+							/*ul#ul-category.treeview-menu
 								each values in data.category
 									- var id = parseInt(values.ID);
 									li.category(class=(data.subUrl === values.Url ? 'active' : ''), data-id= id)
 										a(href='/category/'+values.Url)
 											i(class=(data.subUrl === values.Url ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-											|  #{values.Name}	
+											|  #{values.Name}*/	
 
 						li(class=(data.screen === 'cart' ? 'treeview active' : 'treeview'))
 							a(href="#")
