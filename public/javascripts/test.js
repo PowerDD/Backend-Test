@@ -1,5 +1,5 @@
 $(function() {
-	getShopConfig();
+	loadProductAll();
 });
 function loadProductAll(){
 	$.post($('#apiUrl').val()+'/product/info', {
