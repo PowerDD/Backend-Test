@@ -1,4 +1,4 @@
-var loadxxxxAll = false;
+var loadProductAll = false;
 var loadedCategory = false;
 var loadedBrand = false;
 var firstLoad = true;
@@ -22,7 +22,8 @@ function renderScreen( config ) {
 				$('#btn-list-view').addClass('btn-primary active').removeClass('btn-default');
 			category = config.category;
 		}
-		loadxxxxAll();
+		
+		loadProductAll();
 		firstLoad = false;
 
 		/*if (device == 'desktop') {
@@ -230,7 +231,7 @@ $(function() {
 
 });
 
-function loadxxxxAll(){
+function loadProductAll(){
 	getShopConfig();
 	$.post($('#apiUrl').val()+'/product/info', {
 		apiKey: $('#apiKey').val(),
@@ -280,7 +281,7 @@ function loadxxxxAll(){
 				data.category = distinctCat;
 				data.brand = distinctBrand;
 				
-				loadxxxxAll = true;
+				loadProductAll = true;
 				loadCategory();
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
@@ -301,7 +302,7 @@ function loadCategory(){
 	}
 	$('.hidden').removeClass('hidden').hide();
 	loadedCategory = true;
-	if (loadedCategory && loadxxxxAll) loadBrand();
+	if (loadedCategory && loadProductAll) loadBrand();
 }
 
 function loadBrand(){
@@ -311,7 +312,7 @@ function loadBrand(){
 	}
 	$('.hidden').removeClass('hidden').hide();
 	loadedBrand = true;
-	if (loadedCategory && loadedBrand && loadxxxxAll) renderProduct();
+	if (loadedCategory && loadedBrand && loadProductAll) renderProduct();
 }
 
 function loadCartSummary(){
