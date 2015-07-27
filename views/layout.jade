@@ -161,12 +161,12 @@ html
 		script(src='//ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/bootstrap.min.js')
 		script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js')
 		script(src='//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment-with-locales.min.js')
-		script(src='/javascripts/app.min.js')
-		script(src='/javascripts/common.js')
+		script(src='/javascripts/app.min.js')		
 		script(src='/javascripts/plugins/scrollToFixed/jquery-scrolltofixed-min.js')
 		script(src='/javascripts/test.js')
 		if (data.script != '')
 			script(src='#{data.script}')
+		script(src='/javascripts/common.js')
 
 	else
 		block content
