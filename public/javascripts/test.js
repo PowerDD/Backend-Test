@@ -26,7 +26,8 @@ function loadProductAll(){
 					}
 					unique[categoryArrey[i].CategotyId] = 0;
 					unique[categoryArrey[i].CategotyName] = 0;
-				}				
+				}
+				distinct.sort('CategotyId');
 				console.log(distinct);				
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
