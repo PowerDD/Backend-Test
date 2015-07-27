@@ -12,8 +12,9 @@ function loadProductImage(){
 				var imgName = data.result.CoverImage.split('/').pop();
 				var imgPath = data.result.CoverImage;
 				//imgPath = imgPath.filter(function(n){ return n !== ''; });
-				console.log(imgPath);
-				console.log(imgPath.length('/'));	
+				var str = imgPath.substr(imgPath.lastIndexOf('/') + 1) + '$';
+				imgPath.replace( new RegExp(str), '' );
+				console.log(imgPath);	
 				console.log(imgName);				
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
