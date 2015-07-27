@@ -230,7 +230,7 @@ $(function() {
 
 });
 
-function loadProductAll(){
+function loadProductAll($){
 	/*getShopConfig();
 	$.post($('#apiUrl').val()+'/product/info', {
 		apiKey: $('#apiKey').val(),
