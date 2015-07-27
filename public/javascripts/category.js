@@ -335,10 +335,10 @@ function loadBrand(data){
 }*/
 
 
-function renderProduct(){
+function renderProduct(data){
 	var html = '';
 	var html2 = '';
-	for(i=0; i< data.product.length; i++) {		
+	for(i=0; i < data.product.length; i++) {		
 		result = data.product[i];
 		var BrandId = parseInt(result.BrandId);
 		var categoryId = parseInt(result.CategoryId);
