@@ -34,8 +34,6 @@ function renderScreen( config ) {
 }
 
 $(function() {
-	getShopConfig();
-	loadProductAll();
 	$('.txt-qty').ForceNumericOnly();
 	//loadScreenConfig();
 	//loadCartSummary();
@@ -280,6 +278,7 @@ function loadProductAll(){
 				data.category = distinctCat;
 				data.brand = distinctBrand;
 				loadProductAll = true;
+				getShopConfig();
 				loadCategory();
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
