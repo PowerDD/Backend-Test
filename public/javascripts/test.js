@@ -27,7 +27,7 @@ function loadProductAll(){
 					unique[categoryArrey[i].CategotyId] = 0;
 					unique[categoryArrey[i].CategotyName] = 0;
 				}
-				distinct.sort();
+				distinct.orderJsonString('CategotyId');
 				console.log(distinct);				
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
@@ -94,4 +94,26 @@ function loadBrand(){
 	}catch(err){
 		console.log(err);
 	}
+};
+
+function orderJsonString(prop) {
+   return function(a,b){
+	  if( a[prop] > b[prop]){
+		  return 1;
+	  }else if( a[prop] < b[prop] ){
+		  return -1;
+	  }
+	  return 0;
+   }
+};
+
+function orderJsonInt(prop) {
+   return function(a,b){
+	  if( parseInt(a[prop]) > parseInt(b[prop])){
+		  return 1;
+	  }else if( parseInt(a[prop]) < parseInt(b[prop]) ){
+		  return -1;
+	  }
+	  return 0;
+   }
 };
