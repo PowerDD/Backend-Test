@@ -12,7 +12,7 @@ function loadProductImage(){
 				var imgName = data.result.CoverImage.split('/').pop();
 				var imgPath = data.result.CoverImage;
 				//imgPath = imgPath.filter(function(n){ return n !== ''; });
-				var str = imgPath.substr(imgPath.lastIndexOf('/') + 1) + '$';
+				var str = imgPath.substr(imgPath.lastIndexOf('/') - 1) + '$';
 				imgPath = imgPath.replace( new RegExp(str), '' );
 				console.log('path: '+str);	
 				console.log('name: '+imgName);				
