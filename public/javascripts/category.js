@@ -29,7 +29,6 @@ function renderScreen( config ) {
 
 		if (device == 'desktop') {
 			$('#dv-category').scrollToFixed({ marginTop: 10 });
-			alert(device);
 		}
 		$('#dv-cart').scrollToFixed({ marginTop: 10 });
 
