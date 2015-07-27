@@ -11,7 +11,7 @@ function loadProductImage(){
 			if (data.success) {
 				var imgPath = data.result.CoverImage.split('/');
 				imgPath = imgPath.filter(function(n){ return n !== ''; });
-				console.log(imgPath);							
+				console.log(imgPath[4]);							
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
