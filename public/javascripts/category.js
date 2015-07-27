@@ -37,6 +37,7 @@ function renderScreen( config ) {
 
 $(function() {
 	$('.txt-qty').ForceNumericOnly();
+	getShopConfig();
 	loadScreenConfig();
 	//loadCartSummary();
 	
@@ -233,7 +234,6 @@ $(function() {
 });
 
 function loadProduct(){
-	getShopConfig();
 	$.post($('#apiUrl').val()+'/product/info', {
 		apiKey: $('#apiKey').val(),
 		shop: $('#shop').val(),
