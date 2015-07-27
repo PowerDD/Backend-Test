@@ -27,7 +27,7 @@ function loadProductAll(){
 					unique[categoryArrey[i].CategotyId] = 0;
 					unique[categoryArrey[i].CategotyName] = 0;
 				}
-				distinct.sort(orderJsonString('CategotyId'));
+				distinct.sort(orderJsonString('CategoryPriority'));
 				console.log(distinct);				
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
