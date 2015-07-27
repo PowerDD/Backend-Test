@@ -10,15 +10,21 @@ function loadProductAll(){
 	}, function(data){
 			if (data.success) {
 				data.product = data.result;
-				
+				var categoryArrey = [];
+					for( i=0; i<data.result.length; i++ ) {
+						var info = {};
+						info['CategotyId'] = data.result[i].CategotyId;
+						info['CategotyName'] = data.result[i].Categoty;
+						categoryArrey.push(info);						
+					}	
 				var unique = {};
 				var distinct = [];
-				for( var i in data.result ){
-					if( typeof(unique[data.result[i].CategotyId]) == 'undefined'){
-						distinct.push(data.result[i].CategotyId);
-						distinct.push(data.result[i].Categoty);
+				for( var i in categoryArrey ){
+					if( typeof(unique[categoryArrey[i].CategotyId]) == 'undefined'){
+						distinct.push(categoryArrey[i].CategotyId);
+						distinct.push(categoryArrey[i].Categoty);
 					}
-					unique[data.result[i].CategotyId] = 0;
+					unique[categoryArrey[i].CategotyId] = 0;
 				}
 				distinct.sort();
 				distinct.reverse();
