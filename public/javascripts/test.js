@@ -1,6 +1,21 @@
 $(function() {
-	loadProductAll();
+	loadProductImage();
 });
+function loadProductImage(){
+	$.post($('#apiUrl').val()+'/product/info', {
+		apiKey: $('#apiKey').val(),
+		shop: $('#shop').val(),
+		type: 'item',
+		value: '183'
+	}, function(data){
+			if (data.success) {
+				var imgPath = data.result.CoverImage.splice('/');
+				imgPath = imgPath.filter(function(n){ return n !== ''; });
+				console.log(imgPath);							
+			}
+	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
+}
+
 function loadProductAll(){
 	$.post($('#apiUrl').val()+'/product/info', {
 		apiKey: $('#apiKey').val(),
