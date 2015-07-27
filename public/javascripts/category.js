@@ -22,12 +22,12 @@ function renderScreen( config ) {
 				$('#btn-list-view').addClass('btn-primary active').removeClass('btn-default');
 			category = config.category;
 		}
-		loadProduct_All();
+		loadProductAll();
 		firstLoad = false;
 
-		if (device == 'desktop') {
+		/*if (device == 'desktop') {
 			$('#dv-category').scrollToFixed({ marginTop: 10 });
-		}
+		}*/
 		$('#dv-cart').scrollToFixed({ marginTop: 10 });
 
 	}
@@ -230,7 +230,7 @@ $(function() {
 
 });
 
-function loadProduct_All() {
+function loadProductAll() {
 	getShopConfig();
 	$.post($('#apiUrl').val()+'/product/info', {
 		apiKey: $('#apiKey').val(),
@@ -335,7 +335,7 @@ function loadCartSummary(){
 function renderProduct(){
 	var html = '';
 	var html2 = '';
-	for(i=0; i<data.product.length; i++) {		
+	for(i=0; i< data.product.length; i++) {		
 		result = data.product[i];
 		var BrandId = parseInt(result.BrandId);
 		var categoryId = parseInt(result.CategoryId);
