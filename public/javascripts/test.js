@@ -9,7 +9,7 @@ function loadProductImage(){
 		value: '183'
 	}, function(data){
 			if (data.success) {
-				var imgPath = data.result.CoverImage.splice('/');
+				var imgPath = data.result.CoverImage.split('/');
 				imgPath = imgPath.filter(function(n){ return n !== ''; });
 				console.log(imgPath);							
 			}
