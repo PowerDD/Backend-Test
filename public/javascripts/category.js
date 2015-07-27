@@ -303,8 +303,6 @@ function loadCategory(data){
 	}
 	$('.hidden').removeClass('hidden').hide();
 	loadedCategory = true;
-	console.log(data.category);
-	console.log(data.brand);
 	if (loadedCategory && loadedProduct) loadBrand(data);
 }
 
