@@ -45,3 +45,25 @@ jQuery.fn.ForceNumericOnly = function() {
 		});
 	});
 };
+
+function loadScreenConfig( ) {
+	/*var sp = document.location.pathname.split('/');
+	$.post($('#apiUrl').val()+'/member/screen/config/data', {
+		authKey: $('#authKey').val(),
+		system: 'backend',
+		screen: sp[1],
+	}, function(data){
+		if ( data.success ) {
+			if ( data.correct ) {
+				try {
+					renderScreen( JSON.parse(data.result[0].config) );
+				}
+				catch(err) {
+					renderScreen( null );
+				}
+			}
+			renderScreen( null );
+		}
+	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log( xhr.statusText ); });*/
+	renderScreen( null );
+};

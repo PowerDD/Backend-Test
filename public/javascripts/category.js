@@ -35,7 +35,7 @@ function renderScreen( config ) {
 
 $(function() {
 	$('.txt-qty').ForceNumericOnly();
-	//loadScreenConfig();
+	loadScreenConfig();
 	//loadCartSummary();
 	
 	$(document).on('click', '#ul-category li.category', function(){
