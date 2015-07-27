@@ -230,7 +230,7 @@ $(function() {
 
 });
 
-//function loadProductAll() {
+/*function loadProductAll() {
 	$.post($('#apiUrl').val()+'/product/info', {
 		apiKey: $('#apiKey').val(),
 		shop: $('#shop').val(),
@@ -283,7 +283,7 @@ $(function() {
 				loadCategory();
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
-}
+}*/
 function loadProductAll(){
 	$.post($('#apiUrl').val()+'/product/info', {
 		apiKey: $('#apiKey').val(),
