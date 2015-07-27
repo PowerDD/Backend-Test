@@ -1,6 +1,33 @@
 $(function() {
 	getShopConfig();
 });
+function loadProductAll(){
+	$.post($('#apiUrl').val()+'/product/info', {
+		apiKey: $('#apiKey').val(),
+		shop: $('#shop').val(),
+		type: 'all',
+		value: 'all'
+	}, function(data){
+			if (data.success) {
+				data.product = data.result;
+				
+				var unique = {};
+				var distinct = [];
+				for( var i in data.result ){
+					if( typeof(unique[data.result[i].CategotyId]) == 'undefined'){
+						distinct.push(data.result[i].CategotyId);
+						distinct.push(data.result[i].Categoty);
+					}
+					unique[data.result[i].CategotyId] = 0;
+				}
+				distinct.sort();
+				distinct.reverse();
+				
+				console.log(distinct);				
+			}
+	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
+}
+
 function getShopConfig(){
 	$.post($('#apiUrl').val()+'/shop-config/info', {
 		apiKey: $('#apiKey').val(),
