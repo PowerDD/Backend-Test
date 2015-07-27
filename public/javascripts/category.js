@@ -300,7 +300,6 @@ function loadCategory(){
 	$('.hidden').removeClass('hidden').hide();
 	loadedCategory = true;
 	if (loadedCategory && loadProductAll) loadBrand();
-	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 };
 
 function loadBrand(){
@@ -311,8 +310,6 @@ function loadBrand(){
 	$('.hidden').removeClass('hidden').hide();
 	loadedBrand = true;
 	if (loadedCategory && loadedBrand && loadProductAll) renderProduct();
-
-	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 };
 
 function loadCartSummary(){
