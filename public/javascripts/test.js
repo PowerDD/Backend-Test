@@ -9,9 +9,9 @@ function loadProductImage(){
 		value: '183'
 	}, function(data){
 			if (data.success) {
-				var imgPath = data.result.CoverImage.split('/');
-				imgPath = imgPath.filter(function(n){ return n !== ''; });
-				console.log(imgPath[4]);							
+				var imgPath = data.result.CoverImage.split('/').pop();
+				//imgPath = imgPath.filter(function(n){ return n !== ''; });
+				console.log(imgPath);							
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
