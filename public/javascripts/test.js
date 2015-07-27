@@ -13,8 +13,8 @@ function loadProductAll(){
 				var categoryArrey = [];
 					for( i=0; i<data.result.length; i++ ) {
 						var info = {};
-						info['CategotyId'] = data.result[i].CategotyId;
-						info['CategotyName'] = data.result[i].Categoty;
+						info['CategotyId'] = data.result[i].CategoryId;
+						info['CategotyName'] = data.result[i].Category;
 						info['CategoryPriority'] = data.result[i].CategoryPriority;
 						categoryArrey.push(info);						
 					}	
@@ -27,7 +27,7 @@ function loadProductAll(){
 					unique[categoryArrey[i].CategotyId] = 0;
 					unique[categoryArrey[i].CategotyName] = 0;
 				}				
-				console.log(categoryArrey);				
+				console.log(distinct);				
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
