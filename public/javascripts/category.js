@@ -289,12 +289,12 @@ function loadProduct(){
 }
 
 function loadCategory(data){
-	for( i=0; i< data.category; i++ ) {
+	for( i=0; i< data.category.length; i++ ) {
 		var result = data.category[i];
 		var htmlBrand = '';
 		if (data.brand != undefined)
 		{
-			for( j=0; j< data.brand; j++ ) {
+			for( j=0; j< data.brand.length; j++ ) {
 				var brand = data.brand[j];
 				htmlBrand += '<li class="brand hidden cat-' + parseInt(result.CategoryId) + ' brand-' + parseInt(brand.BrandId) + '" data-id="' + parseInt(brand.BrandId) + '"><a href="javascript:void(0)" class="padding-left-30"><i class="fa fa-caret-right"></i> <span>' + brand.BrandName + '</span></a></li>';
 			}
@@ -309,7 +309,7 @@ function loadCategory(data){
 }
 
 function loadBrand(data){
-	for( i=0; i < data.brand; i++ ) {
+	for( i=0; i < data.brand.length; i++ ) {
 		var result = data.brand[i];
 		$('#tab').append('<li class="brand-' + parseInt(result.BrandId) + ' hidden" data-id="' + parseInt(result.BrandId) + '"><a href="javascript:void(0)">' + result.BrandName + '</a></li>')
 	}
