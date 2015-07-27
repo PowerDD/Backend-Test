@@ -36,11 +36,6 @@ function renderScreen( config ) {
 }
 
 $(function() {
-	$(document).on('shown.bs.popover', '.td-image', function(){
-		$('img.lazy').lazyload({
-			effect : "fadeIn"
-		});
-	});	
 	$('.txt-qty').ForceNumericOnly();
 	loadScreenConfig();
 	//loadCartSummary();
