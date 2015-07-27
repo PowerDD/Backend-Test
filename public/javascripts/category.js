@@ -22,7 +22,7 @@ function renderScreen( config ) {
 				$('#btn-list-view').addClass('btn-primary active').removeClass('btn-default');
 			category = config.category;
 		}
-		loadProductAll();
+		loadProduct_All();
 		firstLoad = false;
 
 		if (device == 'desktop') {
@@ -230,7 +230,8 @@ $(function() {
 
 });
 
-/*function loadProductAll() {
+function loadProduct_All() {
+	getShopConfig();
 	$.post($('#apiUrl').val()+'/product/info', {
 		apiKey: $('#apiKey').val(),
 		shop: $('#shop').val(),
@@ -279,61 +280,11 @@ $(function() {
 				data.category = distinctCat;
 				data.brand = distinctBrand;
 				loadProductAll = true;
-				getShopConfig();
 				loadCategory();
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
-}*/
-function loadProductAll(){
-	$.post($('#apiUrl').val()+'/product/info', {
-		apiKey: $('#apiKey').val(),
-		shop: $('#shop').val(),
-		type: 'all',
-		value: 'all'
-	}, function(data){
-			if (data.success) {
-				data.product = data.result;
-				// Category And Brand //
-				var categoryArrey = [];
-				var brandArrey = [];
-				for( i=0; i<data.result.length; i++ ) {
-					var infoCat = {};
-					var infoBrand = {};
-					infoCat['CategotyId'] = data.result[i].CategoryId;
-					infoCat['CategotyName'] = data.result[i].Category;
-					infoCat['CategoryPriority'] = data.result[i].CategoryPriority;
-					
-					infoBrand['BrandId'] = data.result[i].BrandId;
-					infoBrand['BrandName'] = data.result[i].Brand;
-					infoBrand['BrandPriority'] = data.result[i].BrandPriority;
-					categoryArrey.push(infoCat);		
-					brandArrey.push(infoBrand);
-				}	
-				// Distinct Category //
-				var uniqueCat = {};
-				var distinctCat = [];
-				for( var i in categoryArrey ){
-					if( typeof(uniqueCat[categoryArrey[i].CategotyName]) == 'undefined'){
-						distinctCat.push(categoryArrey[i]);
-					}
-					uniqueCat[categoryArrey[i].CategotyName] = 0;
-				}
-				// Distinct Brand //
-				var uniqueBrand = {};
-				var distinctBrand = [];
-				for( var i in brandArrey ){
-					if( typeof(uniqueBrand[brandArrey[i].BrandName]) == 'undefined'){
-						distinctBrand.push(brandArrey[i]);
-					}
-					uniqueBrand[brandArrey[i].BrandName] = 0;
-				}
-				distinctCat.sort(orderJsonString('CategotyName'));
-				distinctBrand.sort(orderJsonString('BrandPriority'));
-				console.log(distinctCat);	
-				console.log(distinctBrand);				
-			}
-	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
+
 function loadCategory(){
 	for( i=0; i< data.category; i++ ) {
 		var result = data.category[i];
