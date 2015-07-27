@@ -20,11 +20,11 @@ function loadProductAll(){
 				var unique = {};
 				var distinct = [];
 				for( var i in categoryArrey ){
-					if( typeof(unique[categoryArrey[i].CategotyId]) == 'undefined'){
-						distinct.push(categoryArrey[i].CategotyId);
-						distinct.push(categoryArrey[i].Categoty);
+					if( typeof(unique[categoryArrey[i].CategotyName]) == 'undefined'){
+						distinct.push(categoryArrey[i]);
 					}
 					unique[categoryArrey[i].CategotyId] = 0;
+					unique[categoryArrey[i].CategotyName] = 0;
 				}
 				distinct.sort();
 				distinct.reverse();
