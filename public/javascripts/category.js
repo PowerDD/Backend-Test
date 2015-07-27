@@ -6,7 +6,7 @@ var data = {};
 var product;
 var category = "3";
 var productCode = '';
-
+var newProductExp;
 function renderScreen( config ) {
 	if (firstLoad) {
 		if (config == null) {
@@ -349,8 +349,8 @@ function renderProduct(data){
 		
 		html += '<tr data-id="' + result.ID + '" id="sku-' + result.ID + '" data-image="" class="product-row tr-cat-' + categoryId + ' tr-brand-'+BrandId+' tr-brand hidden font-normal">';
 		html += '<td class="td-thumb padding-left-0"><img data-id="' + result.ID + '" class="img-product img-thumbnail lazy'+((result.CoverImage != null) ? ' zoom" data-target="#dv-view_image" data-toggle="modal"' : '"')+' data-original="' + ((result.CoverImage != null) ? result.CoverImage : 'https://cdn24fin.blob.core.windows.net/img/products/1/Logo/1_s.jpg') + '" src="https://cdn24fin.blob.core.windows.net/img/products/1/Logo/1_s.jpg" width="100"></td>';
-		html += '<td><span class="text-'+((isNew <= newProductExp()) ? 'red' : 'light-blue')+' font-bold name">' + result.Name + '</span>';
-		html += (isNew <= newProductExp()) ? ' <img src="/images/icons/new.gif">' : '';
+		html += '<td><span class="text-'+((isNew <= newProductExp) ? 'red' : 'light-blue')+' font-bold name">' + result.Name + '</span>';
+		html += (isNew <= newProductExp) ? ' <img src="/images/icons/new.gif">' : '';
 		html += '<br>';
 		html += (result.ID != null) ? 'SKU : <b class="sku">' + result.ID + '</b>' : '';
 		html += (result.Warranty != 0) ? ' &nbsp; ' + $('#msg-warranty').val() + ' : <b>' + ((result.Warranty == 365) ? '1 '+$('#msg-year').val() : ((result.Warranty >= 30) ? (result.Warranty/30)+ ' ' + $('#msg-month').val() : result.Warranty + ' ' +$('#msg-day').val())) + '</b>' : '';
@@ -425,9 +425,9 @@ function renderProduct(data){
 		}
 		html2 += '</div>';
 		html2 += '<div><small class="pull-left text-muted">SKU : <b class="sku">'+result.ID+'</b>';
-		html2 += ((isNew <= newProductExp()) ? ' <img class="img-up" src="/images/icons/new.gif">' : '') + '</small>';
+		html2 += ((isNew <= newProductExp) ? ' <img class="img-up" src="/images/icons/new.gif">' : '') + '</small>';
 		html2 += (result.Warranty != 0) ? '<small class="pull-right text-muted">' + $('#msg-warranty').val() + ' <b>' + ((result.Warranty == 365) ? '1 '+$('#msg-year').val() : ((result.Warranty >= 30) ? (result.Warranty/30)+ ' ' + $('#msg-month').val() : result.Warranty + ' ' +$('#msg-day').val())) + '</b></small>' : '';
-		html2 += '<div class="clearfix"></div><div class="text-'+((isNew <= newProductExp()) ? 'red' : 'light-blue')+' font-bold name" style="min-height:48px">' + result.Name;
+		html2 += '<div class="clearfix"></div><div class="text-'+((isNew <= newProductExp) ? 'red' : 'light-blue')+' font-bold name" style="min-height:48px">' + result.Name;
 		html2 += '</div><div class="line"></div>';
 		
 		/*if ( result.wholesalePrice1 == undefined ) {
@@ -640,13 +640,11 @@ function getShopConfig(){
 	}, function(data){
 			if (data.success) {
 				data.shopConfig = data.config;
+				newProductExp = data.shopConfig.NewProductExpire.Value;
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
 
-function newProductExp(){
-	return data.shopConfig.NewProductExpire.Value;
-}
 
 function orderJsonString(prop) {
    return function(a,b){
