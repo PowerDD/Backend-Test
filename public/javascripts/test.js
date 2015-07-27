@@ -10,6 +10,7 @@ function loadProductImage(){
 	}, function(data){
 			if (data.success) {
 				var imgPath = data.result.CoverImage.split('/').slice(0,-1);
+				imgPath = imgPath.replace(" ", "/");
 				//imgPath = imgPath.filter(function(n){ return n !== ''; });
 				console.log(imgPath);							
 			}
