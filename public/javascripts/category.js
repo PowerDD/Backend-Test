@@ -292,10 +292,10 @@ function loadCategory(data){
 	for( i=0; i< data.category; i++ ) {
 		var result = data.category[i];
 		var htmlBrand = '';
-		if (result.brand != undefined)
+		if (data.brand != undefined)
 		{
 			for( j=0; j< data.brand; j++ ) {
-				var brand = result.data.brand[j];
+				var brand = data.brand[j];
 				htmlBrand += '<li class="brand hidden cat-' + parseInt(result.CategoryId) + ' brand-' + parseInt(brand.BrandId) + '" data-id="' + parseInt(brand.BrandId) + '"><a href="javascript:void(0)" class="padding-left-30"><i class="fa fa-caret-right"></i> <span>' + brand.BrandName + '</span></a></li>';
 			}
 		}
