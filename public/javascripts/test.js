@@ -9,10 +9,12 @@ function loadProductImage(){
 		value: '183'
 	}, function(data){
 			if (data.success) {
+				var imgName = data.result.CoverImage.split('/').pop();
 				var imgPath = data.result.CoverImage.split('/').slice(0,-1);
 				imgPath = imgPath.replace(" ", "/");
 				//imgPath = imgPath.filter(function(n){ return n !== ''; });
-				console.log(imgPath);							
+				console.log(imgPath);	
+				console.log(imgName);				
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
