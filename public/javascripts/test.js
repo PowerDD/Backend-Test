@@ -1,7 +1,7 @@
 $(function() {
-	loadProductImage();
+	//loadProductImage();
 });
-function loadProductImage(){
+/*function loadProductImage(){
 	$.post($('#apiUrl').val()+'/product/info', {
 		apiKey: $('#apiKey').val(),
 		shop: $('#shop').val(),
@@ -11,9 +11,8 @@ function loadProductImage(){
 			if (data.success) {
 				var imgName = data.result.CoverImage.split('/').pop();
 				var imgPath = data.result.CoverImage;
-				//imgPath = imgPath.filter(function(n){ return n !== ''; });
-				var to = imgPath.lastIndexOf('/') +1;
-				imgPath =  imgPath.substring(0,to);
+				var cut = imgPath.lastIndexOf('/') +1;
+				imgPath =  imgPath.substring(0,cut);
 				console.log('path: '+imgPath);	
 				console.log('name: '+imgName);				
 			}
@@ -154,4 +153,4 @@ function orderJsonInt(prop) {
 	  }
 	  return 0;
    }
-};
+};*/

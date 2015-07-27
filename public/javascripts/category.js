@@ -229,7 +229,8 @@ $(function() {
 	});
 
 });
-function loadProductAll(){
+
+function loadProductAll() {
 	$.post($('#apiUrl').val()+'/product/info', {
 		apiKey: $('#apiKey').val(),
 		shop: $('#shop').val(),
@@ -282,7 +283,7 @@ function loadProductAll(){
 				loadCategory();
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
-};
+}
 
 function loadCategory(){
 	for( i=0; i< data.category; i++ ) {
@@ -300,7 +301,7 @@ function loadCategory(){
 	$('.hidden').removeClass('hidden').hide();
 	loadedCategory = true;
 	if (loadedCategory && loadProductAll) loadBrand();
-};
+}
 
 function loadBrand(){
 	for( i=0; i< data.brand; i++ ) {
@@ -310,7 +311,7 @@ function loadBrand(){
 	$('.hidden').removeClass('hidden').hide();
 	loadedBrand = true;
 	if (loadedCategory && loadedBrand && loadProductAll) renderProduct();
-};
+}
 
 function loadCartSummary(){
 	/*$.post($('#apiUrl').val()+'/order/cart/summary', {
@@ -638,11 +639,11 @@ function getShopConfig(){
 				data.shopConfig = data.config;
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
-};
+}
 
 function newProductExp(){
 	return data.shopConfig.NewProductExpire.Value;
-};
+}
 
 function orderJsonString(prop) {
    return function(a,b){
@@ -653,7 +654,7 @@ function orderJsonString(prop) {
 	  }
 	  return 0;
    }
-};
+}
 
 function orderJsonInt(prop) {
    return function(a,b){
@@ -664,4 +665,4 @@ function orderJsonInt(prop) {
 	  }
 	  return 0;
    }
-};
+}
