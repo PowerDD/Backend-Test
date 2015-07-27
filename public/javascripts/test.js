@@ -22,7 +22,7 @@ function loadProductAll(){
 					
 					infoBrand['BrandId'] = data.result[i].BrandId;
 					infoBrand['BrandName'] = data.result[i].Brand;
-					infoBrand['CBrandPriority'] = data.result[i].BrandPriority;
+					infoBrand['BrandPriority'] = data.result[i].BrandPriority;
 					categoryArrey.push(infoCat);		
 					brandArrey.push(infoBrand);
 				}	
@@ -45,7 +45,7 @@ function loadProductAll(){
 					uniqueBrand[brandArrey[i].BrandName] = 0;
 				}
 				distinctCat.sort(orderJsonString('CategotyName'));
-				distinctBrand.sort(orderJsonString('BrandName'));
+				distinctBrand.sort(orderJsonString('BrandPriority'));
 				console.log(distinctCat);	
 				console.log(distinctBrand);				
 			}
