@@ -11,24 +11,41 @@ function loadProductAll(){
 			if (data.success) {
 				data.product = data.result;
 				var categoryArrey = [];
-					for( i=0; i<data.result.length; i++ ) {
-						var info = {};
-						info['CategotyId'] = data.result[i].CategoryId;
-						info['CategotyName'] = data.result[i].Category;
-						info['CategoryPriority'] = data.result[i].CategoryPriority;
-						categoryArrey.push(info);						
-					}	
-				var unique = {};
-				var distinct = [];
+				var brandArrey = [];
+				for( i=0; i<data.result.length; i++ ) {
+					var infoCat = {};
+					var infoBrand = {};
+					infoCat['CategotyId'] = data.result[i].CategoryId;
+					infoCat['CategotyName'] = data.result[i].Category;
+					infoCat['CategoryPriority'] = data.result[i].CategoryPriority;
+					
+					infoBrand['BrandId'] = data.result[i].BrandId;
+					infoBrand['BrandName'] = data.result[i].Brand;
+					infoBrand['CBrandPriority'] = data.result[i].BrandPriority;
+					categoryArrey.push(infoCat);		
+					brandArrey.push(infoBrand);
+				}	
+				var uniqueCat = {};
+				var distinctCat = [];
 				for( var i in categoryArrey ){
-					if( typeof(unique[categoryArrey[i].CategotyName]) == 'undefined'){
-						distinct.push(categoryArrey[i]);
+					if( typeof(uniqueCat[categoryArrey[i].CategotyName]) == 'undefined'){
+						distinctCat.push(categoryArrey[i]);
 					}
-					unique[categoryArrey[i].CategotyId] = 0;
-					unique[categoryArrey[i].CategotyName] = 0;
+					uniqueCat[categoryArrey[i]] = 0;
 				}
-				distinct.sort(orderJsonString('CategoryPriority'));
-				console.log(distinct);				
+				
+				var uniqueBrand = {};
+				var distinctBrand = [];
+				for( var i in brandArrey ){
+					if( typeof(uniqueBrand[brandArrey[i].BrandName]) == 'undefined'){
+						distinctBrand.push(brandArrey[i]);
+					}
+					uniqueBrand[brandArrey[i]] = 0;
+				}
+				distinctCat.sort(orderJsonString('CategotyName'));
+				distinctBrand.sort(orderJsonString('BrandName'));
+				console.log(distinctCat);	
+				console.log(distinctBrand);				
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
