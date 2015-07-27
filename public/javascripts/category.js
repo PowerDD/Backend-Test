@@ -35,6 +35,7 @@ function renderScreen( config ) {
 
 $(function() {
 	getShopConfig();
+	loadProductAll();
 	$('.txt-qty').ForceNumericOnly();
 	//loadScreenConfig();
 	//loadCartSummary();
