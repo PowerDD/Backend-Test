@@ -20,8 +20,9 @@ function renderScreen( config ) {
 				$('#btn-box-view').addClass('btn-primary active').removeClass('btn-default');
 			else
 				$('#btn-list-view').addClass('btn-primary active').removeClass('btn-default');
-			category = config.category;
+			//category = config.category;
 		}
+		
 		loadProduct_All();
 		firstLoad = false;
 
