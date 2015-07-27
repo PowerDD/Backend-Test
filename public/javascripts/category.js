@@ -35,7 +35,9 @@ function renderScreen( config ) {
 }
 
 $(function() {
+	
 	loadProductAll();
+	
 	$('.txt-qty').ForceNumericOnly();
 	//loadScreenConfig();
 	//loadCartSummary();
@@ -316,8 +318,8 @@ function loadBrand(){
 	if (loadedCategory && loadedBrand && loadProductAll) renderProduct();
 }
 
-function loadCartSummary(){
-	/*$.post($('#apiUrl').val()+'/order/cart/summary', {
+/*function loadCartSummary(){
+	$.post($('#apiUrl').val()+'/order/cart/summary', {
 		authKey: $('#authKey').val(),
 	}, function(data){
 			if (data.success) {
@@ -331,8 +333,8 @@ function loadCartSummary(){
 					}
 				}
 			}
-	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });*/
-}
+	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
+}*/
 
 
 function renderProduct(){
