@@ -10,6 +10,7 @@ function loadProductAll(){
 	}, function(data){
 			if (data.success) {
 				data.product = data.result;
+				// Category And Brand //
 				var categoryArrey = [];
 				var brandArrey = [];
 				for( i=0; i<data.result.length; i++ ) {
@@ -25,22 +26,23 @@ function loadProductAll(){
 					categoryArrey.push(infoCat);		
 					brandArrey.push(infoBrand);
 				}	
+				// Distinct Category //
 				var uniqueCat = {};
 				var distinctCat = [];
 				for( var i in categoryArrey ){
 					if( typeof(uniqueCat[categoryArrey[i].CategotyName]) == 'undefined'){
 						distinctCat.push(categoryArrey[i]);
 					}
-					uniqueCat[categoryArrey[i]] = 0;
+					uniqueCat[categoryArrey[i].CategotyName] = 0;
 				}
-				
+				// Distinct Brand //
 				var uniqueBrand = {};
 				var distinctBrand = [];
 				for( var i in brandArrey ){
 					if( typeof(uniqueBrand[brandArrey[i].BrandName]) == 'undefined'){
 						distinctBrand.push(brandArrey[i]);
 					}
-					uniqueBrand[brandArrey[i]] = 0;
+					uniqueBrand[brandArrey[i].BrandName] = 0;
 				}
 				distinctCat.sort(orderJsonString('CategotyName'));
 				distinctBrand.sort(orderJsonString('BrandName'));
