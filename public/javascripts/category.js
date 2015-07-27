@@ -7,6 +7,7 @@ var product;
 var category = "3";
 var productCode = '';
 var newProductExp;
+
 function renderScreen( config ) {
 	if (firstLoad) {
 		if (config == null) {
@@ -35,7 +36,11 @@ function renderScreen( config ) {
 }
 
 $(function() {
-		
+	$(document).on('shown.bs.popover', '.td-image', function(){
+		$('img.lazy').lazyload({
+			effect : "fadeIn"
+		});
+	});	
 	$('.txt-qty').ForceNumericOnly();
 	loadScreenConfig();
 	//loadCartSummary();
