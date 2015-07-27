@@ -46,6 +46,9 @@ jQuery.fn.ForceNumericOnly = function() {
 	});
 };
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
 function loadScreenConfig( ) {
 	/*var sp = document.location.pathname.split('/');
 	$.post($('#apiUrl').val()+'/member/screen/config/data', {
