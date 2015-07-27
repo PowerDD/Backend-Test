@@ -245,7 +245,7 @@ function loadProduct(){
 				// Category And Brand //
 				var categoryArrey = [];
 				var brandArrey = [];
-				for( i=0; i<data.result.length; i++ ) {
+				for( i=0; i< data.result.length; i++ ) {
 					var infoCat = {};
 					var infoBrand = {};
 					infoCat['CategotyId'] = data.result[i].CategoryId;
@@ -283,12 +283,12 @@ function loadProduct(){
 				data.brand = distinctBrand;
 				
 				loadProductAll = true;
-				loadCategory();
+				loadCategory(data);
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
 
-function loadCategory(){
+function loadCategory(data){
 	for( i=0; i< data.category; i++ ) {
 		var result = data.category[i];
 		var htmlBrand = '';
@@ -306,7 +306,7 @@ function loadCategory(){
 	if (loadedCategoryAll && loadProductAll) loadBrand();
 }
 
-function loadBrand(){
+function loadBrand(data){
 	for( i=0; i< data.brand; i++ ) {
 		var result = data.brand[i];
 		$('#tab').append('<li class="brand-' + parseInt(result.BrandId) + ' hidden" data-id="' + parseInt(result.BrandId) + '"><a href="javascript:void(0)">' + result.BrandName + '</a></li>')
