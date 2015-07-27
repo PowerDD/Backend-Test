@@ -303,17 +303,17 @@ function loadCategory(data){
 	}
 	$('.hidden').removeClass('hidden').hide();
 	loadedCategoryAll = true;
-	if (loadedCategoryAll && loadProductAll) loadBrand();
+	if (loadedCategoryAll && loadProductAll) loadBrand(data);
 }
 
 function loadBrand(data){
-	for( i=0; i< data.brand; i++ ) {
+	for( i=0; i < data.brand; i++ ) {
 		var result = data.brand[i];
 		$('#tab').append('<li class="brand-' + parseInt(result.BrandId) + ' hidden" data-id="' + parseInt(result.BrandId) + '"><a href="javascript:void(0)">' + result.BrandName + '</a></li>')
 	}
 	$('.hidden').removeClass('hidden').hide();
 	loadedBrandAll = true;
-	if (loadedCategoryAll && loadedBrandAll && loadProductAll) renderProduct();
+	if (loadedCategoryAll && loadedBrandAll && loadProductAll) renderProduct(data);
 }
 
 /*function loadCartSummary(){
