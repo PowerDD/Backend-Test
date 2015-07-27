@@ -9,19 +9,11 @@ var productCode = '';
 
 $(function() {
 	
-	loadProductAll();
+	loadProductAllx();
 
 });
 
-function loadProductAll(){
-	$.post($('#apiUrl').val()+'/product/info', {
-		apiKey: $('#apiKey').val(),
-		shop: $('#shop').val(),
-		type: 'all',
-		value: 'all'
-	}, function(data){
-
-	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
+function loadProductAllx(){
 	alert('Product');
 }
 
