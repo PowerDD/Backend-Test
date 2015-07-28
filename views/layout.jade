@@ -82,7 +82,7 @@ html
 						li.header  #{__('Shop')}
 						li(class=(data.screen === 'member' ? 'treeview active' : 'treeview'))
 							a(href="#")
-								i(class=(data.screen === 'member' || data.screen === 'dealer' || data.screen === 'teamwork' ? 'fa fa-user text-aqua' : 'fa fa-user'))
+								i(class=(data.screen === 'member' ? 'fa fa-user text-aqua' : 'fa fa-user'))
 								span  #{__('Member')}
 
 						li(class=(data.screen === 'product' || data.screen === 'category' || data.screen === 'brand' ? 'treeview active' : 'treeview'))
