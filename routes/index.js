@@ -1,53 +1,39 @@
 var request = require('request');
 var moment = require('moment');
 
-exports.afterGetCategoryMenu = function(req, res, data){
-	try{
-		exports.index(req, res, data);
-	}catch(error) {
-		data.error = error.message;
-		data.stack = error.stack;
-		res.render('error', { data: data });
-	}
-};
-
 exports.index = function(req, res, data) {
 	try{
-		if(data.category == '' || data.category == undefined){
-			data.util.getCategoryMenu(req, res, data);
-		}else{
-			if ( typeof req.cookies.memberKey != 'undefined') {
-				
-				request.post({headers: { 'referer': 'https://' + req.get('host') }, url: data.apiUrl + '/member/exist/memberKey',
-					form: {
-						apiKey: data.apiKey,
-						shop: data.shop,
-						memberKey: req.cookies.memberKey,
-					}
-				},
-				function (error, response, body) {
-					if (!error) {
-						var json = JSON.parse(body);
-						data.screen = ( json.success && json.exist ) ? data.screen : 'login';
-						if (!json.exist) res.clearCookie(req.cookies.memberKey);
-					}
-					else {
-						data.screen = 'login';
-					}
+		if ( typeof req.cookies.memberKey != 'undefined') {
+			
+			request.post({headers: { 'referer': 'https://' + req.get('host') }, url: data.apiUrl + '/member/exist/memberKey',
+				form: {
+					apiKey: data.apiKey,
+					shop: data.shop,
+					memberKey: req.cookies.memberKey,
+				}
+			},
+			function (error, response, body) {
+				if (!error) {
+					var json = JSON.parse(body);
+					data.screen = ( json.success && json.exist ) ? data.screen : 'login';
+					if (!json.exist) res.clearCookie(req.cookies.memberKey);
+				}
+				else {
+					data.screen = 'login';
+				}
 
-					if (data.screen == 'login') {
-						res.render(data.screen, { data: data });
-					}
-					else {
-						exports.getMemberInfo(req, res, data)
-					}
+				if (data.screen == 'login') {
+					res.render(data.screen, { data: data });
+				}
+				else {
+					exports.getMemberInfo(req, res, data)
+				}
 
-				});
-			}
-			else {
-				data.screen = 'login';
-				res.render(data.screen, { data: data });
-			}
+			});
+		}
+		else {
+			data.screen = 'login';
+			res.render(data.screen, { data: data });
 		}
 	}
 	catch(error) {
@@ -104,10 +90,10 @@ exports.getMemberInfo = function(req, res, data) {
 				var object = require('./../objects/shop-config');
 				object.action( req, res, data );
 			}
-			/*else if (data.screen == 'category') {
+			else if (data.screen == 'dealer') {
 				render = false;
-				data.util.renderProductCategory( req, res, data );				
-			}*/
+				exports.getDealerRegisterInfo( req, res, data );				
+			}
 
 			if (render)
 				res.render(data.screen, { data: data });
@@ -120,4 +106,30 @@ exports.getMemberInfo = function(req, res, data) {
 		res.render('error', { data: data });
 	}
 
-}
+};
+exports.getDealerRegisterInfo = function( req, res, data ){
+	try{
+		request.post({headers: { 'referer': 'https://' + req.get('host') }, url: data.apiUrl + '/dealer/info',
+			form: {
+				apiKey: data.apiKey,
+				shop: data.shop
+			}
+		},
+		function (error, response, body) {
+			if (!error) {
+				var json = JSON.parse(body);
+				data.dealerRegisterInfo = json.result;
+				res.render(data.screen, { data: data});
+			}else{
+				data.error = error.message;
+				data.stack = error.stack;
+				res.render('error', { data: data });
+			}
+		});
+	}
+	catch(error) {
+		data.error = error.message;
+		data.stack = error.stack;
+		res.render('error', { data: data });
+	}
+};
