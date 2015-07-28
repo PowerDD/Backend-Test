@@ -80,24 +80,10 @@ html
 
 					ul.sidebar-menu
 						li.header  #{__('Shop')}
-						li(class=(data.screen === 'member' || data.screen === 'dealer' || data.screen === 'teamwork' ? 'treeview active' : 'treeview'))
+						li(class=(data.screen === 'member' ? 'treeview active' : 'treeview'))
 							a(href="#")
 								i(class=(data.screen === 'member' || data.screen === 'dealer' || data.screen === 'teamwork' ? 'fa fa-user text-aqua' : 'fa fa-user'))
 								span  #{__('Member')}
-								i.fa.fa-angle-left.pull-right
-							ul.treeview-menu
-								li(class=(data.screen === 'member' ? 'active' : ''))
-									a(href="./member")
-										i(class=(data.screen === 'member' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('Member')}
-								li(class=(data.screen === 'dealer' ? 'active' : ''))
-									a(href="./dealer")
-										i(class=(data.screen === 'dealer' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('Dealer')}
-								li(class=(data.screen === 'teamwork' ? 'active' : ''))
-									a(href="./teamwork")
-										i(class=(data.screen === 'teamwork' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('Teamwork')}
 
 						li(class=(data.screen === 'product' || data.screen === 'category' || data.screen === 'brand' ? 'treeview active' : 'treeview'))
 							a(href="./category")
