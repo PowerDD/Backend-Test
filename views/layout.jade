@@ -148,17 +148,6 @@ html
 		script(src='/javascripts/test.js')
 		if (data.script != '')
 			script(src='#{data.script}')
-		script(type='text/javascript')
-			$(function () {
-				$('#example2').DataTable({
-				"paging": true,
-				"lengthChange": false,
-				"searching": false,
-				"ordering": true,
-				"info": true,
-				"autoWidth": false
-				});
-			});
 
 	else
 		block content
