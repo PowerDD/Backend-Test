@@ -17,7 +17,7 @@ $(function() {
 		$(this).parents('.input-group').find('ul.dropdown-menu li').removeClass('active');
 		$(this).parents('li').addClass('active');
 	});
-
+	$('#example1').DataTable();
 });
 
 

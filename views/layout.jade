@@ -150,18 +150,6 @@ html
 		script(src='/javascripts/dataTables.bootstrap.min.js')
 		if (data.script != '')
 			script(src='#{data.script}')
-		script
-			$(function () {
-				$('#example1').DataTable();
-				$('#example2').DataTable({
-					"paging": true,
-					"lengthChange": false,
-					"searching": false,
-					"ordering": true,
-					"info": true,
-					"autoWidth": false
-				});
-			});
 	else
 		block content
 	
