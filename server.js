@@ -48,6 +48,7 @@ app.get('*', function(req, res) {
 	data.apiUrl = process.env.apiUrl;
 	data.websiteUrl = process.env.Website_URL;
 	data.util = util;
+	data.Moment = require('moment');
 
 	if ( data.screen != 'login' ) {		
 		var url = req.headers['x-original-url'].split('/');

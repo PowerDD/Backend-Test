@@ -15,9 +15,10 @@ block content
 								th จังหวัด
 								th 
 						each values in data.dealerRegisterInfo
+							- var yearTH = parseInt(data.Moment(values.RegisterDate).lang('th').add(3600*7, 'seconds').format('YYYY'))+543;
 							tbody
 								tr
-									td= values.RegisterDate
-									td= values.Firstname+' '+values.Lastname
-									td= values.Province
+									td #{data.Moment(values.RegisterDate).lang('th').add(3600*7, 'seconds').format('DD MMMM')+' '+yearTH}
+									td #{values.Firstname+' '+values.Lastname}
+									td #{values.Province}
 									td X
