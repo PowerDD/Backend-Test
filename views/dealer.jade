@@ -14,9 +14,10 @@ block content
 								th ชื่อ-สกุล
 								th จังหวัด
 								th 
-						each values in data.dealerRegisterInfo
-							- var yearTH = parseInt(data.Moment(values.RegisterDate).lang('th').add(3600*7, 'seconds').format('YYYY'))+543;
-							tbody
+						tbody
+							each values in data.dealerRegisterInfo
+								- var yearTH = parseInt(data.Moment(values.RegisterDate).lang('th').add(3600*7, 'seconds').format('YYYY'))+543;
+							
 								tr
 									td #{data.Moment(values.RegisterDate).lang('th').add(3600*7, 'seconds').format('DD MMMM')+' '+yearTH}
 									td #{values.Firstname+' '+values.Lastname}
