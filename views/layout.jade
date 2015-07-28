@@ -133,7 +133,10 @@ html
 									a(href="./shop-config")
 										i(class=(data.screen === 'shop-config' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
 										|  #{__('Configuration')}
-
+						li(class=(data.screen === 'dealer' ? 'treeview active' : 'treeview'))
+							a(href="./dealer")
+								i(class=(data.screen === 'dealer' ? 'fa fa-users text-aqua' : 'fa fa-users'))
+								span  #{__('Dealer')}
 			div.content-wrapper
 				section.content-header
 					h1 #{__('Screen Title - '+data.screen)}
