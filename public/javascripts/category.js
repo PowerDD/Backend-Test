@@ -289,23 +289,30 @@ function loadProduct(){
 }
 
 function loadCategory(data){
-	for( i=0; i< data.category.length; i++ ) {
-		var result = data.category[i];
+	$.post($('#apiUrl').val()+'/product/category_brand', {
+		apiKey: $('#apiKey').val(),
+		shop: $('#shop').val(),
+		type: 'all',
+		value: 'all'
+	}, function(data){
+		for( i=0; i< data.result.length; i++ ) {
+		var result = data.result[i];
 		var htmlBrand = '';
-		if (data.brand != undefined)
+		if (result.brand != undefined)
 		{
-			for( j=0; j< data.brand.length; j++ ) {
-				var brand = data.brand[j];
-				htmlBrand += '<li class="brand hidden cat-' + parseInt(result.CategoryId) + ' brand-' + parseInt(brand.BrandId) + '" data-id="' + parseInt(brand.BrandId) + '"><a href="javascript:void(0)" class="padding-left-30"><i class="fa fa-caret-right"></i> <span>' + brand.BrandName + '</span></a></li>';
+			for( j=0; j< result.brand.length; j++ ) {
+				var brand = result.brand[j];
+				htmlBrand += '<li class="brand hidden cat-' + parseInt(result.category) + ' brand-' + parseInt(brand.id) + '" data-id="' + parseInt(brand.id) + '"><a href="javascript:void(0)" class="padding-left-30"><i class="fa fa-caret-right"></i> <span>' + brand.name + '</span></a></li>';
 			}
 		}
-		$('#ul-category').append('<li class="category" data-id="' + parseInt(result.CategoryId) + '"><a href="javascript:void(0)"><i class="fa fa-chevron-circle-right"></i> <span>' + result.CategoryName + '</span></a>' + ((htmlBrand != '') ? htmlBrand : '') + '</li>');
+		$('#ul-category').append('<li class="category" data-id="' + parseInt(result.category) + '"><a href="javascript:void(0)"><i class="fa fa-chevron-circle-right"></i> <span>' + result.name + '</span></a>' + ((htmlBrand != '') ? htmlBrand : '') + '</li>');
 	}
 	$('.hidden').removeClass('hidden').hide();
 	loadedCategory = true;
 	if (loadedCategory && loadedProduct) loadBrand(data);
+	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
-
+	
 function loadBrand(data){
 	for( i=0; i < data.brand.length; i++ ) {
 		var result = data.brand[i];
