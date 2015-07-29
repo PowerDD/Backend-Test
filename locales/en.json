@@ -35,5 +35,7 @@
 	"Per Piece": "Per Piece",
 	"Weight Calculation": "Weight Calculation",
 	"loadingData": "Loading data, please wait",
-	"search": "Search"
+	"search": "Search",
+	"item(s)": "Items"
+	"productCategory": "Category"
 }

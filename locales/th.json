@@ -36,5 +36,7 @@
 	"Per Piece": "ต่อชิ้น",
 	"Weight Calculation": "คำนวณตามน้ำหนัก",
 	"loadingData": "กำลังโหลดข้อมูล กรุณารอสักครู่ค่ะ",
-	"search": "ค้นหา"
+	"search": "ค้นหา",
+	"item(s)": "รายการ",
+	"productCategory": "หมวดหมู่สินค้า"
 }
