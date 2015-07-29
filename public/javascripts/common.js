@@ -19,7 +19,7 @@ $(function() {
 	});
 	$('#example1').DataTable({
 		"language": {
-			"search": "Filter records:"
+			"search": #{__('search')}
 			}
 	});
 });
