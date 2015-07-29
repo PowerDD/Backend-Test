@@ -415,7 +415,7 @@ function renderProduct(data){
 		html2 += (result.Warranty != 0) ? '<small class="pull-right text-muted">' + $('#msg-warranty').val() + ' <b>' + ((result.Warranty == 365) ? '1 '+$('#msg-year').val() : ((result.Warranty >= 30) ? (result.Warranty/30)+ ' ' + $('#msg-month').val() : result.Warranty + ' ' +$('#msg-day').val())) + '</b></small>' : '';
 		html2 += '<div class="clearfix"></div><div class="text-'+((isNew <= newProductExp) ? 'red' : 'light-blue')+' font-bold name" style="min-height:48px">' + result.Name;
 		html2 += '</div><div class="line"></div>';
-		
+		html2 += '<div class="pull-left font-sm">' + $('#msg-retailPrice').val() + ' : <b class="font-bigger font-bold text-green">' + numberWithCommas(result.Price) + '</b></div>';
 		/*if ( result.wholesalePrice1 == undefined ) {
 			html2 += '<div class="pull-left font-sm">' + $('#msg-retailPrice').val() + ' : <b class="font-bigger font-bold text-green">' + numberWithCommas(result.retailPrice) + '</b></div>';
 		}
