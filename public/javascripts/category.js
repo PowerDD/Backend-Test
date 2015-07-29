@@ -453,7 +453,7 @@ function renderProduct(data){
 		}
 		
 		html2 += '<div class="clearfix"></div>';
-		html2 += '</div></div></div>';
+		html2 += '</div></div></div></div>';
 
 	}
 	$('#tb-result tbody').html(html);
