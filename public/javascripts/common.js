@@ -19,7 +19,7 @@ $(function() {
 	});
 	$('#example1').DataTable({
 		"language": {
-			"search": "#{__('search')}"
+			"search": "ค้นหา"
 			}
 	});
 });
