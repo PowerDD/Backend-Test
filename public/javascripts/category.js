@@ -346,9 +346,9 @@ function renderProduct(data){
 		}
 		html += '<span class="no-stock-' + result.ID + ' font-sm text-no_stock text-red font-bold' + ((hasStock > 0) ? ' hidden' : '') + '"><i class="fa fa-warning"></i> ' + $('#msg-outOfStock').val() + '</span>';
 
-		if ( result.onCart != undefined ) {
-			if ( result.onCart > 0 || result.onOrder > 0 ) {
-				html += '<br><span class="font-sm text-muted"><span' + ((result.onCart != 0) ? ' class="text-red"' : '') + '>' + $('#msg-itemOnCart').val() + ' : <b>' + result.onCart + '</b></span> / <span' + ((result.onOrder != 0) ? ' class="text-red"' : '') + '>' + $('#msg-onOrder').val() + ' : <b' + ((result.onOrder != 0) ? ' class="font-bigger text-red"' : '') + '>' + result.onOrder + '</b></span></span>';
+		if ( result.OnCart != undefined ) {
+			if ( result.OnCart > 0 || result.OnOrder > 0 ) {
+				html += '<br><span class="font-sm text-muted"><span' + ((result.OnCart != 0) ? ' class="text-red"' : '') + '>' + $('#msg-itemOnCart').val() + ' : <b>' + result.OnCart + '</b></span> / <span' + ((result.OnOrder != 0) ? ' class="text-red"' : '') + '>' + $('#msg-onOrder').val() + ' : <b' + ((result.OnOrder != 0) ? ' class="font-bigger text-red"' : '') + '>' + result.OnOrder + '</b></span></span>';
 			}
 		}
 
@@ -428,7 +428,6 @@ function renderProduct(data){
 			html2 += '<div class="pull-left font-sm">' + $('#msg-price').val() + ' : <b class="font-bigger font-bold text-green">' + numberWithCommas(result.retailPrice) + '</b></div>';
 			html2 += '<div class="pull-right font-sm"><b class="font-bigger font-bold text-red">' + numberWithCommas(result.wholesalePrice1) + '</b> <i class="img-up fa fa-comment-o show-tooltip" data-toggle="tooltip" title="' + result.qty1 + ' ' + $('#msg-orMoreItems').val() + ' ' + $('#msg-ofThe'+((result.isSameCategory == 1) ? 'Same' : 'Differnce')+'Category').val() + '"></i> / <b class="font-bigger font-bold text-red">' + numberWithCommas(result.wholesalePrice2) + '</b> <i class="img-up fa fa-comment-o show-tooltip" data-toggle="tooltip" title="' + result.qty2 + ' ' + $('#msg-orMoreItems').val() + ' ' + $('#msg-ofThe'+((result.isSameCategory == 1) ? 'Same' : 'Differnce')+'Category').val() + '"></i></div>';
 		}*/
-		html2 += '<div class="pull-right font-sm"><b class="font-bigger font-bold text-red">' + numberWithCommas(result.Price) + '</b> <i class="img-up fa fa-comment-o show-tooltip" data-toggle="tooltip" title="' + 'hahaha' + ' ' + $('#msg-orMoreItems').val() + ' ' + $('#msg-ofThe'+((1 == 1) ? 'Same' : 'Differnce')+'Category').val() + '"></i> / <b class="font-bigger font-bold text-red">' + numberWithCommas(result.Price2) + '</b> <i class="img-up fa fa-comment-o show-tooltip" data-toggle="tooltip" title="' + 'ahaha' + ' ' + $('#msg-orMoreItems').val() + ' ' + $('#msg-ofThe'+((1 == 1) ? 'Same' : 'Differnce')+'Category').val() + '"></i></div>';
 
 		if ( result.Price1 != undefined ) {
 			html2 += '<div class="pull-right font-sm">' + $('#msg-remain').val() + ' : <b class="font-bigger text-yellow">' + numberWithCommas(result.Stock) + '</b></div>';
@@ -447,9 +446,9 @@ function renderProduct(data){
 			html2 += ' / <span class="font-bigger' + (($('#role').val() == 'manager') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price5) + '</span>' + (($('#role').val() == 'manager') ? '</div>' : '') + '';
 		}
 
-		if ( result.onCart != undefined ) {
-			if ( result.onCart > 0 || result.onOrder > 0 ) {
-				html2 += '<div class="font-sm text-muted"><span' + ((result.onCart != 0) ? ' class="text-red"' : '') + '>' + $('#msg-itemOnCart').val() + ' : <b>' + result.onCart + '</b></span> / <span' + ((result.onOrder != 0) ? ' class="text-red"' : '') + '>' + $('#msg-onOrder').val() + ' : <b' + ((result.onOrder != 0) ? ' class="font-bigger text-red"' : '') + '>' + result.onOrder + '</b></span></div>';
+		if ( result.OnCart != undefined ) {
+			if ( result.OnCart > 0 || result.OnOrder > 0 ) {
+				html2 += '<div class="font-sm text-muted"><span' + ((result.OnCart != 0) ? ' class="text-red"' : '') + '>' + $('#msg-itemOnCart').val() + ' : <b>' + result.OnCart + '</b></span> / <span' + ((result.OnOrder != 0) ? ' class="text-red"' : '') + '>' + $('#msg-onOrder').val() + ' : <b' + ((result.OnOrder != 0) ? ' class="font-bigger text-red"' : '') + '>' + result.OnOrder + '</b></span></div>';
 			}
 		}
 		
