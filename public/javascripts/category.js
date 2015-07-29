@@ -283,12 +283,12 @@ function loadProduct(){
 				data.brand = distinctBrand;
 				
 				loadedProduct = true;
-				loadCategory(data);
+				loadCategory();
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
 
-function loadCategory(data){
+function loadCategory(){
 	$.post($('#apiUrl').val()+'/product/category_brand', {
 		apiKey: $('#apiKey').val(),
 		shop: $('#shop').val(),
@@ -313,14 +313,14 @@ function loadCategory(data){
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
 	
-function loadBrand(data){
-	for( i=0; i < data.brand.length; i++ ) {
+function loadBrand(){
+	/*for( i=0; i < data.brand.length; i++ ) {
 		var result = data.brand[i];
 		$('#tab').append('<li class="brand-' + parseInt(result.BrandId) + ' hidden" data-id="' + parseInt(result.BrandId) + '"><a href="javascript:void(0)">' + result.BrandName + '</a></li>')
 	}
 	$('.hidden').removeClass('hidden').hide();
 	loadedBrand = true;
-	if (loadedCategory && loadedBrand && loadProduct) renderProduct(data);
+	if (loadedCategory && loadedBrand && loadProduct) renderProduct(data);*/
 }
 
 function loadCartSummary(){
