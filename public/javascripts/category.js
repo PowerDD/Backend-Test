@@ -415,7 +415,7 @@ function renderProduct(data){
 		html2 += (result.Warranty != 0) ? '<small class="pull-right text-muted">' + $('#msg-warranty').val() + ' <b>' + ((result.Warranty == 365) ? '1 '+$('#msg-year').val() : ((result.Warranty >= 30) ? (result.Warranty/30)+ ' ' + $('#msg-month').val() : result.Warranty + ' ' +$('#msg-day').val())) + '</b></small>' : '';
 		html2 += '<div class="clearfix"></div><div class="text-'+((isNew <= newProductExp) ? 'red' : 'light-blue')+' font-bold name" style="min-height:48px">' + result.Name;
 		html2 += '</div><div class="line"></div>';
-		html2 += '<div class="pull-left font-sm">' + $('#msg-retailPrice').val() + ' : <b class="font-bigger font-bold text-green">' + numberWithCommas(result.Price) + '</b></div>';
+
 		/*if ( result.wholesalePrice1 == undefined ) {
 			html2 += '<div class="pull-left font-sm">' + $('#msg-retailPrice').val() + ' : <b class="font-bigger font-bold text-green">' + numberWithCommas(result.retailPrice) + '</b></div>';
 		}
@@ -428,6 +428,7 @@ function renderProduct(data){
 			html2 += '<div class="pull-left font-sm">' + $('#msg-price').val() + ' : <b class="font-bigger font-bold text-green">' + numberWithCommas(result.retailPrice) + '</b></div>';
 			html2 += '<div class="pull-right font-sm"><b class="font-bigger font-bold text-red">' + numberWithCommas(result.wholesalePrice1) + '</b> <i class="img-up fa fa-comment-o show-tooltip" data-toggle="tooltip" title="' + result.qty1 + ' ' + $('#msg-orMoreItems').val() + ' ' + $('#msg-ofThe'+((result.isSameCategory == 1) ? 'Same' : 'Differnce')+'Category').val() + '"></i> / <b class="font-bigger font-bold text-red">' + numberWithCommas(result.wholesalePrice2) + '</b> <i class="img-up fa fa-comment-o show-tooltip" data-toggle="tooltip" title="' + result.qty2 + ' ' + $('#msg-orMoreItems').val() + ' ' + $('#msg-ofThe'+((result.isSameCategory == 1) ? 'Same' : 'Differnce')+'Category').val() + '"></i></div>';
 		}*/
+		html2 += '<div class="pull-right font-sm"><b class="font-bigger font-bold text-red">' + numberWithCommas(result.Price) + '</b> <i class="img-up fa fa-comment-o show-tooltip" data-toggle="tooltip" title="' + 'hahaha' + ' ' + $('#msg-orMoreItems').val() + ' ' + $('#msg-ofThe'+((1 == 1) ? 'Same' : 'Differnce')+'Category').val() + '"></i> / <b class="font-bigger font-bold text-red">' + numberWithCommas(result.Price2) + '</b> <i class="img-up fa fa-comment-o show-tooltip" data-toggle="tooltip" title="' + 'ahaha' + ' ' + $('#msg-orMoreItems').val() + ' ' + $('#msg-ofThe'+((1 == 1) ? 'Same' : 'Differnce')+'Category').val() + '"></i></div>';
 
 		if ( result.Price1 != undefined ) {
 			html2 += '<div class="pull-right font-sm">' + $('#msg-remain').val() + ' : <b class="font-bigger text-yellow">' + numberWithCommas(result.Stock) + '</b></div>';
