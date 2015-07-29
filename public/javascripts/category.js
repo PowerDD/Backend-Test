@@ -243,14 +243,14 @@ function loadCategory(){
 		for( i=0; i< data.result.length; i++ ) {
 		var result = data.result[i];
 		var htmlBrand = '';
-		if (result.brand != undefined)
+		if (BrandId != undefined)
 		{
-			for( j=0; j< result.brand.length; j++ ) {
-				var brand = result.brand[j];
-				htmlBrand += '<li class="brand hidden cat-' + parseInt(result.category) + ' brand-' + parseInt(brand.id) + '" data-id="' + parseInt(brand.id) + '"><a href="javascript:void(0)" class="padding-left-30"><i class="fa fa-caret-right"></i> <span>' + brand.name + '</span></a></li>';
+			for( j=0; j< BrandId.length; j++ ) {
+				var brand = BrandId[j];
+				htmlBrand += '<li class="brand hidden cat-' + parseInt(categoryId) + ' brand-' + parseInt(brand.id) + '" data-id="' + parseInt(brand.id) + '"><a href="javascript:void(0)" class="padding-left-30"><i class="fa fa-caret-right"></i> <span>' + brand.name + '</span></a></li>';
 			}
 		}
-		$('#ul-category').append('<li class="category" data-id="' + parseInt(result.category) + '"><a href="javascript:void(0)"><i class="fa fa-chevron-circle-right"></i> <span>' + result.name + '</span></a>' + ((htmlBrand != '') ? htmlBrand : '') + '</li>');
+		$('#ul-category').append('<li class="category" data-id="' + parseInt(categoryId) + '"><a href="javascript:void(0)"><i class="fa fa-chevron-circle-right"></i> <span>' + result.Name + '</span></a>' + ((htmlBrand != '') ? htmlBrand : '') + '</li>');
 	}
 	$('.hidden').removeClass('hidden').hide();
 	loadedCategory = true;
@@ -341,10 +341,10 @@ function renderProduct(data){
 		html += (result.ID != null) ? 'SKU : <b class="sku">' + result.ID + '</b>' : '';
 		html += (result.Warranty != 0) ? ' &nbsp; ' + $('#msg-warranty').val() + ' : <b>' + ((result.Warranty == 365) ? '1 '+$('#msg-year').val() : ((result.Warranty >= 30) ? (result.Warranty/30)+ ' ' + $('#msg-month').val() : result.Warranty + ' ' +$('#msg-day').val())) + '</b>' : '';
 		html += '<br>';
-		if (($('#role').val() == 'dealer' || $('#role').val() == 'member') && hasStock > 0) {
+		if (($('#role').val() == 'dealer' || $('#role').val() == 'member') && hasStock == 1) {
 			html += '<button class="btn-product-' + result.ID + ' btn-add_cart btn btn-sm btn-warning' + ((device == 'desktop') ? ' hidden' : '') + '" data-target="#dv-add_cart" data-toggle="modal">' + $('#msg-orderNow').val() + '</button>';
 		}
-		html += '<span class="no-stock-' + result.ID + ' font-sm text-no_stock text-red font-bold' + ((hasStock > 0) ? ' hidden' : '') + '"><i class="fa fa-warning"></i> ' + $('#msg-outOfStock').val() + '</span>';
+		html += '<span class="no-stock-' + result.ID + ' font-sm text-no_stock text-red font-bold' + ((hasStock == 1) ? ' hidden' : '') + '"><i class="fa fa-warning"></i> ' + $('#msg-outOfStock').val() + '</span>';
 
 		if ( result.onCart != undefined ) {
 			if ( result.onCart > 0 || result.onOrder > 0 ) {
@@ -400,12 +400,12 @@ function renderProduct(data){
 		html2 += '<div data-id="' + result.ID + '" class="product-row col-xs-12 col-sm-6 col-md-4 col-lg-4 margin-bottom-15 dv-cat-' + categoryId + ' dv-brand-'+BrandId+' dv-brand hidden">';
 		html2 += '<div class="dv-box well well_thin well_white">';
 		html2 += '<div class="dv-thumb margin-bottom-5 padding-top-5 text-center">';
-		html2 += '<img data-id="' + result.ID + '" class="img-product lazy img-responsive img-rounded'+((result.CoverImage != null) ? ' zoom" data-target="#dv-view_image" data-toggle="modal"' : '"')+' data-original="' + ((result.CoverImage != null) ? result.CoverImage : 'https://cdn24fin.blob.core.windows.net/img/products/1/Logo/1_m.jpg') + '" src="https://cdn24fin.blob.core.windows.net/img/products/1/Logo/1_m.jpg">';
+		html2 += '<img data-id="' + result.ID + '" class="img-product lazy img-responsive img-rounded'+((result.imageMedium != null) ? ' zoom" data-target="#dv-view_image" data-toggle="modal"' : '"')+' data-original="' + ((result.imageMedium != null) ? result.imageMedium : 'https://cdn24fin.blob.core.windows.net/img/products/1/Logo/1_m.jpg') + '" src="https://cdn24fin.blob.core.windows.net/img/products/1/Logo/1_m.jpg">';
 		
-		if (($('#role').val() == 'dealer' || $('#role').val() == 'member') && hasStock > 1) {
+		if (($('#role').val() == 'dealer' || $('#role').val() == 'member') && hasStock == 1) {
 			html2 += '<button class="btn-product-' + result.ID + ' btn-add_cart_box btn btn-warning btn-sm btn-center hidden" data-toggle="modal" data-target="#dv-add_cart">' + $('#msg-orderNow').val() + '</button>';
 		}
-		html2 += '<span class="no-stock-' + result.ID + ' btn-center text-no_stock text-red font-bold' + ((hasStock > 1) ? ' hidden' : '') + '" style="text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;"><i class="fa fa-warning"></i> ' + $('#msg-outOfStock').val() + '</span>';
+		html2 += '<span class="no-stock-' + result.ID + ' btn-center text-no_stock text-red font-bold' + ((hasStock == 1) ? ' hidden' : '') + '" style="text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;"><i class="fa fa-warning"></i> ' + $('#msg-outOfStock').val() + '</span>';
 
 		if ( $('#role').val() == 'dealer' || $('#role').val() == 'member' ) {
 		}
@@ -417,7 +417,7 @@ function renderProduct(data){
 		html2 += '</div><div class="line"></div>';
 		
 		/*if ( result.wholesalePrice1 == undefined ) {
-			html2 += '<div class="pull-left font-sm">' + $('#msg-retailPrice').val() + ' : <b class="font-bigger font-bold text-green">' + numberWithCommas(result.retailPrice) + '</b></div>';
+			html2 += '<div class="pull-left font-sm">' + $('#msg-Price').val() + ' : <b class="font-bigger font-bold text-green">' + numberWithCommas(result.Price) + '</b></div>';
 		}
 
 		if ( result.wholesalePrice != undefined ) {
@@ -425,7 +425,7 @@ function renderProduct(data){
 		}
 
 		if ( result.wholesalePrice1 != undefined ) {
-			html2 += '<div class="pull-left font-sm">' + $('#msg-price').val() + ' : <b class="font-bigger font-bold text-green">' + numberWithCommas(result.retailPrice) + '</b></div>';
+			html2 += '<div class="pull-left font-sm">' + $('#msg-price').val() + ' : <b class="font-bigger font-bold text-green">' + numberWithCommas(result.Price) + '</b></div>';
 			html2 += '<div class="pull-right font-sm"><b class="font-bigger font-bold text-red">' + numberWithCommas(result.wholesalePrice1) + '</b> <i class="img-up fa fa-comment-o show-tooltip" data-toggle="tooltip" title="' + result.qty1 + ' ' + $('#msg-orMoreItems').val() + ' ' + $('#msg-ofThe'+((result.isSameCategory == 1) ? 'Same' : 'Differnce')+'Category').val() + '"></i> / <b class="font-bigger font-bold text-red">' + numberWithCommas(result.wholesalePrice2) + '</b> <i class="img-up fa fa-comment-o show-tooltip" data-toggle="tooltip" title="' + result.qty2 + ' ' + $('#msg-orMoreItems').val() + ' ' + $('#msg-ofThe'+((result.isSameCategory == 1) ? 'Same' : 'Differnce')+'Category').val() + '"></i></div>';
 		}*/
 
