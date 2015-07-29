@@ -309,7 +309,7 @@ function loadCategory(data){
 	}
 	$('.hidden').removeClass('hidden').hide();
 	loadedCategory = true;
-	if (loadedCategory && loadedProduct) loadBrand(data);
+	//if (loadedCategory && loadedProduct) loadBrand(data);
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
 	
