@@ -18,7 +18,9 @@ $(function() {
 		$(this).parents('li').addClass('active');
 	});
 	$('#example1').DataTable({
-	"search": {"search": "Initial search"}
+		"language": {
+			"search": "Filter records:"
+			}
 	});
 });
 
