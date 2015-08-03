@@ -3,7 +3,12 @@ var json;
 $(function() {
 
 	loadData();
-
+	$('#example1').DataTable({
+				"language": {
+					"search": "ค้นหา"
+					}
+	});
+	
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
 		var modal = $('#dv-info');
@@ -81,11 +86,7 @@ function loadData(){
 				$('#example1').hide();
 			}
 			
-			$('#example1').DataTable({
-				"language": {
-					"search": "ค้นหา"
-					}
-			});
+			
 		}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
