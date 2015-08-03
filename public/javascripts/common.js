@@ -2,7 +2,7 @@ var device = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.
 $(function() {
 	$('.sidebar-menu').scrollToFixed({ marginTop: 10 });
 	$('.numeric-only').ForceNumericOnly();
-
+	$('.hidden').removeClass('hidden').hide();
 	$(document).on('click', '.btn-logout', function(){
 		$.post($('#apiUrl').val()+'/member/logout', { shop: $('#shop').val(), apiKey: $('#apiKey').val(), memberKey: $.cookie('memberKey'),
 		}, function(data) {
