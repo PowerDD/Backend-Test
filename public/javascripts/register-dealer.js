@@ -69,12 +69,7 @@ function loadData(){
 				html += '<td>'+result.Profile+'</td>';
 				html += '</tr>';
 			}
-			$('#example1 tbody').html( html );
-			$('#example1').DataTable({
-				"language": {
-					"search": "ค้นหา"
-					}
-			});
+			$('#example1 tbody').html( html );			
 			$('.td-image').popover({
 				html: true,
 				trigger: 'hover',
@@ -86,6 +81,11 @@ function loadData(){
 				$('#example1').hide();
 			}
 			
+			$('#example1').DataTable({
+				"language": {
+					"search": "ค้นหา"
+					}
+			});
 		}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
