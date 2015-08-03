@@ -18,7 +18,7 @@ $(function() {
 		$(this).parents('li').addClass('active');
 	});
 	
-	$('#dv-register_dealer').DataTable({
+	$('#example1').DataTable({
 		"language": {
 			"search": "ค้นหา"
 			}
