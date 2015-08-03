@@ -80,6 +80,7 @@ function loadData(){
 				html: true,
 				trigger: 'hover',
 			});
+			$('.wait').show();
 			$('#example1').show();
 			if (data.result.length == 0)
 			{
