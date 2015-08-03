@@ -306,7 +306,7 @@ function loadCartSummary(){
 	$.post($('#apiUrl').val()+'/cart/info', {
 		apiKey: $('#apiKey').val(),
 		shop: $('#shop').val(),
-		memberKey: $('#memberKey').val() 
+		memberKey: $.cookie('memberKey'); 
 	}, function(data){
 			if (data.success) {
 				if (data.summary.Item > 0){
