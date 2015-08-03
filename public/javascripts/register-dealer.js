@@ -73,7 +73,7 @@ function loadData(){
 				html: true,
 				trigger: 'hover',
 			});
-			$('.wait').show();
+			$('.box').show();
 			if (data.result.length == 0)
 			{
 				$('#dv-no_data').show();
