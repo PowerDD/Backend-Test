@@ -53,7 +53,7 @@ function loadData(){
 			var html = '';
 			for( i=0; i<json.length; i++ ) {
 				var result = json[i];
-				html += '<tr data-id="'+i+'">';
+				html += '<tr>';
 				html += '<td><a href="https://24fin-api.azurewebsites.net/report/dealer/'+result.Firstname+'/'+result.Lastname+'.pdf"><i class="fa fa-file-pdf-o pointer"></i></a> <a class="show_info" href="#" data-target="#dv-info" data-toggle="modal"> คุณ'+result.Firstname+((result.Lastname != null) ? ' ' + result.Lastname : '')+
 					((result.Nickname != null && result.Nickname != '') ? ' (' + result.Nickname + ')' : '')+'</a>';
 				if (typeof result.PictureUrl != 'undefined') {
