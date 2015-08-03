@@ -621,15 +621,19 @@ function showProductImage(sku){
 }
 
 function getShopConfig(){
-	$.post($('#apiUrl').val()+'/shop-config/info', {
-		apiKey: $('#apiKey').val(),
-		shop: $('#shop').val()
-	}, function(data){
-			if (data.success) {
-				data.shopConfig = data.config;
-				newProductExp = data.shopConfig.NewProductExpire.Value;
-			}
-	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
+	try{
+		$.post($('#apiUrl').val()+'/shop-config/info', {
+			apiKey: $('#apiKey').val(),
+			shop: $('#shop').val()
+		}, function(data){
+				if (data.success) {
+					data.shopConfig = data.config;
+					newProductExp = data.shopConfig.NewProductExpire.Value;
+				}
+		}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
+	}catch(error){
+		console.log(error);
+	}
 }
 
 
