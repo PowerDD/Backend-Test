@@ -123,6 +123,17 @@ html
 							a(href="./dealer")
 								i(class=(data.screen === 'dealer' ? 'fa fa-users text-aqua' : 'fa fa-users'))
 								span  #{__('Dealer')}
+								
+						li(class=(data.screen === 'register-dealer' ? 'treeview active' : 'treeview'))
+							a(href="#")
+								i(class=(data.screen === 'register-dealer' ? 'fa fa-bar-chart-o text-aqua' : 'fa fa-bar-chart-o'))
+								span  #{__('screen-report-header')}
+								i.fa.fa-angle-left.pull-right
+							ul.treeview-menu
+								li(class=(data.screen === 'register-dealer' ? 'active' : ''))
+									a(href="./register-dealer")
+										i(class=(data.screen === 'register-dealer' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
+										|  #{__('register_dealer')}
 			div.content-wrapper
 				section.content-header
 					h1 #{__('Screen Title - '+data.screen)}
