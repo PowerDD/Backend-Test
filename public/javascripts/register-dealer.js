@@ -63,7 +63,8 @@ function loadData(){
 						}
 					}
 				}
-				html += '</td><td>'+result.Province+'</td>';
+				html += '</td>';
+				html += '<td>'+result.Province+'</td>';
 				html += '<td>'+moment(result.RegisterDate).zone('+07:00').startOf('hour').fromNow()+'</td>';
 				html += '<td>'+result.Profile+'</td>';
 				html += '</tr>';
