@@ -87,6 +87,7 @@ function loadData(){
 					"search": "ค้นหา",
 					"infoEmpty": "ไม่มีข้อมูล",
 					"lengthMenu": "แสดง _MENU_ รายการ",
+					"info":"ตั้งแต่ _START_ ถึง _END_ จาก _TOTAL_ รายการ"
 					"paginate": {
 				             "first": "หน้าแรก",
 							 "last": "หน้าสุดท้าย",
