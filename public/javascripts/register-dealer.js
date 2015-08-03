@@ -86,7 +86,13 @@ function loadData(){
 				"language": {
 					"search": "ค้นหา",
 					"show": "แสดง",
-					"entries": "รายการ"
+					"entries": "รายการ",
+					"paginate": {
+				             "first": "หน้าแรก",
+							 "last": "หน้าสุดท้าย",
+							 "next": "ถัดไป",
+							 "previous": "ก่อนหน้า"
+							}
 					}
 			});
 		}
