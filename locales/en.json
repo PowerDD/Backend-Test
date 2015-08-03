@@ -37,5 +37,10 @@
 	"loadingData": "Loading data, please wait",
 	"search": "Search",
 	"item(s)": "Items"
-	"productCategory": "Category"
+	"productCategory": "Category",
+	"itemOnCart": "Items On Cart ",
+	"cart is empty": "Cart is Empty",
+	"piece(s)": "Piece",
+	"total price": "Total Price",
+	"baht": "Baht"
 }

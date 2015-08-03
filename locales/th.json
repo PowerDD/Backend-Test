@@ -38,5 +38,10 @@
 	"loadingData": "กำลังโหลดข้อมูล กรุณารอสักครู่ค่ะ",
 	"search": "ค้นหา",
 	"item(s)": "รายการ",
-	"productCategory": "หมวดหมู่สินค้า"
+	"productCategory": "หมวดหมู่สินค้า",
+	"itemOnCart": "สินค้าในรถเข็น",
+	"cart is empty": "ไม่มีสินค้าในรถเข็นค่ะ",
+	"piece(s)": "ชิ้น",
+	"total price": "ราคารวม",
+	"baht": "บาท"
 }
