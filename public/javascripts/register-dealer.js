@@ -3,7 +3,7 @@ var json;
 $(function() {
 
 	loadData();
-	$('#example1').DataTable();
+	
 	/*$('#example1').DataTable({
 		"language": {
 			"search": "ค้นหา"
@@ -80,14 +80,14 @@ function loadData(){
 				html: true,
 				trigger: 'hover',
 			});
-			$('.wait').show();
+			$('#example1').show();
 			if (data.result.length == 0)
 			{
 				$('#dv-no_data').show();
 				$('#example1').hide();
 			}
 			
-			
+			$('#example1').DataTable();
 		}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
