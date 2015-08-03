@@ -38,7 +38,7 @@ $(function() {
 
 function loadData(){
 	$('#dv-loading').show();
-	$('#dv-no_data, #dv-register_dealer').hide();
+	$('#dv-no_data, #example1').hide();
 	
 	$.post($('#apiUrl').val()+'/dealer/info', {
 		apiKey: $('#apiKey').val()
@@ -68,7 +68,7 @@ function loadData(){
 				html += '<td>'+result.Profile+'</td>';
 				html += '</tr>';
 			}
-			$('#dv-register_dealer tbody').html( html );
+			$('#example1 tbody').html( html );
 			$('.td-image').popover({
 				html: true,
 				trigger: 'hover',
@@ -77,7 +77,7 @@ function loadData(){
 			if (data.result.length == 0)
 			{
 				$('#dv-no_data').show();
-				$('#dv-register_dealer').hide();
+				$('#example1').hide();
 			}
 			
 		}
