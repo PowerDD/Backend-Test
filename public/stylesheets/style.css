@@ -31,3 +31,16 @@
 
 
 .dotted-line { background: rgba(0, 0, 0, 0) url("../images/dottedBorder.png") repeat-x scroll 0 0; display: block; height:1px; margin-top:5px; margin-bottom:5px }
+
+.pointer { cursor:pointer }
+.zoom { cursor:zoom-in }
+.well_white { background-color: #fefefe !important; }
+.well_thin { padding: 5px 10px !important; }
+.dv-thumb img, .carousel-inner .item img { margin: 0 auto !important }
+.img-up { position:relative; top:-1px }
+#carousel-product .carousel-indicators .active { background-color: #888 !important }
+#carousel-product .carousel-indicators li { border: 1px solid #888 !important }
+
+.morris-hover{position:absolute;z-index:1000}.morris-hover.morris-default-style{border-radius:10px;padding:6px;color:#666;background:rgba(255,255,255,0.8);border:solid 2px rgba(230,230,230,0.8);font-family:sans-serif;font-size:12px;text-align:center}.morris-hover.morris-default-style .morris-hover-row-label{font-weight:bold;margin:0.25em 0}
+.morris-hover.morris-default-style .morris-hover-point{white-space:nowrap;margin:0.1em 0}
+.btn-center { left: 50%; margin: -14px 0 0 -38px; position: absolute; top: 35% }
