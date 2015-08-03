@@ -41,6 +41,7 @@
 	"itemOnCart": "Items On Cart ",
 	"cart is empty": "Cart is Empty",
 	"piece(s)": "Piece",
-	"total price": "Total Price",
-	"baht": "Baht"
+	"total price": "Total",
+	"baht": "Baht",
+	"confirm order": "Confirm"
 }
