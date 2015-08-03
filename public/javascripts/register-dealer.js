@@ -88,6 +88,8 @@ function loadData(){
 					"infoEmpty": "ไม่มีข้อมูล",
 					"lengthMenu": "แสดง _MENU_ รายการ",
 					"info":"ตั้งแต่ _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+					"infoFiltered": " ค้นหาจาก _MAX_ รายการ",
+					"zeroRecords": "ไม่พบข้อมูลที่ค้นหา",
 					"paginate": {
 				             "first": "หน้าแรก",
 							 "last": "หน้าสุดท้าย",
