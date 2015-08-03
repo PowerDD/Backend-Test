@@ -3,13 +3,6 @@ var json;
 $(function() {
 
 	loadData();
-	
-	/*$('#example1').DataTable({
-		"language": {
-			"search": "ค้นหา"
-			}
-	});*/
-	
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
 		var modal = $('#dv-info');
@@ -44,7 +37,7 @@ $(function() {
 
 function loadData(){
 	$('#dv-loading').show();
-	$('#dv-no_data, #example1').hide();
+	$('#dv-no_data, #dv-register_dealer').hide();
 	
 	$.post($('#apiUrl').val()+'/dealer/info', {
 		apiKey: $('#apiKey').val()
@@ -76,20 +69,26 @@ function loadData(){
 				html += '<td>'+result.Profile+'</td>';
 				html += '</tr>';
 			}
-			$('#example1 tbody').html( html );			
+			$('#dv-register_dealer tbody').html( html );			
 			$('.td-image').popover({
 				html: true,
 				trigger: 'hover',
 			});
 			$('.wait').show();
-			$('#example1').show();
+			$('#dv-register_dealer').show();
 			if (data.result.length == 0)
 			{
 				$('#dv-no_data').show();
-				$('#example1').hide();
+				$('#dv-register_dealer').hide();
 			}
 			
-			$('#example1').DataTable();
+			$('#dv-register_dealer').DataTable({
+				"language": {
+					"search": "ค้นหา",
+					"show": "แสดง",
+					"entries": "รายการ"
+					}
+			});
 		}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
