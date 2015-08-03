@@ -49,8 +49,7 @@ function loadData(){
 
 		if (data.success) {
 			json = data.result;
-			sortJSON(json, 'RegisterDate', 'desc');
-
+			
 			var html = '';
 			for( i=0; i<json.length; i++ ) {
 				var result = json[i];

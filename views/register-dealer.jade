@@ -7,21 +7,20 @@ block content
 
 	#dv-no_data.callout.callout-danger.text-center.hidden
 		span.loading.text-muted &nbsp;#{__('noData')}
-	.row
+	.row.wait.hidden
 		.col-xs-12
 			.box
 				.box-header
 					h3.box-title #{__('register_dealer')}
 				.box-body
-					.table-responsive.wait.hidden
-						table#dv-register_dealer.table.table-bordered.table-striped
-							thead
-								tr.font-sm
-									th(width="280") #{__('firstname')} - #{__('lastname')}
-									th(width="150") #{__('province')}
-									th(width="120") #{__('submitDate')}
-									th #{__('profileSummary')}
-							tbody				 
+					table#dv-register_dealer.table.table-bordered.table-striped
+						thead
+							tr.font-sm
+								th(width="280") #{__('firstname')} - #{__('lastname')}
+								th(width="150") #{__('province')}
+								th(width="120") #{__('submitDate')}
+								th #{__('profileSummary')}
+						tbody				 
 	#dv-info.modal.fade(tabindex='-1', role='dialog')
 		.modal-dialog.modal-lg
 			.modal-content
