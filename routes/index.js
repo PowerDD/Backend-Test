@@ -90,7 +90,7 @@ exports.getMemberInfo = function(req, res, data) {
 				var object = require('./../objects/shop-config');
 				object.action( req, res, data );
 			}
-			else if (data.screen == 'dealer') {
+			else if (data.screen == 'register-dealer') {
 				render = false;
 				exports.getDealerRegisterInfo( req, res, data );				
 			}
