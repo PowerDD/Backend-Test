@@ -18,11 +18,11 @@ $(function() {
 		$(this).parents('li').addClass('active');
 	});
 	
-	$('#example1').DataTable({
+	/*$('#example1').DataTable({
 		"language": {
 			"search": "ค้นหา"
 			}
-	});
+	});*/
 });
 
 
