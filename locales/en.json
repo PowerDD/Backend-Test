@@ -50,5 +50,6 @@
 	"year": "Year",
 	"month": "Month",
 	"day": "Day",
-	"remain": "Remain"
+	"remain": "Remain",
+	"onOrder": "on Order"
 }
