@@ -59,7 +59,7 @@ function loadData(){
 			var html = '';
 			for( i=0; i<json.length; i++ ) {
 				var result = json[i];
-				var PictureUrl;
+				var PictureUrl = '';
 				if (typeof result.PictureUrl != 'undefined') {
 					for(j=0; j<=3; j++) {
 						if (typeof result.PictureUrl[j] != 'undefined' && result.PictureUrl[j] != '') {
