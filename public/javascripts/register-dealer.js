@@ -3,11 +3,12 @@ var json;
 $(function() {
 
 	loadData();
-	$('#example1').DataTable({
-				"language": {
-					"search": "ค้นหา"
-					}
-	});
+	$('#example1').DataTable();
+	/*$('#example1').DataTable({
+		"language": {
+			"search": "ค้นหา"
+			}
+	});*/
 	
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
