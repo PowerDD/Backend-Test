@@ -85,8 +85,8 @@ function loadData(){
 			$('#dv-register_dealer').DataTable({
 				"language": {
 					"search": "ค้นหา",
-					"show": "แสดง",
-					"entries": "รายการ",
+					"infoEmpty": "ไม่มีข้อมูล",
+					"lengthMenu": "แสดง _MENU_ รายการ",
 					"paginate": {
 				             "first": "หน้าแรก",
 							 "last": "หน้าสุดท้าย",
