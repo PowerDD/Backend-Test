@@ -274,11 +274,10 @@ function loadBrand(){
 }
 
 function loadProduct(){
-	$.post($('#apiUrl').val()+'/product/info', {
+	$.post($('#apiUrl').val()+'/product/all', {
 		apiKey: $('#apiKey').val(),
 		shop: $('#shop').val(),
-		type: 'all',
-		value: 'all'
+		memberKey: $.cookie('memberKey')
 	}, function(data){
 			if (data.success) {
 				data.product = data.result;
