@@ -53,7 +53,11 @@ jQuery.fn.ForceNumericOnly = function() {
 };
 
 function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	if (typeof x == 'undefined' && x == ''){
+		return 0;
+	}else{
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}    
 };
 function loadScreenConfig( ) {
 	/*var sp = document.location.pathname.split('/');
