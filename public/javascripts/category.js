@@ -193,7 +193,7 @@ $(function() {
 			$.post($('#apiUrl').val()+'/cart/update', {
 				apiKey: $('#apiKey').val(),
 				shop: $('#shop').val(),
-				memberKey: $('#memberKey').val(),
+				memberKey: $.cookie('memberKey'),
 				product: productCode,
 				quantity: qty
 			}, function(data){
