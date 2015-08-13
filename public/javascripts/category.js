@@ -331,8 +331,7 @@ function renderProduct(data){
 		var addDate = moment(result.AddDate).add(3600*7, 'seconds').startOf('day');
 		var now = moment().startOf('day');				
 		var isNew = now.diff(addDate, 'days', true);
-		var hasStock = result.Stock - result.OnCart - result.OnOrder;	
-		
+				
 		html += '<tr data-id="' + result.ID + '" id="sku-' + result.ID + '" data-image="" class="product-row tr-cat-' + categoryId + ' tr-brand-'+BrandId+' tr-brand hidden font-normal">';
 		html += '<td class="td-thumb padding-left-0"><img data-id="' + result.ID + '" class="img-product img-thumbnail lazy'+((result.CoverImage != null) ? ' zoom" data-target="#dv-view_image" data-toggle="modal"' : '"')+' data-original="' + ((result.CoverImage != null) ? result.CoverImage : 'https://cdn24fin.blob.core.windows.net/img/products/1/Logo/1_s.jpg') + '" src="https://cdn24fin.blob.core.windows.net/img/products/1/Logo/1_s.jpg" width="100"></td>';
 		html += '<td><span class="text-'+((isNew <= newProductExp) ? 'red' : 'light-blue')+' font-bold name">' + result.Name + '</span>';
@@ -341,10 +340,10 @@ function renderProduct(data){
 		html += (result.ID != null) ? 'SKU : <b class="sku">' + result.ID + '</b>' : '';
 		html += (result.Warranty != 0) ? ' &nbsp; ' + $('#msg-warranty').val() + ' : <b>' + ((result.Warranty == 365) ? '1 '+$('#msg-year').val() : ((result.Warranty >= 30) ? (result.Warranty/30)+ ' ' + $('#msg-month').val() : result.Warranty + ' ' +$('#msg-day').val())) + '</b>' : '';
 		html += '<br>';
-		if (($('#role').val() == 'dealer' || $('#role').val() == 'member') && hasStock > 0) {
+		if (($('#role').val() == 'dealer' || $('#role').val() == 'member') && result.HasStock == 1) {
 			html += '<button class="btn-product-' + result.ID + ' btn-add_cart btn btn-sm btn-warning' + ((device == 'desktop') ? ' hidden' : '') + '" data-target="#dv-add_cart" data-toggle="modal">' + $('#msg-orderNow').val() + '</button>';
 		}
-		html += '<span class="no-stock-' + result.ID + ' font-sm text-no_stock text-red font-bold' + ((hasStock > 0) ? ' hidden' : '') + '"><i class="fa fa-warning"></i> ' + $('#msg-outOfStock').val() + '</span>';
+		html += '<span class="no-stock-' + result.ID + ' font-sm text-no_stock text-red font-bold' + ((result.HasStock == 1) ? ' hidden' : '') + '"><i class="fa fa-warning"></i> ' + $('#msg-outOfStock').val() + '</span>';
 
 		if ( result.OnCart != undefined ) {
 			if ( result.OnCart > 0 || result.OnOrder > 0 ) {
@@ -402,10 +401,10 @@ function renderProduct(data){
 		html2 += '<div class="dv-thumb margin-bottom-5 padding-top-5 text-center">';
 		html2 += '<img data-id="' + result.ID + '" class="img-product lazy img-responsive img-rounded'+((result.CoverImage != null) ? ' zoom" data-target="#dv-view_image" data-toggle="modal"' : '"')+' data-original="' + ((result.CoverImage != null) ? result.CoverImage : 'https://cdn24fin.blob.core.windows.net/img/products/1/Logo/1_m.jpg') + '" src="https://cdn24fin.blob.core.windows.net/img/products/1/Logo/1_m.jpg">';
 		
-		if (($('#role').val() == 'dealer' || $('#role').val() == 'member') && hasStock > 1) {
+		if (($('#role').val() == 'dealer' || $('#role').val() == 'member') && result.HasStock == 1) {
 			html2 += '<button class="btn-product-' + result.ID + ' btn-add_cart_box btn btn-warning btn-sm btn-center hidden" data-toggle="modal" data-target="#dv-add_cart">' + $('#msg-orderNow').val() + '</button>';
 		}
-		html2 += '<span class="no-stock-' + result.ID + ' btn-center text-no_stock text-red font-bold' + ((hasStock > 1) ? ' hidden' : '') + '" style="text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;"><i class="fa fa-warning"></i> ' + $('#msg-outOfStock').val() + '</span>';
+		html2 += '<span class="no-stock-' + result.ID + ' btn-center text-no_stock text-red font-bold' + ((result.HasStock == 1) ? ' hidden' : '') + '" style="text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;"><i class="fa fa-warning"></i> ' + $('#msg-outOfStock').val() + '</span>';
 
 		if ( $('#role').val() == 'dealer' || $('#role').val() == 'member' ) {
 		}
