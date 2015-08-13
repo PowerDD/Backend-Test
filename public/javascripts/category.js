@@ -190,29 +190,29 @@ $(function() {
 		catch(err) {
 		}
 		if (qty > 0) {
-			$.post($('#apiUrl').val()+'/order/cart/update', {
-				authKey: $('#authKey').val(),
-				productCode: productCode,
-				qty: qty,
+			$.post($('#apiUrl').val()+'/cart/update', {
+				apiKey: $('#apiKey').val(),
+				shop: $('#shop').val(),
+				memberKey: $('#memberKey').val(),
+				product: productCode,
+				quantity: qty
 			}, function(data){
-					if (data.success) {
-						if (data.correct) {
-							
-							if (data.result[0].items > 0){
-								$('#items').html( numberWithCommas(data.result[0].items) );
-								$('#pieces').html( numberWithCommas(data.result[0].qty) );
-								$('#totalPrice').html( numberWithCommas(data.result[0].price) );
-								$('.sp-no_item').hide();
-								$('.sp-has_item').show();
-								$('#menu-cart .badge').addClass('bg-red').html( numberWithCommas(data.result[0].items) ).show();
-							}
-
-							if (data.result[0].remain == 0) {
-								$('.btn-product-'+data.result[0].product).remove();
-								$('.no-stock-'+data.result[0].product).show();
-							}
-
+					if (data.success) {							
+						if (data.totalItem > 0){
+							$('#items').html( numberWithCommas(data.totalItem) );
+							$('#pieces').html( numberWithCommas(data.totalQty) );
+							$('#totalPrice').html( numberWithCommas(data.totalPrice) );
+							$('.sp-no_item').hide();
+							$('.sp-has_item').show();
+							$('#menu-cart .badge').addClass('bg-red').html( numberWithCommas(data.totalItem) ).show();
 						}
+
+						/*if (data.result[0].remain == 0) {
+							$('.btn-product-'+data.result[0].product).remove();
+							$('.no-stock-'+data.result[0].product).show();
+						}*/
+
+						
 					}
 
 					$('#dv-cart').css('background', '#ffcc99');
