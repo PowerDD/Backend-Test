@@ -627,7 +627,12 @@ function getShopConfig(){
 		}, function(data){
 				if (data.success) {
 					data.shopConfig = data.config;
-					newProductExp = data.shopConfig.NewProductExpire.Value;
+					if (typeof data.shopConfig.NewProductExpire.Value != 'undefined' && data.shopConfig.NewProductExpire.Value != ''){
+						newProductExp = data.shopConfig.NewProductExpire.Value;
+					}else{
+						newProductExp = 30;
+					}
+					
 				}
 		}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 	}catch(error){
