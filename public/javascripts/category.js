@@ -627,6 +627,7 @@ function getShopConfig(){
 		}, function(data){
 				if (data.success) {
 					data.shopConfig = data.config;
+					
 					if (typeof data.shopConfig.NewProductExpire.Value != 'undefined' && data.shopConfig.NewProductExpire.Value != ''){
 						newProductExp = data.shopConfig.NewProductExpire.Value;
 					}else{
