@@ -341,7 +341,7 @@ function renderProduct(data){
 		html += (result.ID != null) ? 'SKU : <b class="sku">' + result.ID + '</b>' : '';
 		html += (result.Warranty != 0) ? ' &nbsp; ' + $('#msg-warranty').val() + ' : <b>' + ((result.Warranty == 365) ? '1 '+$('#msg-year').val() : ((result.Warranty >= 30) ? (result.Warranty/30)+ ' ' + $('#msg-month').val() : result.Warranty + ' ' +$('#msg-day').val())) + '</b>' : '';
 		html += '<br>';
-		if (($('#role').val() == 'dealer' || $('#role').val() == 'member') && result.HasStock == 1) {
+		if ((canBuy == true) && result.HasStock == 1) {
 			html += '<button class="btn-product-' + result.ID + ' btn-add_cart btn btn-sm btn-warning' + ((device == 'desktop') ? ' hidden' : '') + '" data-target="#dv-add_cart" data-toggle="modal">' + $('#msg-orderNow').val() + '</button>';
 		}
 		html += '<span class="no-stock-' + result.ID + ' font-sm text-no_stock text-red font-bold' + ((result.HasStock == 1) ? ' hidden' : '') + '"><i class="fa fa-warning"></i> ' + $('#msg-outOfStock').val() + '</span>';
@@ -385,15 +385,15 @@ function renderProduct(data){
 		}
 		if ( result.Price3 != undefined ) {
 			$('#tb-result thead .Price3').show();
-			html += '<td class="text-right font-bigger' + (($('#role').val() == 'sale') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price3) + '</td>';
+			html += '<td class="text-right font-bigger' + (($('#role').val() == 'Sale') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price3) + '</td>';
 		}
 		if ( result.Price4 != undefined ) {
 			$('#tb-result thead .Price4').show();
-			html += '<td class="text-right font-bigger' + (($('#role').val() == 'headSale') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price4) + '</td>';
+			html += '<td class="text-right font-bigger' + (($('#role').val() == 'HeadSale') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price4) + '</td>';
 		}
 		if ( result.Price5 != undefined ) {
 			$('#tb-result thead .Price5').show();
-			html += '<td class="text-right font-bigger' + (($('#role').val() == 'manager') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price5) + '</td>';
+			html += '<td class="text-right font-bigger' + (($('#role').val() == 'Manager') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price5) + '</td>';
 		}
 		html += '</tr>';
 
@@ -402,12 +402,12 @@ function renderProduct(data){
 		html2 += '<div class="dv-thumb margin-bottom-5 padding-top-5 text-center">';
 		html2 += '<img data-id="' + result.ID + '" class="img-product lazy img-responsive img-rounded'+((result.CoverImage != null) ? ' zoom" data-target="#dv-view_image" data-toggle="modal"' : '"')+' data-original="' + ((result.CoverImage != null) ? result.CoverImage : 'https://cdn24fin.blob.core.windows.net/img/products/1/Logo/1_m.jpg') + '" src="https://cdn24fin.blob.core.windows.net/img/products/1/Logo/1_m.jpg">';
 		
-		if (($('#role').val() == 'dealer' || $('#role').val() == 'member') && result.HasStock == 1) {
+		if (canBuy == true && result.HasStock == 1) {
 			html2 += '<button class="btn-product-' + result.ID + ' btn-add_cart_box btn btn-warning btn-sm btn-center hidden" data-toggle="modal" data-target="#dv-add_cart">' + $('#msg-orderNow').val() + '</button>';
 		}
 		html2 += '<span class="no-stock-' + result.ID + ' btn-center text-no_stock text-red font-bold' + ((result.HasStock == 1) ? ' hidden' : '') + '" style="text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;"><i class="fa fa-warning"></i> ' + $('#msg-outOfStock').val() + '</span>';
 
-		if ( $('#role').val() == 'dealer' || $('#role').val() == 'member' ) {
+		if ( canBuy == true  ) {
 		}
 		html2 += '</div>';
 		html2 += '<div><small class="pull-left text-muted">SKU : <b class="sku">'+result.ID+'</b>';
@@ -438,13 +438,13 @@ function renderProduct(data){
 			html2 += ' / <span class="font-bigger">' + numberWithCommas(result.Price2) + '</span>';
 		}
 		if ( result.Price3 != undefined ) {
-			html2 += ' / <span class="font-bigger' + (($('#role').val() == 'sale') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price3) + '</span>' + (($('#role').val() == 'sale') ? '</div>' : '') + '';
+			html2 += ' / <span class="font-bigger' + (($('#role').val() == 'Sale') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price3) + '</span>' + (($('#role').val() == 'Sale') ? '</div>' : '') + '';
 		}
 		if ( result.Price4 != undefined ) {
-			html2 += ' / <span class="font-bigger' + (($('#role').val() == 'headSale') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price4) + '</span>' + (($('#role').val() == 'headSale') ? '</div>' : '') + '';
+			html2 += ' / <span class="font-bigger' + (($('#role').val() == 'HeadSale') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price4) + '</span>' + (($('#role').val() == 'HeadSale') ? '</div>' : '') + '';
 		}
 		if ( result.Price5 != undefined ) {
-			html2 += ' / <span class="font-bigger' + (($('#role').val() == 'manager') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price5) + '</span>' + (($('#role').val() == 'manager') ? '</div>' : '') + '';
+			html2 += ' / <span class="font-bigger' + (($('#role').val() == 'Manager') ? ' text-red font-bold' : '') + '">' + numberWithCommas(result.Price5) + '</span>' + (($('#role').val() == 'Manager') ? '</div>' : '') + '';
 		}
 
 		if ( result.OnCart != undefined ) {
@@ -635,7 +635,11 @@ function getShopConfig(){
 					if (typeof data.shopConfig.MemberTypeToBuy.Value != 'undefined' && data.shopConfig.MemberTypeToBuy.Value != ''){
 						membeyTypeToBuy = data.shopConfig.MemberTypeToBuy.Value;
 					}
-					console.log(membeyTypeToBuy);
+				}
+				for(i=0; i<membeyTypeToBuy.length; i++ ){
+					if($('#role').val() == membeyTypeToBuy[i]){
+						canBuy = true;
+					}
 				}
 		}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 	}catch(error){
