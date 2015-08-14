@@ -7,7 +7,8 @@ var product;
 var category = "3";
 var productCode = '';
 var newProductExp;
-
+var canBuy = false;
+var membeyTypeToBuy = [];
 function renderScreen( config ) {
 	if (firstLoad) {
 		if (config == null) {
@@ -630,10 +631,11 @@ function getShopConfig(){
 					
 					if (typeof data.shopConfig.NewProductExpire.Value != 'undefined' && data.shopConfig.NewProductExpire.Value != ''){
 						newProductExp = data.shopConfig.NewProductExpire.Value;
-					}else{
-						newProductExp = 30;
+					}					
+					if (typeof data.shopConfig.MemberTypeToBuy.Value != 'undefined' && data.shopConfig.MemberTypeToBuy.Value != ''){
+						membeyTypeToBuy = data.shopConfig.MemberTypeToBuy.Value;
 					}
-					
+					console.log(membeyTypeToBuy);
 				}
 		}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 	}catch(error){
