@@ -107,6 +107,7 @@ exports.getMemberInfo = function(req, res, data) {
 	}
 
 };
+
 exports.getDealerRegisterInfo = function( req, res, data ){
 	try{
 		request.post({headers: { 'referer': 'https://' + req.get('host') }, url: data.apiUrl + '/dealer/info',
