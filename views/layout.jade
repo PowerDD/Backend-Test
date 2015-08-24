@@ -127,14 +127,14 @@ html
 						if data.memberInfo.SelectedMemberType == 'Officer'
 							li(class=(data.screen === 'claim' ? 'treeview active' : 'treeview'))
 								a(href="#")
-									i(class=(data.screen === 'claim' ? 'fa fa-bar-chart-o text-aqua' : 'fa fa-bar-chart-o'))
-									span  #{__('screen-report-header')}
+									i(class=(data.screen === 'claim' ? 'fa fa-cubes text-aqua' : 'fa fa-cubes'))
+									span  #{__('Claim-System')}
 									i.fa.fa-angle-left.pull-right
 								ul.treeview-menu
 									li(class=(data.screen === 'claim' ? 'active' : ''))
 										a(href="./claim")
 											i(class=(data.screen === 'claim' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-											|  #{__('claim')}
+											|  #{__('Claim-Data')}
 			div.content-wrapper
 				section.content-header
 					h1 #{__('Screen Title - '+data.screen)}
