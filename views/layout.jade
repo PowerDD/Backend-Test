@@ -123,6 +123,18 @@ html
 									a(href="./register-dealer")
 										i(class=(data.screen === 'register-dealer' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
 										|  #{__('register_dealer')}
+										
+						if data.memberInfo.SelectedMemberType == 'Officer'
+							li(class=(data.screen === 'claim' ? 'treeview active' : 'treeview'))
+								a(href="#")
+									i(class=(data.screen === 'claim' ? 'fa fa-bar-chart-o text-aqua' : 'fa fa-bar-chart-o'))
+									span  #{__('screen-report-header')}
+									i.fa.fa-angle-left.pull-right
+								ul.treeview-menu
+									li(class=(data.screen === 'claim' ? 'active' : ''))
+										a(href="./claim")
+											i(class=(data.screen === 'claim' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
+											|  #{__('claim')}
 			div.content-wrapper
 				section.content-header
 					h1 #{__('Screen Title - '+data.screen)}
