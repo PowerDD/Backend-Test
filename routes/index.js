@@ -96,7 +96,8 @@ exports.getMemberInfo = function(req, res, data) {
 			}
 
 			if (render)
-				res.render(data.screen, { data: data });
+				if (typeof data.screen == 'undefined')
+					res.render(data.screen, { data: data });
 
 		});
 	}

@@ -112,19 +112,18 @@ html
 							a(href="./dealer")
 								i(class=(data.screen === 'dealer' ? 'fa fa-users text-aqua' : 'fa fa-users'))
 								span  #{__('Dealer')}
-								
-						li(class=(data.screen === 'register-dealer' ? 'treeview active' : 'treeview'))
-							a(href="#")
-								i(class=(data.screen === 'register-dealer' ? 'fa fa-bar-chart-o text-aqua' : 'fa fa-bar-chart-o'))
-								span  #{__('screen-report-header')}
-								i.fa.fa-angle-left.pull-right
-							ul.treeview-menu
-								li(class=(data.screen === 'register-dealer' ? 'active' : ''))
-									a(href="./register-dealer")
-										i(class=(data.screen === 'register-dealer' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
-										|  #{__('register_dealer')}
-										
-						if data.memberInfo.SelectedMemberType == 'Officer'
+						if data.memberInfo.SelectedMemberType == 'Officer'		
+							li(class=(data.screen === 'register-dealer' ? 'treeview active' : 'treeview'))
+								a(href="#")
+									i(class=(data.screen === 'register-dealer' ? 'fa fa-bar-chart-o text-aqua' : 'fa fa-bar-chart-o'))
+									span  #{__('screen-report-header')}
+									i.fa.fa-angle-left.pull-right
+								ul.treeview-menu
+									li(class=(data.screen === 'register-dealer' ? 'active' : ''))
+										a(href="./register-dealer")
+											i(class=(data.screen === 'register-dealer' ? 'fa fa-circle-o text-yellow' : 'fa fa-circle-o'))
+											|  #{__('register_dealer')}
+											
 							li(class=(data.screen === 'claim' ? 'treeview active' : 'treeview'))
 								a(href="#")
 									i(class=(data.screen === 'claim' ? 'fa fa-cubes text-aqua' : 'fa fa-cubes'))
