@@ -3,7 +3,8 @@ var json;
 $(function() {
 
 	$('.datepicker').datepicker({
-		format: 'dd/mm/yyyy',
+		date: '+543y',
+		format: 'dd/mm/yyyy' ,
 		autoclose :true,
 		language: 'th'
 	});
