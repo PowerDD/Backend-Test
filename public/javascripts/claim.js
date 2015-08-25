@@ -10,7 +10,7 @@ $(function() {
 	$(document).on('change', '.hasDate', function(){
 		var datex = $('#firstname').val();
 		var split = datex.split('/');
-		var oldyear = year[2];
+		var oldyear = split[2];
 		var newyear = parseInt(year[2])+543;
 		var newdate = datex.replace(oldyear,newyear.toString())
 		console.log(newdate); 
