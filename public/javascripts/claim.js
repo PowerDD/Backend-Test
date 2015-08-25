@@ -1,7 +1,7 @@
 var json;
 
 $(function() {
-	$('.datepicker').datepicker()
+	$('.datepicker').datepicker(language:th, format: 'dd/mm/yyyy', autoclose)
 	//loadData();
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
