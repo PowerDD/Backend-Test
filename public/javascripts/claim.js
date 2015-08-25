@@ -2,10 +2,10 @@ var json;
 
 $(function() {
 
-	$('.datepicker').datepicker({
-		regional: 'th'
-	});
-	
+	// $('.datepicker').datepicker({
+		// $.datepicker.regional[ "th" ]
+	// });
+	$('.datepicker').datepicker({ dateFormat: 'dd/mm/yy', isBuddhist: true, defaultDate: toDay }); 
 	//loadData();
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
