@@ -9,7 +9,7 @@ $(function() {
 	
 	$(document).on('change', '.hasDate', function(){
 		var year = $('#firstname').val().split('/');
-		year = year[2]+543;
+		year = parseInt(year[2])+543;
 		console.log(year);
 	});
 	//loadData();
