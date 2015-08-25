@@ -3857,9 +3857,11 @@ function Datepicker() {
 		firstDay: 0, // The first day of the week, Sun = 0, Mon = 1, ...
 		isRTL: false, // True if right-to-left language, false if left-to-right
 		showMonthAfterYear: false, // True if the year select precedes month, false for month then year
-		yearSuffix: "", // Additional text to append to the year in the month headers
-		isBudhist: true
+		yearSuffix: "" // Additional text to append to the year in the month headers
+		
 	};
+	if(this.regional == this.regional["th"])
+		isBudhist: true
 	this._defaults = { // Global defaults for all the date picker instances
 		showOn: "focus", // "focus" for popup on focus,
 			// "button" for trigger button, or "both" for either
