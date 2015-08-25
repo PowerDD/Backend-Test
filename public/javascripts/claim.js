@@ -2,13 +2,15 @@ var json;
 
 $(function() {
 
-	$('.datepicker').datepicker({
-		Date: '+543y',
-		format: 'dd/mm/yyyy' ,
-		autoclose :true,
-		isBuddhist: true,
-		language: 'th'
-	});
+	// $('.datepicker').datepicker({
+		// Date: '+543y',
+		// format: 'dd/mm/yyyy' ,
+		// autoclose :true,
+		// isBuddhist: true,
+		// language: 'th'
+	// });
+	
+	$('.datepicker').val() = UTCToday();
 	//loadData();
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
@@ -41,7 +43,10 @@ $(function() {
 	});
 
 });
-
+function UTCToday(){
+		var today = new Date();
+		return UTCDate(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
+};
 function loadData(){
 	$('#dv-loading').show();
 	$('#dv-no_data, #dv-register_dealer').hide();
