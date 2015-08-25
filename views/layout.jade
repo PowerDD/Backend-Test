@@ -9,6 +9,7 @@ html
 		link(rel='stylesheet', href='/stylesheets/skins/skin-blue.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		link(rel='stylesheet', href='/stylesheets/dataTables.bootstrap.css')
+		link(rel='stylesheet', href='/stylesheets/datepicker.css')
 	if data.screen != 'login'
 		body.skin-blue.sidebar-mini
 
@@ -159,6 +160,7 @@ html
 		script(src='/javascripts/test.js')
 		script(src='/javascripts/jquery.dataTables.min.js')
 		script(src='/javascripts/dataTables.bootstrap.min.js')
+		script(src='/javascripts/bootstrap-datepicker.js')
 		if (data.script != '')
 			script(src='#{data.script}')
 	else
