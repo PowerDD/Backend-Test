@@ -3861,7 +3861,7 @@ function Datepicker() {
 		
 	};
 	if(this.regional == this.regional["th"])
-		isBudhist: true
+		isBudhist = true;
 	this._defaults = { // Global defaults for all the date picker instances
 		showOn: "focus", // "focus" for popup on focus,
 			// "button" for trigger button, or "both" for either
