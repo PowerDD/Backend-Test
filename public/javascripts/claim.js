@@ -6,7 +6,7 @@ $(function() {
 	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
 	$('.hasDate').datepicker({
 		dateFormat: "dd/mm/yy",
-		refresh: true
+		setDate: "01/08/2015"
 	}); 
 	
 	$(document).on('change', '.hasDate', function(){
