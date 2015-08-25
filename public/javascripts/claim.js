@@ -2,10 +2,14 @@ var json;
 
 $(function() {
 
-	//$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
+	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
 	$('.hasDate').datepicker({
 		dateFormat: "dd/mm/yy"
 	}); 
+	
+	/*$(document).on('change', '.hasDate', function(){
+		
+	});*/
 	//loadData();
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
