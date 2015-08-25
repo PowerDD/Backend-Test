@@ -3842,7 +3842,7 @@ function Datepicker() {
 			isRTL: false, // True if right-to-left language, false if left-to-right
 			showMonthAfterYear: false, // True if the year select precedes month, false for month then year
 			yearSuffix: "" // Additional text to append to the year in the month headers
-		}.
+		},
 		th: {
 			closeText: "เสร็จ", // Display text for close link
 			prevText: "ก่อนหน้า", // Display text for previous month link
