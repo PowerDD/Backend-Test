@@ -13,7 +13,7 @@ $(function() {
 		var oldyear = split[2];
 		var newyear = parseInt(oldyear)+543;
 		var newdate = datex.replace(oldyear,newyear.toString())
-		console.log(newdate); 
+		$('#firstname').val(newdate)
 	});
 	//loadData();
 	$(document).on('click', '.show_info', function(){
