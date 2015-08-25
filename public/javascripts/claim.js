@@ -8,11 +8,11 @@ $(function() {
 	}); 
 	
 	$(document).on('change', '.hasDate', function(){
-		var datex = $('#firstname').val().split('/');
+		var datex = $('#firstname').val();
 		var split = datex.split('/');
 		var oldyear = year[2];
 		var newyear = parseInt(year[2])+543;
-		var newdate = data.replace(oldyear,newyear.toString())
+		var newdate = datex.replace(oldyear,newyear.toString())
 		console.log(newdate); 
 	});
 	//loadData();
