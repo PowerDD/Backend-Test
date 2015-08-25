@@ -533,7 +533,7 @@
 								});
 							} else {
 								var year = parseInt(target.text(), 10)||0;
-								this.viewDate.setUTCFullYear(year)+isBuddhist;
+								this.viewDate.setUTCFullYear(year);
 								this.element.trigger({
 									type: 'changeYear',
 									date: this.viewDate
@@ -546,7 +546,7 @@
 					case 'td':
 						if (target.is('.day') && !target.is('.disabled')){
 							var day = parseInt(target.text(), 10)||1;
-							var year = this.viewDate.getUTCFullYear()+isBuddhist,
+							var year = this.viewDate.getUTCFullYear(),
 								month = this.viewDate.getUTCMonth();
 							if (target.is('.old')) {
 								if (month === 0) {
