@@ -6,6 +6,7 @@ $(function() {
 		Date: '+543y',
 		format: 'dd/mm/yyyy' ,
 		autoclose :true,
+		isBuddhist: true,
 		language: 'th'
 	});
 	//loadData();
