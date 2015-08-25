@@ -2,7 +2,7 @@ var json;
 
 $(function() {
 
-	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
+	//$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
 	$('.hasDate').datepicker({
 		dateFormat: "dd/mm/yy"
 	}); 
