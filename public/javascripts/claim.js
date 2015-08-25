@@ -13,7 +13,7 @@ $(function() {
 		var oldyear = year[2];
 		var newyear = parseInt(year[2])+543;
 		var newdate = data.replace(oldyear,newyear.toString())
-		console.log(newdate);
+		console.log(newdate); //
 	});
 	//loadData();
 	$(document).on('click', '.show_info', function(){
