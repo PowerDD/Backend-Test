@@ -7,9 +7,10 @@ $(function() {
 		dateFormat: "dd/mm/yy"
 	}); 
 	
-	/*$(document).on('change', '.hasDate', function(){
-		
-	});*/
+	$(document).on('change', '.hasDate', function(){
+		var year = $('#firstname').val().split('/');
+		console.log(year);
+	});
 	//loadData();
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
