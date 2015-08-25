@@ -5611,7 +5611,7 @@ $.extend(Datepicker.prototype, {
 		if ( !inst.yearshtml ) {
 			inst.yearshtml = "";
 			if (secondary || !changeYear) { 
-				html += "<span class='ui-datepicker-year'>" + (drawYear+( this.regional[ "th" ] ? 543 : 0) + "</span>";
+				html += "<span class='ui-datepicker-year'>" + (drawYear+( this.regional[ "th" ] ? 543 : 0)) + "</span>";
 			} else {
 				// determine range of years to display
 				years = this._get(inst, "yearRange").split(":");
@@ -5630,7 +5630,7 @@ $.extend(Datepicker.prototype, {
 				for (; year <= endYear; year++) {
 					inst.yearshtml += "<option value='" + year + "'" +
 						(year === drawYear ? " selected='selected'" : "") +
-						">" + (year+( this.regional[ "th" ] ? 543 : 0) + "</option>";
+						">" + (year+( this.regional[ "th" ] ? 543 : 0)) + "</option>";
 				}
 				inst.yearshtml += "</select>";
 
