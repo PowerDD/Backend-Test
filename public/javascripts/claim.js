@@ -1,8 +1,8 @@
 var json;
 
 $(function() {
-	$.fn.datepicker.dates['th'];
-	$('.datepicker').datepicker('autoclose')
+
+	$('.datepicker').datepicker(autoclose)
 	//loadData();
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
