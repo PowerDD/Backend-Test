@@ -5610,7 +5610,7 @@ $.extend(Datepicker.prototype, {
 		// year selection
 		if ( !inst.yearshtml ) {
 			inst.yearshtml = "";
-			if (secondary || !changeYear) { //(drawYear+( this.regional[ "th" ] ? 543 : 0)
+			if (secondary || !changeYear) { //(drawYear+( this.regional[ "th" ] ? 543 : 0) ฮ่าๆ
 				html += "<span class='ui-datepicker-year'>" + drawYear + "</span>";
 			} else {
 				// determine range of years to display
