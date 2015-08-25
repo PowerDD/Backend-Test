@@ -2,8 +2,8 @@ var json;
 
 $(function() {
 
-	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
-	$('#firstname').datepicker(); 
+	//$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
+	$('.hasDatepicker').datepicker(); 
 	//loadData();
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
