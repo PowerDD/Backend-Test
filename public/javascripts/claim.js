@@ -11,7 +11,7 @@ $(function() {
 		var datex = $('#firstname').val();
 		var split = datex.split('/');
 		var oldyear = split[2];
-		var newyear = parseInt(year[2])+543;
+		var newyear = parseInt(oldyear)+543;
 		var newdate = datex.replace(oldyear,newyear.toString())
 		console.log(newdate); 
 	});
