@@ -3,7 +3,6 @@ var json;
 $(function() {
 
 	$('.datepicker').datepicker({
-		Date: +7,
 		format: 'dd/mm/yyyy' ,
 		autoclose :true,
 		isBuddhist: true,

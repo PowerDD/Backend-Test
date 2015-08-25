@@ -27,7 +27,7 @@
 		var today = new Date();
 		return UTCDate(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
 	}
-
+	var isBuddhist = 0;
 	// Picker object
 
 	var Datepicker = function(element, options) {
@@ -84,6 +84,12 @@
 			this.autoclose = options.autoclose;
 		} else if ('dateAutoclose' in this.element.data()) {
 			this.autoclose = this.element.data('date-autoclose');
+		}
+		
+		this.isBuddhist = false;
+		if ('isBuddhist' in options) {
+			this.isBuddhist = options.isBuddhist;
+			isBuddhist = 543;
 		}
 
 		this.keyboardNavigation = true;
@@ -357,7 +363,7 @@
 
 		fill: function() {
 			var d = new Date(this.viewDate),
-				year = d.getUTCFullYear() +543,
+				year = d.getUTCFullYear() +isBuddhist,
 				month = d.getUTCMonth(),
 				startYear = this.startDate !== -Infinity ? this.startDate.getUTCFullYear() : -Infinity,
 				startMonth = this.startDate !== -Infinity ? this.startDate.getUTCMonth() : -Infinity,
@@ -449,7 +455,7 @@
 
 		updateNavArrows: function() {
 			var d = new Date(this.viewDate),
-				year = d.getUTCFullYear(),
+				year = d.getUTCFullYear() +isBuddhist,
 				month = d.getUTCMonth();
 			switch (this.viewMode) {
 				case 0:
@@ -527,7 +533,7 @@
 								});
 							} else {
 								var year = parseInt(target.text(), 10)||0;
-								this.viewDate.setUTCFullYear(year);
+								this.viewDate.setUTCFullYear(year)+isBuddhist;
 								this.element.trigger({
 									type: 'changeYear',
 									date: this.viewDate
@@ -540,7 +546,7 @@
 					case 'td':
 						if (target.is('.day') && !target.is('.disabled')){
 							var day = parseInt(target.text(), 10)||1;
-							var year = this.viewDate.getUTCFullYear(),
+							var year = this.viewDate.getUTCFullYear()+isBuddhist,
 								month = this.viewDate.getUTCMonth();
 							if (target.is('.old')) {
 								if (month === 0) {
