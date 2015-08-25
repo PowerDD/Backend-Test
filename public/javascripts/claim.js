@@ -1,7 +1,16 @@
 var json;
 
 $(function() {
-
+	
+	$('.hasDate').click(function(){
+		var datex = $('#firstname').val();
+		var split = datex.split('/');
+		var oldyear = split[2];
+		var newyear = parseInt(oldyear)-543;
+		var newdate = datex.replace(oldyear,newyear.toString())
+		$('#firstname').val(newdate)
+	});
+	
 	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
 	$('.hasDate').datepicker({
 		dateFormat: "dd/mm/yy"
@@ -15,6 +24,8 @@ $(function() {
 		var newdate = datex.replace(oldyear,newyear.toString())
 		$('#firstname').val(newdate)
 	});
+	
+	
 	//loadData();
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
