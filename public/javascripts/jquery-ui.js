@@ -3858,7 +3858,7 @@ function Datepicker() {
 		isRTL: false, // True if right-to-left language, false if left-to-right
 		showMonthAfterYear: false, // True if the year select precedes month, false for month then year
 		yearSuffix: "", // Additional text to append to the year in the month headers
-		isBudhist = true
+		isBudhist: true
 	};
 	this._defaults = { // Global defaults for all the date picker instances
 		showOn: "focus", // "focus" for popup on focus,
