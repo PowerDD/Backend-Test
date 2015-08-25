@@ -6,7 +6,7 @@ $(function() {
 		// $.datepicker.regional[ "th" ]
 	// });
 	$('#firstname').datepicker({
-		$.datepicker.regional[ "th" ]
+		regional: 'th'
 	}); 
 	//loadData();
 	$(document).on('click', '.show_info', function(){
