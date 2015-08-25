@@ -3,10 +3,7 @@ var json;
 $(function() {
 
 	$('.datepicker').datepicker({
-		format: 'dd/mm/yyyy' ,
-		autoclose :true,
-		isBuddhist: true,
-		language: 'th'
+		regional: 'th'
 	});
 	
 	//loadData();
