@@ -3807,7 +3807,7 @@ function datepicker_getZindex( elem ) {
    Use the singleton instance of this class, $.datepicker, to interact with the date picker.
    Settings for (groups of) date pickers are maintained in an instance object,
    allowing multiple different settings on the same page. */
-var isBudhist == false;
+var isBudhist = false;
 function Datepicker() {
 	this._curInst = null; // The current instance in use
 	this._keyEvent = false; // If the last event was a key event
@@ -3858,7 +3858,7 @@ function Datepicker() {
 		isRTL: false, // True if right-to-left language, false if left-to-right
 		showMonthAfterYear: false, // True if the year select precedes month, false for month then year
 		yearSuffix: "" // Additional text to append to the year in the month headers
-		isBudhist == true;
+		isBudhist = true;
 	};
 	this._defaults = { // Global defaults for all the date picker instances
 		showOn: "focus", // "focus" for popup on focus,
