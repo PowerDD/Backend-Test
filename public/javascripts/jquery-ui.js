@@ -3860,6 +3860,7 @@ function Datepicker() {
 		yearSuffix: "" // Additional text to append to the year in the month headers
 		
 	};
+	alert(this.regional);
 	if(this.regional == this.regional["th"])
 		isBudhist = true;
 	this._defaults = { // Global defaults for all the date picker instances
