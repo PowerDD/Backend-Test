@@ -3807,7 +3807,7 @@ function datepicker_getZindex( elem ) {
    Use the singleton instance of this class, $.datepicker, to interact with the date picker.
    Settings for (groups of) date pickers are maintained in an instance object,
    allowing multiple different settings on the same page. */
-var isBudhist = false;
+
 function Datepicker() {
 	this._curInst = null; // The current instance in use
 	this._keyEvent = false; // If the last event was a key event
@@ -3860,8 +3860,8 @@ function Datepicker() {
 		yearSuffix: "" // Additional text to append to the year in the month headers
 		
 	};
-	if(this.regional == "th")
-		isBudhist = true;
+
+	
 	this._defaults = { // Global defaults for all the date picker instances
 		showOn: "focus", // "focus" for popup on focus,
 			// "button" for trigger button, or "both" for either
@@ -5614,7 +5614,7 @@ $.extend(Datepicker.prototype, {
 		if ( !inst.yearshtml ) {
 			inst.yearshtml = "";
 			if (secondary || !changeYear) {  
-				html += "<span class='ui-datepicker-year'>" + (drawYear+( isBudhist ? 543 : 0)) + "</span>";
+				html += "<span class='ui-datepicker-year'>" + (drawYear+( this.regional == "th" ? 543 : 0)) + "</span>";
 			} else {
 				// determine range of years to display
 				years = this._get(inst, "yearRange").split(":");
@@ -5633,7 +5633,7 @@ $.extend(Datepicker.prototype, {
 				for (; year <= endYear; year++) {
 					inst.yearshtml += "<option value='" + year + "'" +
 						(year === drawYear ? " selected='selected'" : "") +
-						">" + (year+( isBudhist ? 543 : 0)) + "</option>";
+						">" + (year+( this.regional == "th" ? 543 : 0)) + "</option>";
 				}
 				inst.yearshtml += "</select>";
 
