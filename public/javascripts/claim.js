@@ -8,9 +8,12 @@ $(function() {
 	}); 
 	
 	$(document).on('change', '.hasDate', function(){
-		var year = $('#firstname').val().split('/');
-		year = parseInt(year[2])+543;
-		console.log(year);
+		var date = $('#firstname').val().split('/');
+		var split = date.split('/');
+		var oldyear = year[2];
+		var newyear = parseInt(year[2])+543;
+		var newdate = data.replace(oldyear,newyear.toString())
+		console.log(newdate);
 	});
 	//loadData();
 	$(document).on('click', '.show_info', function(){
