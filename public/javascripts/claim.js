@@ -5,12 +5,9 @@ $(function() {
 
 	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
 	$('.hasDate').datepicker({
-		dateFormat: "dd/mm/yy",
-		changeMonth: true,
-		changeYear: true,
-		currentText: "Now"
+		dateFormat: "dd/mm/yy"
 	}); 
-	
+	$('.hasDate').datepicker( "setDate", "10/08/2015" );
 	$(document).on('change', '.hasDate', function(){
 		var datex = $('#firstname').val();
 		var split = datex.split('/');
