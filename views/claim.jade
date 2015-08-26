@@ -16,34 +16,83 @@ block content
 				.alert.alert-info.text-center.margin-bottom-0
 					| ขอบคุณสำหรับข้อมูล จะมีเจ้าหน้าที่พิจารณา และติดต่อท่านกลับไปค่ะ
 		.col-xs-12.col-sm-6.col-md-6.col-lg-6
-			#form-input.row.margin-bottom-15
-				.col-xs-12.col-sm-12.col-md-12.col-lg-12.margin-bottom-15
-					form
-						.form-group.col-sm-6.text-center
-							input#firstname.form-control.required.hasDate(type='text', placeholder='Barcode')
-							span#btn-register.btn.btn-warning.margin-top-5 ตรวจสอบ
-		.col-xs-12.col-sm-6.col-md-6.col-lg-6
-			strong.margin-top-15 เงื่อนไขการรับประกันและการเคลมสินค้า
-			ul
-				li
-					| 1. ทางบริษัทรับประกันผลิตภัณฑ์ REMAX เฉพาะที่ซื้อภายในประเทศไทยกับทางบริษัทเท่านั้น โดยมีกำหนดระยะเวลาประกันตามหมวดหมู่สินค้า ดังต่อไปนี้
-					ul
-						li POWERBANK, CABLE, ADAPTER, SMALL TALK, BLUETOOTH, SPEAKER รับประกัน 1 ปี 
-						li FILM, BAG รับประกันความเสียหายเปลี่ยนใหม่ภายใน 7 วัน (ประกัน 0 วัน)
-				li
-					| 2. ลูกค้าต้องนำสินค้าที่มีหลักฐานดังนี้ void sticker บริษัท หรือกล่องสินค้าที่มีสติกเกอร์บาร์โคดของบริษัท (เลขประจำตัวสินค้า Serial No) แสดงต่อเจ้าหน้าที่ทุกครั้ง ที่นำสินค้าส่งเคลม หากไม่มีหลักฐานดังกล่าวไม่รับเคลมสินค้า
-				li
-					| 3. การรับประกันจะรับประกันความเสียหายของสินค้าภายใต้การใช้งานที่ถูกวิธีและความเสียหายที่เกิดจากความผิดพลาดในการผลิตเท่านั้น
-				li
-					| 4. ไม่รับประกันสินค้าที่ได้รับความเสียหายจากอุบัติเหตุ การใช้งานผิดวิธี สินค้าที่มีการเก็บรักษาที่ไม่ถูกต้อง อาทิ มีคราบน้ำ,รอยคราบสกปรก , รอยสนิม, รอยความชื้น, รอยสารเคมี รวมถึงสินค้าที่ส่งเคลมต้องอยู่ในสภาพดี หากมีสภาพ ผิดปกติไปจากเดิมทางรูปทรงได้แก่ แตก, port USB หัก, บิ่น ,งอ , ยุบ, เบี้ยว , ร้าว , ทะลุ ,ขาด,มีบางส่วนขาดหายไป หรือมีการแกะ ดัดแปลงแก้ไข ขอสงวนสิทธิ์ไม่รับเคลมสินค้า
-				li
-					| 5. ทางบริษัทขอสงวนสิทธิ์ในการเปลี่ยนสินค้ารุ่นที่มูลค่าเท่ากันให้ลูกค้า กรณีสินค้าที่ลูกค้าส่งเคลมหมดรุ่นหรือยกเลิกจำหน่าย
-				li
-					b ติดต่อ
-					|  ฝ่ายเคลมสินค้า Remax โทร 081- 828-8833 / 02-1567199
-				li
-					b email:
-					|  service@remaxthailand.co.th
-	.row
-		.col-xs-12.col-sm-12.col-md-12.col-lg-12.margin-top-10
-			img.img-responsive.no-radius(src='https://lh3.googleusercontent.com/dEuJl53gqaJ5_uDMtz10aPEeqnPPccMnvq9mlI26OYg=w1500-no')
+			h3 #{__('pleace_search')}
+			form.form-horizontal
+				.form-group
+					label.col-sm-2.control-label(for='input') Shop ID
+					.col-sm-6.text-center
+						input.form-control.claimno(type='text', placeholder='Claim No.')
+				.form-group
+					label.col-sm-2.control-label(for='input') Shop ID
+					.col-sm-6.text-center
+						input.form-control.claimno(type='text', placeholder='Claim No.')
+					label.col-sm-2.control-label(for='input') Shop ID
+					.col-sm-6.text-center
+						input.form-control.claimno(type='text', placeholder='Claim No.')
+				
+	
+	.row.wait.hidden
+		.col-xs-12
+			.box
+				.box-header
+					h3.box-title #{__('register_dealer')}
+				.box-body
+					table#dv-register_dealer.table.table-bordered.table-striped
+						thead
+							tr.font-sm
+								th(width="200") #{__('firstname')} - #{__('lastname')}
+								th(width="80") #{__('province')}
+								th(width="80") #{__('submitDate')}
+								th #{__('profileSummary')}
+						tbody				 
+						
+	#dv-info.modal.fade(tabindex='-1', role='dialog')
+		.modal-dialog.modal-lg
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal')
+						span(aria-hidden='true') &times;
+						span.sr-only Close
+					h4.modal-title
+				.modal-body
+					dl
+						dt  เบอร์โทรฯ
+						dd.mobile
+					dl
+						dt  เวลาที่สะดวกในการติดต่อ
+						dd.time
+					dl
+						dt  สนใจเป็นตัวแทนในจังหวัด
+						dd.province
+					dl
+						dt  ที่อยู่
+						dd.address
+					dl
+						dt  แนะนำประวัติ หรือกิจการ หรือรูปแบบการจำหน่าย
+						dd.profile
+					dl
+						dt  สาเหตุที่สนใจเป็นตัวแทนจำหน่าย
+						dd.reason
+					dl
+						dt  ความคาดหวังเมื่อเป็นตัวแทนจำหน่าย
+						dd.expect
+					dl
+						dt  ความคิดเห็น เกี่ยวกับการแข่งขันเพื่อความอยู่รอดในธุรกิจ
+						dd.comment
+
+					.row
+						.col-sm-6.img0
+							a(href="#", target="_blank")
+								img.img-responsive.img-rounded.margin-bottom-10(src="https://res.cloudinary.com/powerdd/image/upload/v1438076463/0875665456-1.jpg")
+						.col-sm-6.img1
+							a(href="#", target="_blank")
+								img.img-responsive.img-rounded.margin-bottom-10(src="https://res.cloudinary.com/powerdd/image/upload/v1438076463/0875665456-1.jpg")
+						.col-sm-6.img2
+							a(href="#", target="_blank")
+								img.img-responsive.img-rounded.margin-bottom-10(src="https://res.cloudinary.com/powerdd/image/upload/v1438076463/0875665456-1.jpg")
+						.col-sm-6.img3
+							a(href="#", target="_blank")
+								img.img-responsive.img-rounded.margin-bottom-10(src="https://res.cloudinary.com/powerdd/image/upload/v1438076463/0875665456-1.jpg")
+
+				.modal-footer
+					button.btn.btn-default(type='button', data-dismiss='modal') #{__('cancel')}
