@@ -30,23 +30,19 @@ block content
 					.col-sm-3.text-center
 						input.form-control.input-date#date_to
 				.form-group.radio
-					label.col-sm-3.control-label(for='.radio') #{__('status')}
+					label.col-sm-3.control-label #{__('status')}
 					.radio
-						label
-							input(type='radio', name='optradio')
-							| Option 1
+						input.col-sm-8(type='radio', name='optradio', data-status='A')
+						| Option 1
 					.radio
-						label
-							input(type='radio', name='optradio')
-							| Option 2
+						input.col-sm-8(type='radio', name='optradio', data-status='B')
+						| Option 2
 					.radio
-						label
-							input(type='radio', name='optradio')
-							| Option 3
+						input.col-sm-8(type='radio', name='optradio', data-status='C')
+						| Option 3
 					.radio
-						label
-							input(type='radio', name='optradio')
-							| Option 4
+						input.col-sm-8(type='radio', name='optradio', data-status='D')
+						| Option 4
 				
 	
 	.row.wait.hidden
