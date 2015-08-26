@@ -54,9 +54,9 @@ function loadDate(){
             if(this.id == 'date_from'){
               var dateMin = $('#date_from').datepicker("getDate");
               var rMin = new Date(dateMin.getFullYear(), dateMin.getMonth(),dateMin.getDate() + 1); // Min Date = Selected + 1d
-              var rMax = new Date(dateMin.getFullYear(), dateMin.getMonth(),dateMin.getDate() + 31); // Max Date = Selected + 31d
+              //var rMax = new Date(dateMin.getFullYear(), dateMin.getMonth(),dateMin.getDate() + 31); // Max Date = Selected + 31d
               $('#date_to').datepicker("option","minDate",rMin);
-              $('#date_to').datepicker("option","maxDate",rMax);                    
+              //$('#date_to').datepicker("option","maxDate",rMax);                    
             }
 
         }
