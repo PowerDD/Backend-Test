@@ -10,12 +10,7 @@ $(function() {
 	
 	//loadData();
 	$(document).ready( function() {
-		var d = new Date();
-		var curr_date = d.getDate();
-		var curr_month = d.getMonth();
-		curr_month++;
-		var curr_year = d.getFullYear();
-		$('.input-date').val(curr_date + "/" + curr_month + "/" + curr_year);
+		
 	});
 	​
 	$(document).on('click', '.show_info', function(){
@@ -49,10 +44,7 @@ $(function() {
 	});
 
 });
-function UTCToday(){
-		var today = new Date();
-		return UTCDate(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
-};
+
 function loadData(){
 	$('#dv-loading').show();
 	$('#dv-no_data, #dv-register_dealer').hide();
