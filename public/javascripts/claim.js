@@ -10,8 +10,14 @@ $(function() {
 	
 	//loadData();
 	$(document).ready( function() {
-		$('.input-date').val(new Date().toDateInputValue());
-	});​
+		var d = new Date();
+		var curr_date = d.getDate();
+		var curr_month = d.getMonth();
+		curr_month++;
+		var curr_year = d.getFullYear();
+		$('.input-date').val(curr_date + "/" + curr_month + "/" + curr_year);
+	});
+	​
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
 		var modal = $('#dv-info');
