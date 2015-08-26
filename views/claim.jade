@@ -34,22 +34,22 @@ block content
 					.radio.col-sm-8
 						label
 							input(type='radio', name='optradio', data-status='A', checked)
-							| Option 1
+							| #{__('claim_wait_checkdata')}
 					label.col-sm-3.control-label(for='input')
 					.radio.col-sm-8
 						label
 							input(type='radio', name='optradio', data-status='B')
-							| Option 2
+							| #{__('claim_customer_sent')}
 					label.col-sm-3.control-label(for='input')
 					.radio.col-sm-8
 						label
 							input(type='radio', name='optradio', data-status='C')
-							| Option 3
+							| #{__('claim_instock')}
 					label.col-sm-3.control-label(for='input')
 					.radio.col-sm-8
 						label
 							input(type='radio', name='optradio', data-status='D')
-							| Option 4
+							| #{__('claim_finish')}
 				.form-group
 					.col-sm-12.text-center
 						.btn.btn-sm.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit

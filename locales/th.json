@@ -69,6 +69,10 @@
 	"pleace_search": "ระบุค่าค้นหา",
 	"_from": "ตั้งแต่",
 	"_to": "ถึง",
+	"claim_wait_checkdata":"รอตรวจสอบข้อมูล",
+	"claim_customer_sent":"สินค้าจัดส่งจากลูกค้า",
+	"claim_instock":"สินค้าค้างส่ง หรือ รอสินค้าเปลี่ยน",
+	"claim_finish":"สินค้าส่งแล้ว",
 
 	"welcome to new system v2": "ยินดีต้อนรับเข้าสู่ระบบ (Version 2.0)",
 	"hello": "สวัสดี",

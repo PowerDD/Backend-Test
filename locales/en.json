@@ -68,6 +68,10 @@
 	"pleace_search": "Search",
 	"_from": "From",
 	"_to": "To",
+	"claim_wait_checkdata":"Wait for Check Claim detail",
+	"claim_customer_sent":"Customer sent Product Claim",
+	"claim_instock":"Product Claim in Stock",
+	"claim_finish":"Finish",
 
 	"welcome to new system v2": "Welcome to Backend System (Version 2.0)",
 	"hello": "Hello",
