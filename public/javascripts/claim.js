@@ -6,8 +6,10 @@ $(function() {
 	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
 	$('.hasDate').datepicker({
 		dateFormat: "dd/mm/yy",
-		setDate: "01/08/2015" 
-	}); //
+		changeMonth: true,
+		changeYear: true,
+		currentText: "Now"
+	}); 
 	
 	$(document).on('change', '.hasDate', function(){
 		var datex = $('#firstname').val();
