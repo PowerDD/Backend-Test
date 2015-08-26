@@ -7,16 +7,6 @@ $(function() {
 	$('.hasDate').datepicker({
 		dateFormat: "dd/mm/yy"
 	}); 
-	$('.hasDate').datepicker( "setDate", "10/08/2015" );
-	$(document).on('change', '.hasDate', function(){
-		var datex = $('#firstname').val();
-		var split = datex.split('/');
-		var oldyear = split[2];
-		var newyear = parseInt(oldyear)+543;
-		var newdate = datex.replace(oldyear,newyear.toString())
-		$('#firstname').val(newdate);
-	});
-	
 	
 	//loadData();
 	$(document).on('click', '.show_info', function(){
