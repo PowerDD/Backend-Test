@@ -1,24 +1,12 @@
 var json;
 
 $(function() {
-	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
-	loadDate();
-	$('.input-date').datepicker({
-		dateFormat: "dd/mm/yy",
-		onSelect: function( selectedDate ) {
-            if(this.class == 'date_from'){
-              var dateMin = $('.date_from').datepicker("getDate");
-              var rMin = new Date(dateMin.getFullYear(), dateMin.getMonth(),dateMin.getDate() + 1); // Min Date = Selected + 1d
-              var rMax = new Date(dateMin.getFullYear(), dateMin.getMonth(),dateMin.getDate() + 31); // Max Date = Selected + 31d
-              $('.date_to').datepicker("option","minDate",rMin);
-              $('.date_to').datepicker("option","maxDate",rMax);                    
-            }
+	
 
-        }
-	});
+	
 	
 	//loadData();
-	
+	loadDate();
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
 		var modal = $('#dv-info');
@@ -56,7 +44,23 @@ function loadDate(){
 	var curr_month = d.getMonth();
 	curr_month++;
 	var curr_year = d.getFullYear();
-	$('.input-date').val(curr_date + "/" + curr_month + "/" + curr_year);	 
+	$('.input-date').val(curr_date + "/" + curr_month + "/" + curr_year);
+	
+	
+	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
+	$('.input-date').datepicker({
+		dateFormat: "dd/mm/yy",
+		onSelect: function( selectedDate ) {
+            if(this.id == 'date_from'){
+              var dateMin = $('#date_from').datepicker("getDate");
+              var rMin = new Date(dateMin.getFullYear(), dateMin.getMonth(),dateMin.getDate() + 1); // Min Date = Selected + 1d
+              var rMax = new Date(dateMin.getFullYear(), dateMin.getMonth(),dateMin.getDate() + 31); // Max Date = Selected + 31d
+              $('#date_to').datepicker("option","minDate",rMin);
+              $('#date_to').datepicker("option","maxDate",rMax);                    
+            }
+
+        }
+	}); 
 }
 function loadData(){
 	$('#dv-loading').show();
