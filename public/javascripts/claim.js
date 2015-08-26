@@ -9,6 +9,9 @@ $(function() {
 	// }); 
 	
 	//loadData();
+	$(document).ready( function() {
+		$('.input-date').val(new Date().toDateInputValue());
+	});​
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
 		var modal = $('#dv-info');

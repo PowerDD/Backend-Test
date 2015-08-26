@@ -66,6 +66,8 @@
 	"claimdate": "Date",
 	"claimdetial": "Detail",
 	"pleace_search": "Search",
+	"_from": "From",
+	"_to": "To",
 
 	"welcome to new system v2": "Welcome to Backend System (Version 2.0)",
 	"hello": "Hello",

@@ -67,6 +67,8 @@
 	"claimdate": "วันที่ส่งข้อมูล",
 	"claimdetial": "รายละเอียด",
 	"pleace_search": "ระบุค่าค้นหา",
+	"_from": "ตั้งแต่",
+	"_to": "ถึง",
 
 	"welcome to new system v2": "ยินดีต้อนรับเข้าสู่ระบบ (Version 2.0)",
 	"hello": "สวัสดี",
