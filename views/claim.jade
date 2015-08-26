@@ -29,6 +29,24 @@ block content
 					label.col-sm-2.control-label(for='input') #{__('_to')}
 					.col-sm-3.text-center
 						input.form-control.input-date#date_to
+				.form-group.radio
+					label.col-sm-3.control-label(for='.radio') #{__('status')}
+					.radio
+						label
+							input(type='radio', name='optradio')
+							| Option 1
+					.radio
+						label
+							input(type='radio', name='optradio')
+							| Option 2
+					.radio
+						label
+							input(type='radio', name='optradio')
+							| Option 3
+					.radio
+						label
+							input(type='radio', name='optradio')
+							| Option 4
 				
 	
 	.row.wait.hidden
