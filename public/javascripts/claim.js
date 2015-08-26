@@ -10,7 +10,6 @@ $(function() {
 	
 	//loadData();
 	loadDate();
-	​
 	$(document).on('click', '.show_info', function(){
 		var id = parseInt($(this).parents('tr').data('id'));
 		var modal = $('#dv-info');
