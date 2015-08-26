@@ -4,9 +4,9 @@ $(function() {
 	
 
 	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
-	// $('.hasDate').datepicker({
+	$('.input-date').datepicker({
 		// dateFormat: "dd/mm/yy"
-	// }); 
+	}); 
 	
 	//loadData();
 	loadDate();
