@@ -37,6 +37,24 @@ $(function() {
 	$('.btn-submit').click(function(){
 		loadData();
 	});
+	
+	$('#table-claim_info').DataTable({
+		searching: false,
+		"language": {
+			"search": "ค้นหา",
+			"infoEmpty": "ไม่มีข้อมูล",
+			"lengthMenu": "แสดง _MENU_ รายการ",
+			"info":"ตั้งแต่ _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+			"infoFiltered": " ค้นหาจาก _MAX_ รายการ",
+			"zeroRecords": "ไม่พบข้อมูลที่ค้นหา",
+			"paginate": {
+					 "first": "หน้าแรก",
+					 "last": "หน้าสุดท้าย",
+					 "next": "ถัดไป",
+					 "previous": "ก่อนหน้า"
+					}
+			}
+	});
 
 });
 function loadDate(){
