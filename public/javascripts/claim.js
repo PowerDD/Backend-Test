@@ -49,7 +49,7 @@ function loadDate(){
 	
 	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
 	$('.input-date').datepicker({
-		dateFormat: "dd/mm/yy",
+		dateFormat: "DD/MM/YY",
 		onSelect: function( selectedDate ) {
             if(this.id == 'date_from'){
               var dateMin = $('#date_from').datepicker("getDate");
@@ -66,8 +66,13 @@ function loadData(){
 	$('#dv-loading').show();
 	$('#dv-no_data, #dv-register_dealer').hide();
 	
-	$.post($('#apiUrl').val()+'/dealer/info', {
-		apiKey: $('#apiKey').val()
+	$.post($('#apiUrl').val()+'/claim/info', {
+		apiKey: $('#apiKey').val(),
+		shop: $('#shop').val(),
+		id: $('#claimno').val(),
+		claimdate_from: $('#date_from').val(),
+		claimdate_to: $('#date_to').val(),
+		status: $('.radio :checked').attr('data-status')
 	}, function(data){
 		$('#dv-loading').hide();
 		
