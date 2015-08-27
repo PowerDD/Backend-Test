@@ -1,19 +1,6 @@
 var json;
 
-$(function() {
-	/*$(document).on('click', '.btn-collapse', function(){
-		$(this).parent().find('.result').JSONView('collapse');
-	});
-
-	$(document).on('click', '.btn-expand', function(){
-		$(this).parent().find('.result').JSONView('expand');
-	});
-
-	$(document).on('click', '.btn-toggle', function(){
-		$(this).parent().find('.result').JSONView('toggle');
-	});*/
-
-	
+$(function() {	
 	
 	//loadData();
 	loadDate();

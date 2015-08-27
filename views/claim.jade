@@ -15,15 +15,15 @@ block content
 			.col-xs-12.col-sm-12.col-md-12.col-lg-12.margin-top-10
 				.alert.alert-info.text-center.margin-bottom-0
 					| ขอบคุณสำหรับข้อมูล จะมีเจ้าหน้าที่พิจารณา และติดต่อท่านกลับไปค่ะ
+					
 	#accordion.panel-group(role='tablist', aria-multiselectable='true')
 		.panel.panel-default
 			#headingOne.panel-heading(role='tab')
 				h4.panel-title
 					a(data-toggle='collapse', data-parent='#accordion', href='#info', aria-expanded='false')
-						#{__('pleace_search')}
+						|#{__('pleace_search')}
 			#info.panel-collapse.collapse(role='tabpanel')
 				.panel-body
-					pre URL : /#{data.screen}/info
 					.panel.panel-default
 						.panel-body						
 							.col-xs-12.col-sm-6.col-md-6.col-lg-6
