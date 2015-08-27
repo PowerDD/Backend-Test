@@ -79,8 +79,8 @@ function loadData(){
 		apiKey: $('#apiKey').val(),
 		shop: $('#shop').val(),
 		id: $('#claimno').val(),
-		claimdate_from: date_from,
-		claimdate_to: date_to,
+		claimdate_from: typeof $('#date_from').val() != 'undefined' && $('#date_from').val() != '' ? date_from : '',
+		claimdate_to: typeof $('#date_to').val() != 'undefined' && $('#date_to').val() != '' ? date_to : '',
 		status: $('.radio :checked').attr('data-status')
 	}, function(data){
 		$('#dv-loading').hide();
