@@ -24,6 +24,8 @@ block content
 										label.col-sm-2.control-label(for='input') #{__('_to')}
 										.col-sm-3.text-center
 											input.form-control.input-date#date_to
+							.col-xs-12.col-sm-6.col-md-6.col-lg-6
+								form.form-horizontal
 									.form-group
 										label.col-sm-3.control-label(for='input') #{__('status')}
 										.radio.col-sm-8
@@ -45,6 +47,8 @@ block content
 											label
 												input(type='radio', name='optradio', data-status='SH')
 												| #{__('claim_finish')}
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12
+								form.form-horizontal
 									.form-group
 										.col-sm-12.text-center
 											.btn.btn-sm.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') #{__('submit')}
