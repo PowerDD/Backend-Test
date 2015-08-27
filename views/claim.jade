@@ -1,26 +1,11 @@
 extends layout
 
 block content
-	.pinBox.pinWell.padding-10
-		h1.page-header.font-28.margin-top-10 เคลมสินค้า
-		#form-loading.row.hidden
-			.col-xs-12.col-sm-12.col-md-12.col-lg-12.margin-top-10
-				.alert.alert-info.text-center.margin-bottom-0
-					.progress.margin-bottom-5
-					#progress.progress-bar.progress-bar-striped.active(role='progressbar', aria-valuenow='0', aria-valuemin='0', aria-valuemax='100', style='width: 0%')
-						span.sr-only
-					i.fa.fa-cog.fa-spin
-						|  กำลังส่งข้อมูลเข้าระบบ กรุณารอสักครู่ค่ะ
-		#form-success.row.hidden
-			.col-xs-12.col-sm-12.col-md-12.col-lg-12.margin-top-10
-				.alert.alert-info.text-center.margin-bottom-0
-					| ขอบคุณสำหรับข้อมูล จะมีเจ้าหน้าที่พิจารณา และติดต่อท่านกลับไปค่ะ
-					
 	#accordion.panel-group(role='tablist', aria-multiselectable='true')
 		.panel.panel-default
 			#headingOne.panel-heading(role='tab')
 				h4.panel-title
-					a(data-toggle='collapse', data-parent='#accordion', href='#info', aria-expanded='false')
+					a(data-toggle='collapse', data-parent='#accordion', href='#info', aria-expanded='true')
 						|#{__('pleace_search')}
 			#info.panel-collapse.collapse(role='tabpanel')
 				.panel-body
@@ -67,7 +52,7 @@ block content
 	
 	.row.wait.hidden
 		.col-xs-12
-			.box
+			.box.box-info
 				.box-header
 					h3.box-title #{__('register_dealer')}
 				.box-body
