@@ -5,9 +5,12 @@ block content
 		.panel.panel-default
 			#headingOne.panel-heading(role='tab')
 				h4.panel-title
-					a(data-toggle='collapse', data-parent='#accordion', href='#info', aria-expanded='true')
+					a(data-toggle='collapse', data-parent='#accordion', href='#info', aria-expanded='false')
 						|#{__('pleace_search')}
-			#info.panel-collapse(role='tabpanel')
+					.box-tools.pull-right
+						button.btn.btn-box-tool(data-widget="collapse")
+							i.fa.fa-plus
+			#info.panel-collapse.collapse(role='tabpanel')
 				.panel-body
 					.panel.panel-default
 						.panel-body						
