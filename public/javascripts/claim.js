@@ -39,7 +39,7 @@ $(function() {
 	
 	$('.btn-submit').click(function(){
 		var x = $('#date_from').val().split('/');
-		var d = x[2] +'-'+ (x[1].length < 2 ? '0'+x[1] : x[1]) +'-'+ x[0];
+		var d = x[2] +'-'+ x[1] +'-'+ x[0];
 		console.log(d)
 	});
 
@@ -54,7 +54,7 @@ function loadDate(){
 	
 	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
 	$('.input-date').datepicker({
-		dateFormat: "dd/m/yy",
+		dateFormat: "dd/mm/yy",
 		onSelect: function( selectedDate ) {
             if(this.id == 'date_from'){
               var dateMin = $('#date_from').datepicker("getDate");
