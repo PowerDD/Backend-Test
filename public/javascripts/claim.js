@@ -39,8 +39,8 @@ $(function() {
 	
 	$('.btn-submit').click(function(){
 		var x = $('#date_from').val().split('/');
-		//var d = "'"x[2]+'-'+x[0]+'-'x[1]"'";
-		console.log(x[2])
+		var d = x[2] +'-'+ x[0] +'-'+ x[1];
+		console.log(d)
 	});
 
 });
