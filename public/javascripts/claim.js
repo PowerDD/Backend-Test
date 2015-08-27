@@ -38,9 +38,7 @@ $(function() {
 	});
 	
 	$('.btn-submit').click(function(){
-		var date_from = $('#date_from').val().split('/');
-		date_from = date_from[2] +'-'+ date_from[1] +'-'+ date_from[0];
-		console.log(date_from)
+		loadData();
 	});
 
 });
@@ -69,8 +67,8 @@ function loadDate(){
 	}); 
 }
 function loadData(){
-	$('#dv-loading').show();
-	$('#dv-no_data, #dv-register_dealer').hide();
+	//$('#dv-loading').show();
+	//$('#dv-no_data, #dv-register_dealer').hide();
 	
 	var date_from = $('#date_from').val().split('/');
 		date_from = date_from[2] +'-'+ date_from[1] +'-'+ date_from[0];
@@ -81,8 +79,8 @@ function loadData(){
 		apiKey: $('#apiKey').val(),
 		shop: $('#shop').val(),
 		id: $('#claimno').val(),
-		claimdate_from: $('#date_from').val(),
-		claimdate_to: $('#date_to').val(),
+		claimdate_from: date_from,
+		claimdate_to: date_to,
 		status: $('.radio :checked').attr('data-status')
 	}, function(data){
 		$('#dv-loading').hide();
@@ -90,7 +88,8 @@ function loadData(){
 		moment.locale('th');
 
 		if (data.success) {
-			json = data.result;
+			console.log('its okay')
+			/*json = data.result;
 			
 			var html = '';
 			for( i=0; i<json.length; i++ ) {
@@ -141,6 +140,7 @@ function loadData(){
 							}
 					}
 			});
+			*/
 		}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
 }
