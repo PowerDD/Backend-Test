@@ -83,7 +83,6 @@ function loadData(){
 			}
 			
 			$('#dv-register_dealer').DataTable({
-				searching: false,
 				"language": {
 					"search": "ค้นหา",
 					"infoEmpty": "ไม่มีข้อมูล",
