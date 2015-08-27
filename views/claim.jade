@@ -15,45 +15,54 @@ block content
 			.col-xs-12.col-sm-12.col-md-12.col-lg-12.margin-top-10
 				.alert.alert-info.text-center.margin-bottom-0
 					| ขอบคุณสำหรับข้อมูล จะมีเจ้าหน้าที่พิจารณา และติดต่อท่านกลับไปค่ะ
-					
-		.col-xs-12.col-sm-6.col-md-6.col-lg-6
-			h3 #{__('pleace_search')}
-			form.form-horizontal
-				.form-group
-					label.col-sm-3.control-label(for='input') #{__('claimno')}
-					.col-sm-8.text-center
-						input.form-control#claimno(type='text', placeholder='Claim No.')
-				.form-group
-					label.col-sm-3.control-label(for='input') #{__('_from')}#{__('date')}
-					.col-sm-3.text-center
-						input.form-control.input-date#date_from
-					label.col-sm-2.control-label(for='input') #{__('_to')}
-					.col-sm-3.text-center
-						input.form-control.input-date#date_to
-				.form-group
-					label.col-sm-3.control-label(for='input') #{__('status')}
-					.radio.col-sm-8
-						label
-							input(type='radio', name='optradio', data-status='CI', checked)
-							| #{__('claim_wait_checkdata')}
-					label.col-sm-3.control-label(for='input')
-					.radio.col-sm-8
-						label
-							input(type='radio', name='optradio', data-status='CP')
-							| #{__('claim_customer_sent')}
-					label.col-sm-3.control-label(for='input')
-					.radio.col-sm-8
-						label
-							input(type='radio', name='optradio', data-status='CT')
-							| #{__('claim_instock')}
-					label.col-sm-3.control-label(for='input')
-					.radio.col-sm-8
-						label
-							input(type='radio', name='optradio', data-status='SH')
-							| #{__('claim_finish')}
-				.form-group
-					.col-sm-12.text-center
-						.btn.btn-sm.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') #{__('submit')}
+	#accordion.panel-group(role='tablist', aria-multiselectable='true')
+		.panel.panel-default
+			#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#info', aria-expanded='false')
+						#{__('pleace_search')}
+			#info.panel-collapse.collapse(role='tabpanel')
+				.panel-body
+					pre URL : /#{data.screen}/info
+					.panel.panel-default
+						.panel-body						
+							.col-xs-12.col-sm-6.col-md-6.col-lg-6
+								form.form-horizontal
+									.form-group
+										label.col-sm-3.control-label(for='input') #{__('claimno')}
+										.col-sm-8.text-center
+											input.form-control#claimno(type='text', placeholder='Claim No.')
+									.form-group
+										label.col-sm-3.control-label(for='input') #{__('_from')}#{__('date')}
+										.col-sm-3.text-center
+											input.form-control.input-date#date_from
+										label.col-sm-2.control-label(for='input') #{__('_to')}
+										.col-sm-3.text-center
+											input.form-control.input-date#date_to
+									.form-group
+										label.col-sm-3.control-label(for='input') #{__('status')}
+										.radio.col-sm-8
+											label
+												input(type='radio', name='optradio', data-status='CI', checked)
+												| #{__('claim_wait_checkdata')}
+										label.col-sm-3.control-label(for='input')
+										.radio.col-sm-8
+											label
+												input(type='radio', name='optradio', data-status='CP')
+												| #{__('claim_customer_sent')}
+										label.col-sm-3.control-label(for='input')
+										.radio.col-sm-8
+											label
+												input(type='radio', name='optradio', data-status='CT')
+												| #{__('claim_instock')}
+										label.col-sm-3.control-label(for='input')
+										.radio.col-sm-8
+											label
+												input(type='radio', name='optradio', data-status='SH')
+												| #{__('claim_finish')}
+									.form-group
+										.col-sm-12.text-center
+											.btn.btn-sm.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') #{__('submit')}
 				
 	
 	.row.wait.hidden
