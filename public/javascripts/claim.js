@@ -36,6 +36,12 @@ $(function() {
 			for(i=0; i<=3; i++) modal.find('.img'+i).hide();
 		}
 	});
+	
+	$('.btn-submit').click(function(){
+		var x = $('#date_from').val().split('/');
+		var d = x[2]+'-'+x[0]+'-'x[1];
+		console.log(d)
+	});
 
 });
 function loadDate(){
