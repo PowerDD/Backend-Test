@@ -61,6 +61,7 @@ function loadDate(){
               var rMin = new Date(dateMin.getFullYear(), dateMin.getMonth(),dateMin.getDate()); // Min Date = Selected + 1d
               //var rMax = new Date(dateMin.getFullYear(), dateMin.getMonth(),dateMin.getDate() + 31); // Max Date = Selected + 31d
               $('#date_to').datepicker("option","minDate",rMin);
+			  $('#date_to').val($('#date_from').val())
               //$('#date_to').datepicker("option","maxDate",rMax);                    
             }
 
