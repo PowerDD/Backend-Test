@@ -38,9 +38,9 @@ $(function() {
 	});
 	
 	$('.btn-submit').click(function(){
-		var x = $('#date_from').val().split('/');
-		var d = x[2] +'-'+ x[1] +'-'+ x[0];
-		console.log(d)
+		var date_from = $('#date_from').val().split('/');
+		date_from = date_from[2] +'-'+ date_from[1] +'-'+ date_from[0];
+		console.log(date_from)
 	});
 
 });
@@ -72,6 +72,11 @@ function loadData(){
 	$('#dv-loading').show();
 	$('#dv-no_data, #dv-register_dealer').hide();
 	
+	var date_from = $('#date_from').val().split('/');
+		date_from = date_from[2] +'-'+ date_from[1] +'-'+ date_from[0];
+	var date_to = $('#date_to').val().split('/');
+		date_to = date_to[2] +'-'+ date_to[1] +'-'+ date_to[0];
+		
 	$.post($('#apiUrl').val()+'/claim/info', {
 		apiKey: $('#apiKey').val(),
 		shop: $('#shop').val(),
