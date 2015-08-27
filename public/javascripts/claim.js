@@ -39,13 +39,12 @@ $(function() {
 
 });
 function loadDate(){
-	var d = new Date();
+	/*var d = new Date();
 	var curr_date = d.getDate();
 	var curr_month = d.getMonth();
 	curr_month++;
 	var curr_year = d.getFullYear();
-	$('.input-date').val(curr_date + "/" + curr_month + "/" + curr_year);
-	
+	$('.input-date').val(curr_date + "/" + curr_month + "/" + curr_year);*/
 	
 	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
 	$('.input-date').datepicker({
