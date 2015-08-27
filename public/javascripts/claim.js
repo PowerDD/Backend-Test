@@ -49,7 +49,7 @@ function loadDate(){
 	
 	$.datepicker.setDefaults( $.datepicker.regional[ "th" ] );
 	$('.input-date').datepicker({
-		dateFormat: "DD/MM/YY",
+		dateFormat: "dd/mm/yy",
 		onSelect: function( selectedDate ) {
             if(this.id == 'date_from'){
               var dateMin = $('#date_from').datepicker("getDate");
